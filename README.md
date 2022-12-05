@@ -15,8 +15,9 @@ Group Members & Professor (Prof. Kal Bugrara):
 - Email ID: mendiratta.p@northeastern.edu
 
 ## Topic: Library Management System
-4 - Enterprises (unis)
-6 - orgs different departments like (sci, eco, tech, etc)
-8 - roles(super admin, university admin, manage books admin, manage student admin, issue books admin, return books admin, defaulter admin, student)
+
+4 - Enterprises (Universities)
+6 - Organizations different departments like (Science, Economics, Technology, Arts, Commerce, Medical)
+8 - Roles (Super Admin, University Admin, Manage Books Admin, Manage Student Admin, Issue Books Admin, Return Books Admin, Defaulter Admin, Student)
 
 ### Project aspects:
