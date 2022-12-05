@@ -1,8 +1,6 @@
 # INFO 5100 FINAL PROJECT
 
-Group Members & Professor:
-
-- Prof. Kal Bugrara
+Group Members & Professor (Prof. Kal Bugrara):
 
 - Name: Bonie Rajkumar Sachdev
 - NUID: 002774547
