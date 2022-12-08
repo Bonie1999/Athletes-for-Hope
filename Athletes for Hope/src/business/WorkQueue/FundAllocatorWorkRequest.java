@@ -4,10 +4,30 @@
  */
 package business.WorkQueue;
 
+import business.Consultation.ConsultationFundAllocator;
+import java.util.ArrayList;
+
 /**
  *
- * @author puranjaimendiratta
+ * @author Puranjai
  */
-public class FundAllocatorWorkRequest {
-    
+public class FundAllocatorWorkRequest extends WorkRequest {
+    TalentScoutWorkRequest hswr;
+    ArrayList<ConsultationFundAllocator> FAConsult = new ArrayList<ConsultationFundAllocator>();
+
+    public TalentScoutWorkRequest getHswr() {
+        return hswr;
+    }
+
+    public void setHswr(TalentScoutWorkRequest hswr) {
+        this.hswr = hswr;
+    }
+
+    public ArrayList<ConsultationFundAllocator> getFAConsult() {
+        return FAConsult;
+    }
+
+    public void setConslrEncounter(ArrayList<ConsultationFundAllocator> FAConsult) {
+        this.FAConsult = FAConsult;
+    }
 }
