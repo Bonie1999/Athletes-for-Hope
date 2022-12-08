@@ -4,10 +4,22 @@
  */
 package business.Organization;
 
+import business.Role.SportsTrainingCoachRole;
+import business.Role.Role;
+import java.util.ArrayList;
 /**
  *
  * @author hp
  */
-public class PhysicalTrainingOrganization {
+public class PhysicalTrainingOrganization extends Organization {
+     public PhysicalTrainingOrganization() {
+        super(Organization.Type.PhysicalTraining.getValue());
+    }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new SportsTrainingCoachRole());
+        return roles;
+    }
 }
