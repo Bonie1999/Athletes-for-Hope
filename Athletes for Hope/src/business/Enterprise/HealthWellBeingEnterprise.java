@@ -4,10 +4,18 @@
  */
 package business.Enterprise;
 
+import business.Role.Role;
+import java.util.ArrayList;
 /**
  *
  * @author hp
  */
-public class HealthWellBeingEnterprise {
-    
+public class HealthWellBeingEnterprise extends Enterprise{
+      
+    public HealthWellBeingEnterprise(String name){
+        super(name,EnterpriseType.HealthWellBeing);
+    }
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }
