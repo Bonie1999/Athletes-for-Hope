@@ -4,10 +4,17 @@
  */
 package business.Enterprise;
 
+import business.Role.Role;
+import java.util.ArrayList;
 /**
  *
  * @author hp
  */
-public class NutritionEnterprise {
-    
+public class NutritionEnterprise extends Enterprise{
+    public NutritionEnterprise(String name){
+        super(name,EnterpriseType.Nutrition);
+    }
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }
