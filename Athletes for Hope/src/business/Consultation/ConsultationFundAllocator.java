@@ -9,5 +9,41 @@ package business.Consultation;
  * @author nishank
  */
 public class ConsultationFundAllocator {
+    private String en;
+    private String minutes;
+    private String name;
+    
+    
+    public ConsultationFundAllocator(){
+         
+    }
+
+  
+
+    public String getEn() {
+        return en;
+    }
+
+    public void setEn(String en) {
+        this.en = en;
+    }
+
+    public String getMinutes() {
+        return minutes;
+    }
+
+    public void setMinutes(String minutes) {
+        this.minutes = minutes;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    
     
 }
