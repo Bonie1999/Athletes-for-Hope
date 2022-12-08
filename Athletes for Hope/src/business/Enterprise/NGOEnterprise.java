@@ -16,6 +16,7 @@ public class NGOEnterprise extends Enterprise {
     public NGOEnterprise(String name){
         super(name,Enterprise.EnterpriseType.NGO);
     }
+    @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
