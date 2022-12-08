@@ -14,6 +14,7 @@ public class NutritionEnterprise extends Enterprise{
     public NutritionEnterprise(String name){
         super(name,EnterpriseType.Nutrition);
     }
+    @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
