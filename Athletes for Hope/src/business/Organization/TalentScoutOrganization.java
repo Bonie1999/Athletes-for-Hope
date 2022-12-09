@@ -4,10 +4,23 @@
  */
 package business.Organization;
 
+import business.Role.TalentScoutRole;
+import business.Role.Role;
+import java.util.ArrayList;
 /**
  *
  * @author hp
  */
-public class TalentScoutOrganization {
+public class TalentScoutOrganization extends Organization{
+
+    public TalentScoutOrganization() {
+        super(Organization.Type.TalentScout.getValue());
+    }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new TalentScoutRole());
+        return roles;
+    }
 }

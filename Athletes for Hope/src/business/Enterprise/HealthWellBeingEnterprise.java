@@ -15,6 +15,7 @@ public class HealthWellBeingEnterprise extends Enterprise{
     public HealthWellBeingEnterprise(String name){
         super(name,EnterpriseType.HealthWellBeing);
     }
+    @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
     }

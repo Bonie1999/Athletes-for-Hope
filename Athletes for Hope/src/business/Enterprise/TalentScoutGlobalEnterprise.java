@@ -14,6 +14,7 @@ public class TalentScoutGlobalEnterprise extends Enterprise {
     public TalentScoutGlobalEnterprise(String name){
         super(name,EnterpriseType.TalentScoutGlobal);
     }
+    @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
     }
