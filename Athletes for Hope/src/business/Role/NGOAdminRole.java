@@ -14,7 +14,7 @@ import ui.EnterpriseAdmin.EnterpriseAdminJPanel;
  *
  * @author nishank
  */
-public class NGOAdminRole {
+public class NGOAdminRole extends Role{
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
         return new EnterpriseAdminJPanel(userProcessContainer, enterprise, business);
