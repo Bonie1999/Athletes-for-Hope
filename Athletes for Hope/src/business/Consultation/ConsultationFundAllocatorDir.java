@@ -23,7 +23,7 @@ public class ConsultationFundAllocatorDir {
         return Consultations;
     }
 
-    public HashMap<String, ArrayList<ConsultationFundAllocator>> getEncounterDirectory() {
+    public HashMap<String, ArrayList<ConsultationFundAllocator>> getConsultationDirectory() {
         return ConsultationDirectory;
     }
 }
