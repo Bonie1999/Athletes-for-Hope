@@ -26,19 +26,300 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblManageEnterpriseAdmins = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableEnterpriseAdmins = new javax.swing.JTable();
+        lblSelectEnterprise = new javax.swing.JLabel();
+        lblNetwork = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtNameOfAdmin = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
+        comboBoxSelectNetwork = new javax.swing.JComboBox();
+        comboBoxSelectEnterprise = new javax.swing.JComboBox();
+        btnDelete = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblManageEnterpriseAdmins.setBackground(new java.awt.Color(255, 255, 255));
+        lblManageEnterpriseAdmins.setFont(new java.awt.Font("Monaco", 1, 24)); // NOI18N
+        lblManageEnterpriseAdmins.setForeground(new java.awt.Color(230, 126, 34));
+        lblManageEnterpriseAdmins.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageEnterpriseAdmins.setText("Manage Enterprise Administrators");
+        jPanel1.add(lblManageEnterpriseAdmins, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 687, 40));
+
+        tableEnterpriseAdmins.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Enterprise", "Network", "Username"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableEnterpriseAdmins);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 490, 170));
+
+        lblSelectEnterprise.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblSelectEnterprise.setText("Select Enterprise:");
+        jPanel1.add(lblSelectEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        lblNetwork.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblNetwork.setText("Select Network:");
+        jPanel1.add(lblNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel4.setText("Name:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 71, -1));
+        jPanel1.add(txtNameOfAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 130, -1));
+
+        jLabel5.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel5.setText("Set Username:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 110, 26));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 130, -1));
+
+        jLabel6.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel6.setText("Set Password:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 110, -1));
+
+        btnSubmit.setBackground(new java.awt.Color(51, 102, 255));
+        btnSubmit.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.setBorderPainted(false);
+        btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSubmitMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSubmitMouseEntered(evt);
+            }
+        });
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 130, -1));
+
+        comboBoxSelectNetwork.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxSelectNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxSelectNetworkActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comboBoxSelectNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 130, -1));
+
+        comboBoxSelectEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(comboBoxSelectEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 130, -1));
+
+        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
+        btnDelete.setBorderPainted(false);
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseEntered(evt);
+            }
+        });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1030, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSubmitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseExited
+        btnSubmit.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmitMouseExited
+
+    private void btnSubmitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseEntered
+        btnSubmit.setForeground(new Color(0,128,128));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmitMouseEntered
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+
+        if( txtUsername.getText().isEmpty()||String.valueOf(txtPassword.getPassword()).isEmpty()|| txtNameOfAdmin.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "please enter all mandatory fields");
+            return;
+        }
+
+        Enterprise enterprise = (Enterprise) comboBoxSelectEnterprise.getSelectedItem();
+
+        String username = txtUsername.getText();
+        String password = String.valueOf(txtPassword.getPassword());
+
+        String name = txtNameOfAdmin.getText();
+
+        Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
+
+        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Wellness")){
+            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new HealthAdminRole());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
+                txtPassword.setText("");
+                return;
+            }
+            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new HealthAdminRole());
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Justice")){
+            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new LegalAdminRole());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
+                txtPassword.setText("");
+                return;
+            }
+            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new LegalAdminRole());
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("NGO")){
+            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NGOAdminRole());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
+                txtPassword.setText("");
+                return;
+            }
+            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NGOAdminRole());
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Pharmaceutical")){
+            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PharmacyAdminRole());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
+                txtPassword.setText("");
+                return;
+            }
+            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PharmacyAdminRole());
+        }
+        else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Rehabilitation")){
+            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new RehabilitationCaretaker());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
+                txtPassword.setText("");
+                return;
+            }
+            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PharmacyAdminRole());
+        }
+        //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new AdminRole());
+        populateTable();
+        txtUsername.setText("");
+        txtPassword.setText("");
+        txtNameOfAdmin.setText("");
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void comboBoxSelectNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxSelectNetworkActionPerformed
+
+        Network network = (Network) comboBoxSelectNetwork.getSelectedItem();
+        if (network != null){
+            populateEnterpriseComboBox(network);
+        }
+    }//GEN-LAST:event_comboBoxSelectNetworkActionPerformed
+
+    private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteMouseExited
+
+    private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteMouseEntered
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableEnterpriseAdmins.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else
+        {
+            UserAccount p = (UserAccount) tableEnterpriseAdmins.getValueAt(selectedRow, 2);
+
+            for (Network network : system.getNetworkList())
+            {
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList())
+                {
+                    for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccntList())
+                    {
+                        if (p == userAccount) {
+                            enterprise.getUserAccountDirectory().getUserAccntList().remove(p);
+                            break;
+                        }
+
+                    }
+                }
+            }
+            JOptionPane.showMessageDialog(null, "Account successfully deleted!");
+            populateTable();
+
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox comboBoxSelectEnterprise;
+    private javax.swing.JComboBox comboBoxSelectNetwork;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblManageEnterpriseAdmins;
+    private javax.swing.JLabel lblNetwork;
+    private javax.swing.JLabel lblSelectEnterprise;
+    private javax.swing.JTable tableEnterpriseAdmins;
+    private javax.swing.JTextField txtNameOfAdmin;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }

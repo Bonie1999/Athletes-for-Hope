@@ -26,19 +26,211 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableCases = new javax.swing.JTable();
+        lblCaseVolunteer = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
+        lblReceiver = new javax.swing.JLabel();
+        txtCaseVolunteerDate = new javax.swing.JLabel();
+        txtCaseVolunteer = new javax.swing.JLabel();
+        txtCaseVolunteerStatus = new javax.swing.JLabel();
+        lblCounsellor = new javax.swing.JLabel();
+        txtDoctorDate = new javax.swing.JLabel();
+        txtDoctor = new javax.swing.JLabel();
+        txtDoctorStatus = new javax.swing.JLabel();
+        lblLawyer = new javax.swing.JLabel();
+        lblDoc = new javax.swing.JLabel();
+        lblPsych = new javax.swing.JLabel();
+        txtCounsellorDate = new javax.swing.JLabel();
+        txtCOunsellor = new javax.swing.JLabel();
+        txtCounsellorStatus = new javax.swing.JLabel();
+        txtLawyerDate = new javax.swing.JLabel();
+        txtLawyer = new javax.swing.JLabel();
+        txtLawyerStatus = new javax.swing.JLabel();
+        txtlPsychDate = new javax.swing.JLabel();
+        txtPsych = new javax.swing.JLabel();
+        txtPsychStatus = new javax.swing.JLabel();
+        btnCheckStatus = new javax.swing.JButton();
+        lblStatus = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(244, 241, 222));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(244, 241, 222));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tableCases.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Index", "Date", "Receiver ", "Current Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableCases);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 0, 598, 156));
+
+        lblCaseVolunteer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblCaseVolunteer.setForeground(new java.awt.Color(61, 64, 91));
+        lblCaseVolunteer.setText("Case Volunteer");
+        jPanel3.add(lblCaseVolunteer, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 189, 125, -1));
+
+        lblDate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(224, 122, 95));
+        lblDate.setText("Date:");
+        jPanel3.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+
+        lblReceiver.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblReceiver.setForeground(new java.awt.Color(224, 122, 95));
+        lblReceiver.setText("Reciever:");
+        jPanel3.add(lblReceiver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, 32));
+        jPanel3.add(txtCaseVolunteerDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 217, 120, 35));
+        jPanel3.add(txtCaseVolunteer, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 270, 125, 32));
+        jPanel3.add(txtCaseVolunteerStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 320, 125, 30));
+
+        lblCounsellor.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblCounsellor.setForeground(new java.awt.Color(61, 64, 91));
+        lblCounsellor.setText("Counsellor");
+        jPanel3.add(lblCounsellor, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 103, -1));
+        jPanel3.add(txtDoctorDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 217, 100, 30));
+        jPanel3.add(txtDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 90, 32));
+        jPanel3.add(txtDoctorStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 100, 30));
+
+        lblLawyer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblLawyer.setForeground(new java.awt.Color(61, 64, 91));
+        lblLawyer.setText("Lawyer");
+        jPanel3.add(lblLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 190, 101, -1));
+
+        lblDoc.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblDoc.setForeground(new java.awt.Color(61, 64, 91));
+        lblDoc.setText("Doctor");
+        jPanel3.add(lblDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 74, -1));
+
+        lblPsych.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblPsych.setForeground(new java.awt.Color(61, 64, 91));
+        lblPsych.setText("Psychiatrist");
+        jPanel3.add(lblPsych, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 108, -1));
+        jPanel3.add(txtCounsellorDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 217, 120, 35));
+        jPanel3.add(txtCOunsellor, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 270, 120, 32));
+        jPanel3.add(txtCounsellorStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 321, 120, 30));
+        jPanel3.add(txtLawyerDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(518, 217, 101, 35));
+        jPanel3.add(txtLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 270, 103, 36));
+        jPanel3.add(txtLawyerStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 320, 103, 21));
+        jPanel3.add(txtlPsychDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 217, 145, 35));
+        jPanel3.add(txtPsych, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 270, 145, 36));
+        jPanel3.add(txtPsychStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 320, 145, 21));
+
+        btnCheckStatus.setBackground(new java.awt.Color(129, 178, 154));
+        btnCheckStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnCheckStatus.setForeground(new java.awt.Color(61, 64, 91));
+        btnCheckStatus.setText("Check Status");
+        btnCheckStatus.setBorderPainted(false);
+        btnCheckStatus.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCheckStatusMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCheckStatusMouseExited(evt);
+            }
+        });
+        btnCheckStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCheckStatusActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnCheckStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 70, -1, -1));
+
+        lblStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblStatus.setForeground(new java.awt.Color(224, 122, 95));
+        lblStatus.setText("Status:");
+        jPanel3.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 21));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, 400));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -16, 940, 590));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 936, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCheckStatusMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCheckStatusMouseEntered
+        btnCheckStatus.setForeground(new Color(0,128,128));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCheckStatusMouseEntered
+
+    private void btnCheckStatusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCheckStatusMouseExited
+        btnCheckStatus.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCheckStatusMouseExited
+
+    private void btnCheckStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckStatusActionPerformed
+        popStatusTable();
+    }//GEN-LAST:event_btnCheckStatusActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCheckStatus;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCaseVolunteer;
+    private javax.swing.JLabel lblCounsellor;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblDoc;
+    private javax.swing.JLabel lblLawyer;
+    private javax.swing.JLabel lblPsych;
+    private javax.swing.JLabel lblReceiver;
+    private javax.swing.JLabel lblStatus;
+    private javax.swing.JTable tableCases;
+    private javax.swing.JLabel txtCOunsellor;
+    private javax.swing.JLabel txtCaseVolunteer;
+    private javax.swing.JLabel txtCaseVolunteerDate;
+    private javax.swing.JLabel txtCaseVolunteerStatus;
+    private javax.swing.JLabel txtCounsellorDate;
+    private javax.swing.JLabel txtCounsellorStatus;
+    private javax.swing.JLabel txtDoctor;
+    private javax.swing.JLabel txtDoctorDate;
+    private javax.swing.JLabel txtDoctorStatus;
+    private javax.swing.JLabel txtLawyer;
+    private javax.swing.JLabel txtLawyerDate;
+    private javax.swing.JLabel txtLawyerStatus;
+    private javax.swing.JLabel txtPsych;
+    private javax.swing.JLabel txtPsychStatus;
+    private javax.swing.JLabel txtlPsychDate;
     // End of variables declaration//GEN-END:variables
 }
