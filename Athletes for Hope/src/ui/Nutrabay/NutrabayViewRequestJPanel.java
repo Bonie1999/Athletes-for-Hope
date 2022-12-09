@@ -26,19 +26,190 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblHeader = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblPharmaViewRequest = new javax.swing.JTable();
+        btnAssignRequest = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(244, 241, 222));
+
+        lblHeader.setBackground(new java.awt.Color(129, 178, 154));
+        lblHeader.setFont(new java.awt.Font("Monaco", 1, 24)); // NOI18N
+        lblHeader.setForeground(new java.awt.Color(61, 64, 91));
+        lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHeader.setText("Manage Requests");
+
+        tblPharmaViewRequest.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Patient's Name", "Doctor's Name", "Status", "Pharmacist"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblPharmaViewRequest);
+
+        btnAssignRequest.setBackground(new java.awt.Color(129, 178, 154));
+        btnAssignRequest.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnAssignRequest.setForeground(new java.awt.Color(61, 64, 58));
+        btnAssignRequest.setText("Assign Request");
+        btnAssignRequest.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAssignRequestMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAssignRequestMouseExited(evt);
+            }
+        });
+        btnAssignRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignRequestActionPerformed(evt);
+            }
+        });
+
+        btnView.setBackground(new java.awt.Color(129, 178, 154));
+        btnView.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnView.setForeground(new java.awt.Color(61, 64, 58));
+        btnView.setText("View");
+        btnView.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnViewMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnViewMouseExited(evt);
+            }
+        });
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(261, 261, 261)
+                        .addComponent(btnAssignRequest)
+                        .addGap(43, 43, 43)
+                        .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(154, 154, 154))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAssignRequest)
+                    .addComponent(btnView))
+                .addGap(103, 103, 103))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAssignRequestMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAssignRequestMouseEntered
+        btnAssignRequest.setForeground(new Color(0,128,128));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAssignRequestMouseEntered
+
+    private void btnAssignRequestMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAssignRequestMouseExited
+        btnAssignRequest.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAssignRequestMouseExited
+
+    private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblPharmaViewRequest.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
+
+        PharmacistWorkRequest request = (PharmacistWorkRequest)tblPharmaViewRequest.getValueAt(selectedRow, 2);
+        request.setReceiver(userAccount);
+        request.setStatus("Accepted");
+        populateTable();
+    }//GEN-LAST:event_btnAssignRequestActionPerformed
+
+    private void btnViewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewMouseEntered
+        btnView.setForeground(new Color(0,128,128));         // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewMouseEntered
+
+    private void btnViewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewMouseExited
+        btnView.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewMouseExited
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblPharmaViewRequest.getSelectedRow();
+
+        if (selectedRow < 0){
+            return;
+        }
+
+        PharmacistWorkRequest request = (PharmacistWorkRequest)tblPharmaViewRequest.getValueAt(selectedRow, 2);
+        if (request.getReceiver()!=userAccount){
+            JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
+        }else{
+
+            ViewPrescriptionJPanel caseReportJPanel = new ViewPrescriptionJPanel(userProcessContainer,system,request,userAccount);
+            userProcessContainer.add("caseReportJPanel", caseReportJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+
+        }
+    }//GEN-LAST:event_btnViewActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAssignRequest;
+    private javax.swing.JButton btnView;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblHeader;
+    private javax.swing.JTable tblPharmaViewRequest;
     // End of variables declaration//GEN-END:variables
 }
