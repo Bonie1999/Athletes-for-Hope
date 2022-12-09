@@ -26,19 +26,177 @@ public class ManageOrganizations extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableOrg = new javax.swing.JTable();
+        lblOrgType = new javax.swing.JLabel();
+        btnAddOrg = new javax.swing.JButton();
+        comboBoxOrgType = new javax.swing.JComboBox();
+        btnDltOrg = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(1300, 700));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(230, 126, 34));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manage Organization(s)");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 656, 41));
+
+        tableOrg.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Name"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableOrg);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 210, 98));
+
+        lblOrgType.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblOrgType.setText("Organization Type:");
+        jPanel2.add(lblOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, -1, 26));
+
+        btnAddOrg.setBackground(new java.awt.Color(51, 102, 255));
+        btnAddOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnAddOrg.setForeground(new java.awt.Color(255, 255, 255));
+        btnAddOrg.setText("Add Organization");
+        btnAddOrg.setBorderPainted(false);
+        btnAddOrg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddOrgMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddOrgMouseEntered(evt);
+            }
+        });
+        btnAddOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrgActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAddOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+
+        comboBoxOrgType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(comboBoxOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 155, -1));
+
+        btnDltOrg.setBackground(new java.awt.Color(51, 102, 255));
+        btnDltOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnDltOrg.setForeground(new java.awt.Color(255, 255, 255));
+        btnDltOrg.setText("Delete Organization");
+        btnDltOrg.setBorderPainted(false);
+        btnDltOrg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDltOrgMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDltOrgMouseEntered(evt);
+            }
+        });
+        btnDltOrg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDltOrgActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnDltOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 140, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 38, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAddOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddOrgMouseExited
+        btnAddOrg.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddOrgMouseExited
+
+    private void btnAddOrgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddOrgMouseEntered
+        btnAddOrg.setForeground(new Color(0,128,128));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddOrgMouseEntered
+
+    private void btnAddOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrgActionPerformed
+        // TODO add your handling code here:
+        Organization.Type type = (Organization.Type) comboBoxOrgType.getSelectedItem();
+        directory.createOrganization(type);
+        populateTable();
+    }//GEN-LAST:event_btnAddOrgActionPerformed
+
+    private void btnDltOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDltOrgMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDltOrgMouseExited
+
+    private void btnDltOrgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDltOrgMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDltOrgMouseEntered
+
+    private void btnDltOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDltOrgActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tableOrg.getSelectedRow();
+        if(selectedRow<0){
+            JOptionPane.showMessageDialog(null, "Please select the row to delete the account", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Organization o = (Organization) tableOrg.getValueAt(selectedRow, 0);
+
+            for (Organization org: directory.getOrganizationList()){
+                if (o==org){
+                    directory.getOrganizationList().remove(o);
+                    break;
+                }
+            }
+            JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
+            populateTable();
+        }
+    }//GEN-LAST:event_btnDltOrgActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddOrg;
+    private javax.swing.JButton btnDltOrg;
+    private javax.swing.JComboBox comboBoxOrgType;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblOrgType;
+    private javax.swing.JTable tableOrg;
     // End of variables declaration//GEN-END:variables
 }
