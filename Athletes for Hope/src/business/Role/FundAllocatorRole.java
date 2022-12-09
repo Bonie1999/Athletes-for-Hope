@@ -7,12 +7,12 @@ import javax.swing.JPanel;
 import business.EcoSystem;
 import business.Enterprise.Enterprise;
 import business.Network.Network;
-import business.Organization.CounsellingOrganization;
+import business.Organization.SportsFundOrganization;
 import business.Organization.Organization;
 import business.UserAccount.UserAccount;
-import business.WorkQueue.CaseReporterWorkRequest; 
+import business.WorkQueue.TalentScoutWorkRequest; 
 import javax.swing.JPanel;
-import ui.Counsellor.CounsellorJPanel;
+import ui.FundAllocator.FundAllocatorJPanel;
 /**
  *
  * @author nishank
@@ -20,6 +20,6 @@ import ui.Counsellor.CounsellorJPanel;
 public class FundAllocatorRole {
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise, EcoSystem business,Network network) {
-        return new CounsellorJPanel(userProcessContainer, account, organization,enterprise,business,network);
+        return new FundAllocatorJPanel(userProcessContainer, account, organization,enterprise,business,network);
     }
 }
