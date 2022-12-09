@@ -4,10 +4,26 @@
  */
 package business.Consultation;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 /**
  *
  * @author nishank
  */
 public class ConsultationFundAllocatorDir {
-    
+    private ArrayList<ConsultationFundAllocator> Consultations;
+    private HashMap<String,ArrayList<ConsultationFundAllocator>> ConsultationDirectory;
+
+    public ConsultationFundAllocatorDir() {
+       ConsultationDirectory=new HashMap<String,ArrayList<ConsultationFundAllocator>>();
+       Consultations=new ArrayList<ConsultationFundAllocator>();
+    }
+
+    public ArrayList<ConsultationFundAllocator> getConsultations() {
+        return Consultations;
+    }
+
+    public HashMap<String, ArrayList<ConsultationFundAllocator>> getEncounterDirectory() {
+        return ConsultationDirectory;
+    }
 }
