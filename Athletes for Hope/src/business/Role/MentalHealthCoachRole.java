@@ -6,18 +6,18 @@ package business.Role;
 import business.EcoSystem;
 import business.Enterprise.Enterprise;
 import business.Network.Network;
-import business.Organization.PsychiatricOrganization;
+import business.Organization.MentalHealthOrganization;
 import business.Organization.Organization;
 import business.UserAccount.UserAccount;
-import ui.Psychiatrist.PsychiatristJPanel;
+import ui.MentalHealthCoach.MentalHealthCoachJPanel;
 import javax.swing.JPanel;
 /**
  *
  * @author nishank
  */
-public class MentalHealthCoachRole {
+public class MentalHealthCoachRole extends Role{
       @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
-        return new PsychiatristJPanel(userProcessContainer, account, organization,enterprise,business,network);
+        return new MentalHealthCoachJPanel(userProcessContainer, account, organization,enterprise,business,network);
     }
 }
