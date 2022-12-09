@@ -14,7 +14,7 @@ import ui.HealthInsuranceAgent.HealthInsuranceAgentJPanel;
  *
  * @author nishank
  */
-public class HealthInsuranceAgentRole {
+public class HealthInsuranceAgentRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise,EcoSystem business,Network network) {
         return new HealthInsuranceAgentJPanel(userProcessContainer, account, organization,enterprise,business,network);

@@ -15,7 +15,7 @@ import ui.TalentScout.TalentScout;
  *
  * @author nishank
  */
-public class TalentScoutRole {
+public class TalentScoutRole extends Role{
         @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
         return new TalentScout(userProcessContainer, account, organization,enterprise,business,network);

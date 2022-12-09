@@ -17,7 +17,7 @@ import ui.FundAllocator.FundAllocatorJPanel;
  *
  * @author nishank
  */
-public class FundAllocatorRole {
+public class FundAllocatorRole extends Role{
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise, EcoSystem business,Network network) {
         return new FundAllocatorJPanel(userProcessContainer, account, organization,enterprise,business,network);
