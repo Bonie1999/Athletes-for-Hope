@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package ui.FundAllocator;
+package ui.PhysicalTraining;
 
 /**
  *
  * @author nishank
  */
-public class FundAllocatorRequest extends javax.swing.JPanel {
+public class TalentScoutPT extends javax.swing.JPanel {
 
     /**
-     * Creates new form FundAllocatorRequest
+     * Creates new form TalentScoutPT
      */
-    public FundAllocatorRequest() {
+    public TalentScoutPT() {
         initComponents();
     }
 
