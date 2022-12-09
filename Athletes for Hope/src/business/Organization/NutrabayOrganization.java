@@ -4,10 +4,24 @@
  */
 package business.Organization;
 
+import business.Role.SupplementSalesRepRole;
+import business.Role.Role;
+import java.util.ArrayList;
 /**
  *
  * @author hp
  */
-public class NutrabayOrganization {
+public class NutrabayOrganization extends Organization{
+
+    public NutrabayOrganization() {
+        super(Organization.Type.Nutrabay.getValue());
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new SupplementSalesRepRole());
+        return roles;
+    }
     
 }
