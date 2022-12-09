@@ -8,12 +8,12 @@ package ui.LabTechnician;
  *
  * @author hp
  */
-public class LabAssistantJPanel extends javax.swing.JPanel {
+public class TestResultsJpanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form LabAssistantJPanel
+     * Creates new form TestResultsJpanel
      */
-    public LabAssistantJPanel() {
+    public TestResultsJpanel() {
         initComponents();
     }
 
