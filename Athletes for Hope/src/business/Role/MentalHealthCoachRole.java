@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  *
  * @author nishank
  */
-public class MentalHealthCoachRole {
+public class MentalHealthCoachRole extends Role{
       @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
         return new MentalHealthCoachJPanel(userProcessContainer, account, organization,enterprise,business,network);

@@ -15,7 +15,7 @@ import ui.RecruitingManager.RecruitingManagerJPanel;
  *
  * @author nishank
  */
-public class RecruitingManagerRole {
+public class RecruitingManagerRole extends Role {
          @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
         return new RecruitingManagerJPanel(userProcessContainer, account, organization,enterprise,business,network);
