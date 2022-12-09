@@ -26,19 +26,228 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        lblManageEnterprises = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableEnterprises = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        lblNetworkName = new javax.swing.JLabel();
+        txtEnterpriseName = new javax.swing.JTextField();
+        comboBoxNetworkName = new javax.swing.JComboBox();
+        comboBoxEnterpriseType = new javax.swing.JComboBox();
+        btnDelete = new javax.swing.JButton();
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblManageEnterprises.setBackground(new java.awt.Color(255, 255, 255));
+        lblManageEnterprises.setFont(new java.awt.Font("Monaco", 1, 24)); // NOI18N
+        lblManageEnterprises.setForeground(new java.awt.Color(230, 126, 34));
+        lblManageEnterprises.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblManageEnterprises.setText("Manage Enterprises");
+        jPanel1.add(lblManageEnterprises, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 628, 40));
+
+        tableEnterprises.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Enterprise Name", "Network", "Type"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableEnterprises);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 430, 130));
+
+        jLabel2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel2.setText("Enterprise Type:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 162, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel3.setText("Network:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 121, -1, -1));
+
+        btnSubmit.setBackground(new java.awt.Color(51, 102, 255));
+        btnSubmit.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("Submit");
+        btnSubmit.setBorderPainted(false);
+        btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSubmitMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSubmitMouseEntered(evt);
+            }
+        });
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 258, 120, -1));
+
+        lblNetworkName.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblNetworkName.setText("Name:");
+        jPanel1.add(lblNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 211, -1, -1));
+        jPanel1.add(txtEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 120, -1));
+
+        comboBoxNetworkName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxNetworkName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxNetworkNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comboBoxNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 120, -1));
+
+        comboBoxEnterpriseType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxEnterpriseType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxEnterpriseTypeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comboBoxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 120, -1));
+
+        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
+        btnDelete.setBorderPainted(false);
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseEntered(evt);
+            }
+        });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1300, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSubmitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseExited
+        btnSubmit.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmitMouseExited
+
+    private void btnSubmitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseEntered
+        btnSubmit.setForeground(new Color(0,128,128));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmitMouseEntered
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        if( txtEnterpriseName.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(null, "please enter all mandatory fields");
+            return;
+        }
+
+        Network network = (Network) comboBoxNetworkName.getSelectedItem();
+        Enterprise.EnterpriseType type = (Enterprise.EnterpriseType) comboBoxEnterpriseType.getSelectedItem();
+
+        if (network == null || type == null) {
+            JOptionPane.showMessageDialog(null, "Invalid Input!");
+            return;
+        }
+
+        String name = txtEnterpriseName.getText();
+
+        Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise(name, type);
+
+        populateTable();
+        txtEnterpriseName.setText("");
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void comboBoxNetworkNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxNetworkNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxNetworkNameActionPerformed
+
+    private void comboBoxEnterpriseTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxEnterpriseTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxEnterpriseTypeActionPerformed
+
+    private void btnDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteMouseExited
+
+    private void btnDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteMouseEntered
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+
+        int selectedRow = tableEnterprises.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row to delete!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Enterprise p = (Enterprise) tableEnterprises.getValueAt(selectedRow, 0);
+            for (Network network : system.getNetworkList()) {
+                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+
+                    if(p==enterprise){
+                        network.getEnterpriseDirectory().getEnterpriseList().remove(p);
+                        break;
+                    }
+
+                }
+            }
+            JOptionPane.showMessageDialog(null, "You have successfully deleted the account");
+            populateTable();
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JComboBox comboBoxEnterpriseType;
+    private javax.swing.JComboBox comboBoxNetworkName;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblManageEnterprises;
+    private javax.swing.JLabel lblNetworkName;
+    private javax.swing.JTable tableEnterprises;
+    private javax.swing.JTextField txtEnterpriseName;
     // End of variables declaration//GEN-END:variables
 }
