@@ -6,10 +6,10 @@ package business.Role;
 import business.EcoSystem;
 import business.Enterprise.Enterprise;
 import business.Network.Network;
-import business.Organization.PharmacyOrganization;
+import business.Organization.NutrabayOrganization;
 import business.Organization.Organization;
 import business.UserAccount.UserAccount;
-import ui.Pharmacy.PharmacistJPanel;
+import ui.Nutrabay.SupplementSalesRepJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 public class SupplementSalesRepRole {
         @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
-        return new PharmacistJPanel(userProcessContainer, account, organization,enterprise,business);
+        return new SupplementSalesRepJPanel(userProcessContainer, account, organization,enterprise,business);
     }
 
 }

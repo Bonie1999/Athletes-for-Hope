@@ -9,7 +9,7 @@ import business.Network.Network;
 import business.Organization.Organization;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import ui.CaseVolunteer.CaseVolunteerJPanel;
+import ui.RecruitingManager.RecruitingManagerJPanel;
 
 /**
  *
@@ -18,7 +18,7 @@ import ui.CaseVolunteer.CaseVolunteerJPanel;
 public class RecruitingManagerRole {
          @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
-        return new CaseVolunteerJPanel(userProcessContainer, account, organization,enterprise,business,network);
+        return new RecruitingManagerJPanel(userProcessContainer, account, organization,enterprise,business,network);
     }
     
 }
