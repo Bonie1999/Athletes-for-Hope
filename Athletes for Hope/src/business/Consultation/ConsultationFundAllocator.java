@@ -9,7 +9,7 @@ package business.Consultation;
  * @author nishank
  */
 public class ConsultationFundAllocator {
-    private String en;
+     private String en;
     private String minutes;
     private String name;
     
