@@ -3,11 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package business.WorkQueue;
-
+import java.util.ArrayList;
 /**
  *
- * @author puranjaimendiratta
+ * @author Puranjai
  */
-public class SupplementSalesRepWorkRequest {
+public class SupplementSalesRepWorkRequest extends WorkRequest {
     
+    TrainingCoachWorkRequest TrainingCoachWorkRequest;
+    private ArrayList<Supplements> supplements = new ArrayList<Supplements>();
+
+    public TrainingCoachWorkRequest getTrainingCoachWorkRequest() {
+        return TrainingCoachWorkRequest;
+    }
+
+    public void setTrainingCoachWorkRequest(TrainingCoachWorkRequest TrainingCoachWorkRequest) {
+        this.TrainingCoachWorkRequest = TrainingCoachWorkRequest;
+    }
+
+    public ArrayList<Supplements> getSupplements() {
+        return supplements;
+    }
+
+    public void setSupplements(ArrayList <Supplements> supplements) {
+        this.supplements = supplements;
+    }
 }
