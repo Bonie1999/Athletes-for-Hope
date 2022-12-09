@@ -4,10 +4,47 @@
  */
 package business.WorkQueue;
 
+import java.util.ArrayList;
+import java.util.Date;
 /**
  *
  * @author puranjaimendiratta
  */
-public class LabTechnicianWorkRequest {
-    
+public class LabTechnicianWorkRequest extends WorkRequest {
+     TrainingCoachWorkRequest TrainingCoachWorkRequest;
+    private String testResult;
+    private String labsign;
+    private ArrayList<LabTest> LabTestList = new ArrayList<LabTest>();
+
+    public String getTestResult() {
+        return testResult;
+    }
+
+    public void setTestResult(String testResult) {
+        this.testResult = testResult;
+    }
+
+    public TrainingCoachWorkRequest getTrainingCoachWorkRequest() {
+        return TrainingCoachWorkRequest;
+    }
+
+    public void setTrainingCoachWorkRequest(TrainingCoachWorkRequest TrainingCoachWorkRequest) {
+        this.TrainingCoachWorkRequest = TrainingCoachWorkRequest;
+    } 
+
+    public String getLabsign() {
+        return labsign;
+    }
+
+    public void setLabsign(String labsign) {
+        this.labsign = labsign;
+    }
+
+    public ArrayList<LabTest> getLabTestList() {
+        return LabTestList;
+    }
+
+    public void setLabTestList(ArrayList<LabTest> LabTestList) {
+        this.LabTestList = LabTestList;
+    }
 }
