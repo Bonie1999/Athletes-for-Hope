@@ -4,6 +4,17 @@
  */
 package ui.EnterpriseAdmin;
 
+import business.EcoSystem;
+import business.Employee.Employee;
+import business.Enterprise.Enterprise;
+import business.Organization.Organization;
+import business.Role.Role;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author nishank
@@ -13,8 +24,19 @@ public class ManageUsers extends javax.swing.JPanel {
     /**
      * Creates new form ManageUsers
      */
-    public ManageUsers() {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    public ManageUsers(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.system = system;
+        
+        popOrganizationComboBox();
+        //employeeJComboBox.removeAllItems();
+        popData();
+        this.setSize(1080, 680);
     }
 
     /**
@@ -283,4 +305,20 @@ public class ManageUsers extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    private void popData() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void popOrganizationComboBox() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void populateEmployeeComboBox(Organization organization) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void populateRoleComboBox(Organization organization) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
