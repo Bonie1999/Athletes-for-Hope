@@ -30,4 +30,8 @@ public class FundAllocatorWorkRequest extends WorkRequest {
     public void setConslrEncounter(ArrayList<ConsultationFundAllocator> FAConsult) {
         this.FAConsult = FAConsult;
     }
+
+    public Object getConslrConsultation() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

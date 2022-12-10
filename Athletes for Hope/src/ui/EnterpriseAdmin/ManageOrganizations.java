@@ -38,6 +38,65 @@ public class ManageOrganizations extends javax.swing.JPanel {
         //System.out.println(enterprise.getEnterpriseType().getValue());
     }
 
+    @SuppressWarnings("unchecked")
+    private void populateCombo(){
+        comboBoxOrgType.removeAllItems();
+        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("NGO")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.TalentRecruitment.getValue()) || type.getValue().equals(Organization.Type.SportsFund.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Wellness")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.PhysicalTraining.getValue()) || type.getValue().equals(Organization.Type.Diagnostic.getValue())
+                        || type.getValue().equals(Organization.Type.MentalHealth.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Justice")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.Health.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Pharmaceutical")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.Nutrabay.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Psychiatrist")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.MentalHealth.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        }
+        
+        
+        
+        
+        /*for (Organization.Type type : Organization.Type.values()){
+            if (!type.getValue().equals(Organization.Type.Admin.getValue()))
+                organizationJComboBox.addItem(type);
+        }*/
+    }
+
+    private void populateTable(){
+        DefaultTableModel model = (DefaultTableModel) tableOrg.getModel();
+        
+        model.setRowCount(0);
+        
+        for (Organization organization : directory.getOrganizationList()){
+            Object[] row = new Object[1];
+            //row[0] = organization.getOrganizationID();
+            row[0] = organization;
+            
+            model.addRow(row);
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -202,12 +261,4 @@ public class ManageOrganizations extends javax.swing.JPanel {
     private javax.swing.JLabel lblOrgType;
     private javax.swing.JTable tableOrg;
     // End of variables declaration//GEN-END:variables
-
-    private void populateTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void populateCombo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

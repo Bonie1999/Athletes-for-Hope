@@ -38,6 +38,44 @@ public class ManageUsers extends javax.swing.JPanel {
         popData();
         this.setSize(1080, 680);
     }
+ public void popOrganizationComboBox() {
+        comboOrgSel.removeAllItems();
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            comboOrgSel.addItem(organization);
+        }
+    }
+    
+    public void populateEmployeeComboBox(Organization organization){
+        comboEmployeeSel.removeAllItems();
+        
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+            comboEmployeeSel.addItem(employee);
+        }
+    }
+    
+    private void populateRoleComboBox(Organization organization){
+        comboRoleSel.removeAllItems();
+        for (Role role : organization.getSupportedRole()){
+            comboRoleSel.addItem(role);
+        }
+    }
+
+    public void popData() {
+
+        DefaultTableModel model = (DefaultTableModel) tableUsers.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccntList()) {
+                Object row[] = new Object[2];
+                row[0] = ua;
+                row[1] = ua.getRole();
+                ((DefaultTableModel) tableUsers.getModel()).addRow(row);
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -306,19 +344,4 @@ public class ManageUsers extends javax.swing.JPanel {
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 
-    private void popData() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void popOrganizationComboBox() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void populateEmployeeComboBox(Organization organization) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void populateRoleComboBox(Organization organization) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
