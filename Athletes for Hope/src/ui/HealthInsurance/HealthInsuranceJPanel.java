@@ -4,6 +4,15 @@
  */
 package ui.HealthInsurance;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.HealthOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author hp
@@ -13,8 +22,23 @@ public class HealthInsuranceJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HealthInsuranceJPanel
      */
-    public HealthInsuranceJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private final HealthOrganization organization;
+    private Enterprise enterprise;
+    private Network network;
+    public HealthInsuranceJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise,EcoSystem business,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.organization = (HealthOrganization) organization;
+        this.business = business;
+        this.enterprise = enterprise;
+        this.network=network;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(100);
+        populateBottom();
     }
 
     /**
@@ -86,7 +110,11 @@ public class HealthInsuranceJPanel extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void populateBottom() {
+        HealthInsuranceRequestJPanel lrJPanel=new HealthInsuranceRequestJPanel(userProcessContainer,business,userAccount,organization,network);
+        jSplitPane1.setBottomComponent(lrJPanel);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
