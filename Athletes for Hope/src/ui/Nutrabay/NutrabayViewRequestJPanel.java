@@ -4,6 +4,18 @@
  */
 package ui.Nutrabay;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Enterprise.NutritionEnterprise;
+import business.Organization.Organization;
+import business.Organization.NutrabayOrganization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.SupplementSalesRepWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
@@ -13,8 +25,17 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NutrabayViewRequestJPanel
      */
-    public NutrabayViewRequestJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    NutrabayOrganization Organization;
+    UserAccount userAccount;
+    public NutrabayViewRequestJPanel(JPanel userProcessContainer, EcoSystem system,NutrabayOrganization Organization,UserAccount userAccount) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.Organization = Organization;
+        this.userAccount = userAccount;
+        populateTable();
     }
 
     /**
@@ -168,7 +189,7 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        PharmacistWorkRequest request = (PharmacistWorkRequest)tblPharmaViewRequest.getValueAt(selectedRow, 2);
+        SupplementSalesRepWorkRequest request = (SupplementSalesRepWorkRequest)tblPharmaViewRequest.getValueAt(selectedRow, 2);
         request.setReceiver(userAccount);
         request.setStatus("Accepted");
         populateTable();
@@ -190,12 +211,12 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        PharmacistWorkRequest request = (PharmacistWorkRequest)tblPharmaViewRequest.getValueAt(selectedRow, 2);
+        SupplementSalesRepWorkRequest request = (SupplementSalesRepWorkRequest)tblPharmaViewRequest.getValueAt(selectedRow, 2);
         if (request.getReceiver()!=userAccount){
             JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
         }else{
 
-            ViewPrescriptionJPanel caseReportJPanel = new ViewPrescriptionJPanel(userProcessContainer,system,request,userAccount);
+            ViewSupplementJPanel caseReportJPanel = new ViewSupplementJPanel(userProcessContainer,system,request,userAccount);
             userProcessContainer.add("caseReportJPanel", caseReportJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -203,7 +224,28 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnViewActionPerformed
 
-
+    private void populateTable() {
+        
+        DefaultTableModel model= (DefaultTableModel) tblPharmaViewRequest.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+        
+         for(SupplementSalesRepWorkRequest request : Organization.getWorkQueue().getSupplementSalesRepWorkRequest())
+         {
+         
+            row[0]=request.getTrainingCoachWorkRequest().getTalentScoutWorkRequest().getChildName();
+            row[1] = request.getSender();
+            row[2] = request;
+            if (request.getReceiver()==null){
+                row[3] = "Not Assigned";
+            }else{
+                row[3] = request.getReceiver();
+            }
+            
+            model.addRow(row);
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssignRequest;
     private javax.swing.JButton btnView;

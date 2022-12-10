@@ -4,6 +4,25 @@
  */
 package ui.Nutrabay;
 
+import business.EcoSystem;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.Supplements;
+import business.WorkQueue.SupplementSalesRepWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author hp
@@ -13,8 +32,17 @@ public class ViewSupplementJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ViewSupplementJPanel
      */
-    public ViewSupplementJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    SupplementSalesRepWorkRequest request;
+    UserAccount userAccount;
+    public ViewSupplementJPanel(JPanel userProcessContainer, EcoSystem system,SupplementSalesRepWorkRequest request, UserAccount userAccount) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.request = request;
+        this.userAccount = userAccount;
+        populatereport();
     }
 
     /**
@@ -220,11 +248,70 @@ public class ViewSupplementJPanel extends javax.swing.JPanel {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         request.setStatus("Processed");
-        sendInvite(request.getDoctorWorkRequest().getCaseReporterWorkRequest());
+        sendInvite(request.getTrainingCoachWorkRequest().getTalentScoutWorkRequest());
 
         //JOptionPane.showMessageDialog(null,"Medicines are ready for pick-up");
     }//GEN-LAST:event_jButton2ActionPerformed
+    
+    private void populatereport() {
+        jTextField2.setText(request.getRequestDate().toString());
+        jTextField4.setText(request.getTrainingCoachWorkRequest().getTalentScoutWorkRequest().getChildName());
+        jTextField3.setText(request.getSender().toString());
+        populatetable();
+    }
+    
+    private void populatetable() {
+        DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[2];
+        model.setRowCount(0);
+        
+         for(Supplements M : request.getSupplements())
+         {
+         
+            row[0]=M;
+            row[1]=M.getAmount();
+            
+            model.addRow(row);
+            
+        }
+    }
+    
+    private void sendInvite(TalentScoutWorkRequest request){
+        String FromEmail="sexualawareness.help@gmail.com";
+        String FromEmailPass="Fin@lProject21";
+        String Subject = "Sign up successful";
+//        String ema=request.getEmail();
+        String nv=request.getChildName();
+        Properties properties=new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        
+        Session session=Session.getDefaultInstance(properties, new javax.mail.Authenticator(){
+           @Override
+            protected PasswordAuthentication getPasswordAuthentication(){
+         return new PasswordAuthentication(FromEmail,FromEmailPass);
+        }
+        });
+        
+        try
+        {
+            Message msg=new MimeMessage(session);
+            msg.setFrom(new InternetAddress(FromEmail));
+//            msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(ema));
+            msg.setSubject("Medicines are Ready");
+            msg.setText("Dear "+nv +"\n"+"Medicines are ready for pick-up. "+"\n"+"\n"+"Best,"+"\n"+userAccount.getEmp().getName());
+            Transport.send(msg);
+            JOptionPane.showMessageDialog(this, "Medicines are ready for pick-up. Invitation has been sent successfully.");
 
+        }catch(Exception e)
+        {
+            System.out.println(""+e);
+            JOptionPane.showMessageDialog(this, "Incorrect E-mail id.Invitation cannot be been sent.");
+            
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
