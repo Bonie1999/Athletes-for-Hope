@@ -4,6 +4,18 @@
  */
 package ui.LabTechnician;
 
+import business.EcoSystem;
+import business.Enterprise.HealthWellBeingEnterprise;
+import business.Network.Network;
+import business.Organization.DiagnosticOrganization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.LabTechnicianWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
@@ -13,8 +25,22 @@ public class LabRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LabRequestJPanel
      */
-    public LabRequestJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    //userProcessContainer,business,network,Henterprise,userAccount
+    Network network;
+    HealthWellBeingEnterprise enterprise;
+    UserAccount userAccount;
+    DiagnosticOrganization Organization;
+    public LabRequestJPanel(JPanel userProcessContainer, EcoSystem system, Network network, HealthWellBeingEnterprise enterprise, UserAccount userAccount,DiagnosticOrganization Organization ) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.enterprise = enterprise;
+        this.network = network;
+        this.userAccount = userAccount;
+        this.Organization = Organization;
+        populateTable();
     }
 
     /**
@@ -164,7 +190,7 @@ public class LabRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        WorkRequest request = (LabAssistantWorkRequest)jTable1.getValueAt(selectedRow, 2);
+        WorkRequest request = (LabTechnicianWorkRequest)jTable1.getValueAt(selectedRow, 2);
         request.setReceiver(userAccount);
         request.setStatus("Accepted");
         populateTable();
@@ -190,7 +216,7 @@ public class LabRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        LabAssistantWorkRequest request = (LabAssistantWorkRequest)jTable1.getValueAt(selectedRow, 2);
+        LabTechnicianWorkRequest request = (LabTechnicianWorkRequest)jTable1.getValueAt(selectedRow, 2);
 
         if (request.getReceiver()!=userAccount){
             JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
@@ -213,4 +239,26 @@ public class LabRequestJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+    private void populateTable() {
+        
+        DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+        
+         for(LabTechnicianWorkRequest request : Organization.getWorkQueue().getLabTechnicianWorkRequest())
+         {
+         
+            row[0]=request.getTrainingCoachWorkRequest().getReceiver();
+            row[1] = request.getTrainingCoachWorkRequest().getTalentScoutWorkRequest().getChildName();
+            row[2] = request;
+            if (request.getReceiver()==null){
+                row[3] = "Not Assigned";
+            }else{
+                row[3] = request.getReceiver();
+            }
+            
+            model.addRow(row);
+        }
+    }
 }
