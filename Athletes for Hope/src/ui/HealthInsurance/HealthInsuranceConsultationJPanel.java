@@ -4,6 +4,28 @@
  */
 package ui.HealthInsurance;
 
+import business.EcoSystem;
+import business.Consultation.ConsultationHealthInsuranceAgent;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.InsuranceAgentWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
@@ -13,8 +35,21 @@ public class HealthInsuranceConsultationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HealthInsuranceConsultationJPanel
      */
-    public HealthInsuranceConsultationJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    InsuranceAgentWorkRequest request;
+    UserAccount userAccount;
+    Network network;
+    Organization organization;
+    public HealthInsuranceConsultationJPanel(JPanel userProcessContainer, EcoSystem system,UserAccount userAccount,Network network, Organization organization, InsuranceAgentWorkRequest request) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.userAccount = userAccount;
+        this.network = network;
+        this.organization=organization;
+        this.request=request;
+        populateName();
     }
 
     /**
@@ -173,28 +208,68 @@ public class HealthInsuranceConsultationJPanel extends javax.swing.JPanel {
 
     private void btnUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseEntered
         // TODO add your handling code here:
+        btnUpdate.setForeground(new Color(0,128,128));
     }//GEN-LAST:event_btnUpdateMouseEntered
 
     private void btnUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseExited
         // TODO add your handling code here:
+        btnUpdate.setForeground(Color.black);
     }//GEN-LAST:event_btnUpdateMouseExited
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        if(txtEncounterNo.getText().equalsIgnoreCase("") && txtAreaMinutes.getText().equalsIgnoreCase(""))
+        {
+            JOptionPane.showMessageDialog(null, "Please fill the necessary fields");
+        }
+        else{
+            ConsultationHealthInsuranceAgent encounterLawyer =new ConsultationHealthInsuranceAgent();
+            encounterLawyer.setConsultation(txtEncounterNo.getText());
+            encounterLawyer.setMinutes(txtAreaMinutes.getText());
+
+            request.getHealthInsuranceAgentConsultation().add(encounterLawyer);
+            populateName();
+            txtEncounterNo.setText("");
+            txtAreaMinutes.setText("");
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
         // TODO add your handling code here:
+        btnBack.setForeground(new Color(0,128,128));
     }//GEN-LAST:event_btnBackMouseEntered
 
     private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
         // TODO add your handling code here:
+        btnBack.setForeground(Color.black);
     }//GEN-LAST:event_btnBackMouseExited
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        HealthInsuranceJPanel sysAdminwjp = (HealthInsuranceJPanel) component;
+        //sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+    
+    private void populateName() {
 
+        txtName.setText(request.getTalentScoutWorkRequest().getChildName());
+
+
+        DefaultTableModel model= (DefaultTableModel) tblEncounterDetails.getModel();
+        Object[] row=new Object[2];
+        model.setRowCount(0);
+
+        for (ConsultationHealthInsuranceAgent l: request.getHealthInsuranceAgentConsultation()){
+            row[0] = l.getConsultation();
+            row[1] = l.getMinutes();
+            model.addRow(row);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

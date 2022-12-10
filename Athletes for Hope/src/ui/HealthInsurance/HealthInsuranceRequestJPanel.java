@@ -4,6 +4,25 @@
  */
 package ui.HealthInsurance;
 
+import business.EcoSystem;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.InsuranceAgentWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
@@ -13,8 +32,20 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form HealthInsuranceRequestJPanel
      */
-    public HealthInsuranceRequestJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    InsuranceAgentWorkRequest request;
+    Network network;
+    public HealthInsuranceRequestJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount,Organization organization,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.organization=organization;
+        this.userAccount = userAccount;
+      
+        populateTable();
     }
 
     /**
@@ -173,7 +204,7 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
 
         int selectedRow = tblLawyerManageRequest.getSelectedRow();
-        WorkRequest request = (LawyerWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
+        WorkRequest request = (InsuranceAgentWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
             request.setStatus("Accepted");
@@ -208,13 +239,13 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 return;
             }
 
-            LawyerWorkRequest request = (LawyerWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
+            InsuranceAgentWorkRequest request = (InsuranceAgentWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
 
             if (request.getReceiver()!=userAccount){
                 JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
             }else{
 
-                CaseReportLJPanel caseReportJPanel = new CaseReportLJPanel(userProcessContainer,system,request.getCaseReporterWorkRequest(),userAccount,network);
+                HealthInsuranceCaseReportJPanel caseReportJPanel = new HealthInsuranceCaseReportJPanel(userProcessContainer,system,request.getTalentScoutWorkRequest(),userAccount,network);
                 userProcessContainer.add("caseReportJPanel", caseReportJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
@@ -248,13 +279,13 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
             if (selectedRow < 0){
                 return;
             }
-            LawyerWorkRequest request = (LawyerWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
+            InsuranceAgentWorkRequest request = (InsuranceAgentWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
 
             if (request.getReceiver()!=userAccount){
                 JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
             }
             else{
-                LawyerEncounterJPanel lencounterJPanel = new LawyerEncounterJPanel(userProcessContainer,system,userAccount,network,organization,request);
+                HealthInsuranceConsultationJPanel lencounterJPanel = new HealthInsuranceConsultationJPanel(userProcessContainer,system,userAccount,network,organization,request);
                 userProcessContainer.add("caseReportJPanel", lencounterJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
@@ -285,14 +316,49 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 return;
             }
 
-            WorkRequest request = (LawyerWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
+            WorkRequest request = (InsuranceAgentWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
             request.setReceiver(userAccount);
             request.setStatus("Case Completed");
             populateTable();
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCaseCompleteActionPerformed
-
+    
+    private void populateTable() {
+        DefaultTableModel model= (DefaultTableModel) tblLawyerManageRequest.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+         for(InsuranceAgentWorkRequest request : organization.getWorkQueue().getInsuranceAgentWorkRequestList())
+         {
+         
+            row[0]=request.getTalentScoutWorkRequest().getChildName();
+            row[1] = request.getTalentScoutWorkRequest().getDoe();
+            row[2] = request;
+            if (request.getReceiver()==null){
+              row[3] = "Not Assigned";
+            }else{
+              row[3] = request.getReceiver();
+            }
+            
+            model.addRow(row);
+        }
+        
+    }
+    
+    private int CheckOpenCases(UserAccount userAccount) {
+        int a = 0;
+        for(InsuranceAgentWorkRequest request : organization.getWorkQueue().getInsuranceAgentWorkRequestList())
+        {
+        
+          if (request.getReceiver()==userAccount){
+              if (request.getStatus().equalsIgnoreCase("Accepted")){
+                  a = a + 1;
+              }
+          } 
+        }
+        return a; 
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssignRequest;
