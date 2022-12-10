@@ -4,6 +4,14 @@
  */
 package ui.Nutrabay;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Enterprise.NutritionEnterprise;
+import business.Organization.Organization;
+import business.Organization.NutrabayOrganization;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author hp
@@ -13,8 +21,26 @@ public class NutrabayJPanel extends javax.swing.JPanel {
     /**
      * Creates new form NutrabayJPanel
      */
-    public NutrabayJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private NutrabayOrganization POrganization; 
+    private NutritionEnterprise Penterprise;
+    public NutrabayJPanel(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise,EcoSystem business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.POrganization = (NutrabayOrganization)organization;
+        this.Penterprise = (NutritionEnterprise) enterprise;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(100);
+        populateBottom();
+    }
+    
+    private void populateBottom() {
+        NutrabayViewRequestJPanel pvrJPanel=new NutrabayViewRequestJPanel(userProcessContainer,business,POrganization,userAccount);
+        jSplitPane1.setBottomComponent(pvrJPanel);
     }
 
     /**

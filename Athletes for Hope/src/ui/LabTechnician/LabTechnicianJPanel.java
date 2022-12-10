@@ -4,6 +4,14 @@
  */
 package ui.LabTechnician;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Enterprise.HealthWellBeingEnterprise;
+import business.Network.Network;
+import business.Organization.DiagnosticOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import javax.swing.JPanel;
 /**
  *
  * @author hp
@@ -13,8 +21,28 @@ public class LabTechnicianJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LabAssistantJPanel
      */
-    public LabTechnicianJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private DiagnosticOrganization LOrganization; 
+    private HealthWellBeingEnterprise Henterprise;
+    private Network network;
+    public LabTechnicianJPanel(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise,EcoSystem business,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.LOrganization = (DiagnosticOrganization)organization;
+        this.Henterprise = (HealthWellBeingEnterprise) enterprise;
+        this.network = network;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(100);
+        populateBottom();
+    }
+    
+     private void populateBottom() {
+        LabRequestJPanel lrJPanel=new LabRequestJPanel(userProcessContainer,business,network,Henterprise,userAccount,LOrganization);
+        jSplitPane1.setBottomComponent(lrJPanel);
     }
 
     /**

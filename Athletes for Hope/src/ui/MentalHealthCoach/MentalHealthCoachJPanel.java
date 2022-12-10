@@ -4,6 +4,16 @@
  */
 package ui.MentalHealthCoach;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Enterprise.NGOEnterprise;
+import business.Enterprise.HealthWellBeingEnterprise;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.Organization.MentalHealthOrganization;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author hp
@@ -13,8 +23,28 @@ public class MentalHealthCoachJPanel extends javax.swing.JPanel {
     /**
      * Creates new form MentalHealthCoachJPanel
      */
-    public MentalHealthCoachJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private MentalHealthOrganization HPOrganization; 
+    private HealthWellBeingEnterprise NGOenterprise;
+    private Network network;
+    public MentalHealthCoachJPanel(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise,EcoSystem business,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.HPOrganization = (MentalHealthOrganization)organization;
+        this.NGOenterprise = (HealthWellBeingEnterprise) enterprise;
+        this.network=network;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(100);
+        populateBottom();
+    }
+    
+    private void populateBottom() {
+        MentalHealthCoachRequestJPanel hprJPanel=new MentalHealthCoachRequestJPanel(userProcessContainer,business,userAccount,HPOrganization,network);
+        jSplitPane1.setBottomComponent(hprJPanel);
     }
 
     /**
