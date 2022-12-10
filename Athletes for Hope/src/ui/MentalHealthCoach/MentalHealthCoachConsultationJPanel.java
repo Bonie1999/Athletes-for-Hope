@@ -4,6 +4,27 @@
  */
 package ui.MentalHealthCoach;
 
+import business.EcoSystem;
+import business.Consultation.ConsultationMentalHealthCoach;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.MentalHealthCoachWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
@@ -13,8 +34,21 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
     /**
      * Creates new form MentalHealthCoachConsultationJPanel
      */
-    public MentalHealthCoachConsultationJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    MentalHealthCoachWorkRequest request;
+    UserAccount userAccount;
+    Network network;
+    Organization organization;
+    public MentalHealthCoachConsultationJPanel(JPanel userProcessContainer, EcoSystem system,UserAccount userAccount,Network network, Organization organization,MentalHealthCoachWorkRequest request) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.userAccount = userAccount;
+        this.network = network;
+        this.organization=organization;
+        this.request=request;
+        populate();
     }
 
     /**
@@ -250,7 +284,7 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnBackMouseExited
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        PsychiatristRequestJPanel hreqJPanel = new PsychiatristRequestJPanel(userProcessContainer,system,userAccount,organization,network);
+        MentalHealthCoachRequestJPanel hreqJPanel = new MentalHealthCoachRequestJPanel(userProcessContainer,system,userAccount,organization,network);
         userProcessContainer.add("caseReportJPanel", hreqJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);        // TODO add your handling code here:
@@ -271,11 +305,11 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please fill out the necessary fields");
         }
         else{
-            EncounterPsychiatrist hpe=new EncounterPsychiatrist();
-            hpe.setEncounter(txtEncounterNo.getText());
+            ConsultationMentalHealthCoach hpe=new ConsultationMentalHealthCoach();
+            hpe.setConsultation(txtEncounterNo.getText());
             hpe.setGuidance(txtAreaAdvice.getText());
             hpe.setProgress(txtProgress.getText());
-            request.getHPEncounter().add(hpe);
+            request.getMentalHealthCoachConsultation().add(hpe);
             //organization.getHPencounterdir().getHPEncounters().add(hpe);
             //organization.getHPencounterdir().getHPEncounterDirectory().put(request.CaseReporterWorkRequest().getNameofvictim(), organization.getHPencounterdir().getHPEncounters());
             populate();
@@ -319,7 +353,22 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
-
+    
+    private void populate() {
+    
+        txtName.setText(request.getTalentScoutWorkRequest().getChildName());
+        txtAreaMoreDetails.setText(request.getTalentScoutWorkRequest().getParentName());
+        
+        DefaultTableModel model= (DefaultTableModel) tblPsychiatristEncounter.getModel();
+        Object[] row=new Object[3];
+        model.setRowCount(0);
+        for (ConsultationMentalHealthCoach HPE: request.getMentalHealthCoachConsultation()){
+            row[0] = HPE.getConsultation();
+            row[1]=HPE.getGuidance();
+            row[2]=HPE.getProgress();
+            model.addRow(row);
+        }
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

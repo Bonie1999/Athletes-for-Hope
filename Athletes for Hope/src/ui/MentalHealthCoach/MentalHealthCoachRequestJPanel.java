@@ -4,6 +4,26 @@
  */
 package ui.MentalHealthCoach;
 
+import business.EcoSystem;
+import business.Network.Network;
+import business.Organization.TalentScoutOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.MentalHealthCoachWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
@@ -13,8 +33,19 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form MentalHealthCoachRequestJPanel
      */
-    public MentalHealthCoachRequestJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    MentalHealthCoachWorkRequest request;
+    Network network;
+    public MentalHealthCoachRequestJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount,Organization organization,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.organization= organization;
+        this.userAccount = userAccount;
+        populateTable();
     }
 
     /**
@@ -163,7 +194,7 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
 
         int selectedRow = tblPsychiatristRequestDetails.getSelectedRow();
-        PsychiatristWorkRequest request = (PsychiatristWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
+        MentalHealthCoachWorkRequest request = (MentalHealthCoachWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
             request.setStatus("Accepted");
@@ -192,12 +223,12 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
             if (selectedRow < 0){
                 return;
             }
-            PsychiatristWorkRequest request = (PsychiatristWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
+            MentalHealthCoachWorkRequest request = (MentalHealthCoachWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
 
             if (request.getReceiver()!=userAccount){
                 JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
             }else{
-                PsychiatristEncounterJPanel lencounterJPanel = new PsychiatristEncounterJPanel(userProcessContainer,system,userAccount,network,organization,request);
+                MentalHealthCoachConsultationJPanel lencounterJPanel = new MentalHealthCoachConsultationJPanel(userProcessContainer,system,userAccount,network,organization,request);
                 userProcessContainer.add("caseReportJPanel", lencounterJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
@@ -214,12 +245,82 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        WorkRequest request = (PsychiatristWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
+        WorkRequest request = (MentalHealthCoachWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
         request.setReceiver(userAccount);
         request.setStatus("Case Completed");
         populateTable();
     }//GEN-LAST:event_btnCaseCompleteActionPerformed
+    
+    private void populateTable() {
+        DefaultTableModel model= (DefaultTableModel) tblPsychiatristRequestDetails.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+         for(MentalHealthCoachWorkRequest request : organization.getWorkQueue().getMentalHealthCoachWorkRequestList())
+         {
+         
+            row[0]=request.getTalentScoutWorkRequest().getChildName();
+            row[1] = request.getTalentScoutWorkRequest().getSportType();
+            row[2] = request;
+            if (request.getReceiver()==null){
+              row[3] = "Not Assigned";
+            }else{
+              row[3] = request.getReceiver();
+            }
+            model.addRow(row);
+        }
+    }
+    
+    private void sendInvite(MentalHealthCoachWorkRequest request) {
+        String FromEmail="sexualawareness.help@gmail.com";
+        String FromEmailPass="Fin@lProject21";
+        String Subject = "Sign up successful";
+        
+        Properties properties=new Properties();
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.host", "smtp.gmail.com");
+        properties.put("mail.smtp.port", "587");
+        
+        Session session=Session.getDefaultInstance(properties, new javax.mail.Authenticator(){
+           @Override
+            protected PasswordAuthentication getPasswordAuthentication(){
+         return new PasswordAuthentication(FromEmail,FromEmailPass);
+        }
+        });
+        
+        try
+        {
+            Message msg=new MimeMessage(session);
+            msg.setFrom(new InternetAddress(FromEmail));
+//            msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(request.getTalentScoutWorkRequest().getEmail()));
+            msg.setSubject("Invitation for a session with Help Provider.");
+            msg.setText("Dear "+ request.getTalentScoutWorkRequest().getChildName()+"\n"+"I am here to help you. Join me through the following link for the next encounter."+"\n"+"zoom1.link"+"\n"+"Best,"+"\n"+userAccount.getEmp().getName());
+            Transport.send(msg);
+            JOptionPane.showMessageDialog(this, "Invitation has been sent successfully.");
 
+        }catch(Exception e)
+        {
+            System.out.println(""+e);
+            //JOptionPane.showMessageDialog(this, "Incorrect E-mail id.Invitation cannot be been sent.");
+
+        }
+    }
+    
+    private int CheckOpenCases(UserAccount userAccount) {
+        int a = 0;
+        for(MentalHealthCoachWorkRequest request : organization.getWorkQueue().getMentalHealthCoachWorkRequestList())
+        {
+        
+          if (request.getReceiver()==userAccount){
+              if (request.getStatus().equalsIgnoreCase("Accepted")){
+                  a = a + 1;
+              }
+          } 
+        }
+        return a; 
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssignRequest;
