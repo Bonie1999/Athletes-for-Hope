@@ -3,18 +3,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.PhysicalTraining;
+import business.EcoSystem;
+import business.Network.Network;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.LabTechnicianWorkRequest;
+import business.WorkQueue.LabTest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author nishank
  */
 public class RequestLabTest extends javax.swing.JPanel {
-
+JPanel userProcessContainer;
+    EcoSystem system;
+    LabTechnicianWorkRequest labrequest;
+    UserAccount userAccount;
+    Network network;
     /**
      * Creates new form RequestLabTest
      */
-    public RequestLabTest() {
+    public RequestLabTest(JPanel userProcessContainer, EcoSystem system,LabTechnicianWorkRequest labrequest,UserAccount userAccount,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.labrequest = labrequest;
+        this.userAccount = userAccount;
+        this.network = network;
+        
+        populateform();
+        populatetable();
     }
 
     /**
@@ -299,4 +323,26 @@ public class RequestLabTest extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
+private void populateform() {
+        jTextField3.setText(labrequest.getSender().toString());
+        jTextField1.setText(labrequest.getTrainingCoachWorkRequest().getTalentScoutWorkRequest().getChildName());
+        Date date = new Date();
+        jTextField2.setText(date.toString());
+        
+    }
+
+    private void populatetable() {
+        DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[1];
+        model.setRowCount(0);
+        
+         for(LabTest LT : labrequest.getLabTestList())
+         {
+         
+            row[0]=LT;
+            
+            model.addRow(row);
+        }
+        
+    }
 }

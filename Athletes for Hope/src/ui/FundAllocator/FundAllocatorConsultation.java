@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.FundAllocator;
+
 import business.EcoSystem;
 import business.Consultation.ConsultationFundAllocator;
 import business.Network.Network;
@@ -258,7 +259,7 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
             ConsultationFundAllocator en=new ConsultationFundAllocator();
             en.setEn(txtEncounterNo.getText());
             en.setMinutes(txtAreaMinutesofMeeting.getText());
-            request.getConslrEncounter().add(en);
+            request.getConslrConsultation().add(en);
             //organization.getCounsellorencounterdir().getEncounters().add(en);
             // for(CounsellarWorkRequest request : organization.getWorkQueue().getCounsellarworkRequestList()){
                 //organization.getCounsellorencounterdir().getEncounterDirectory().put(request.getHelpSeekerWorkRequest().getNameofvictim(), organization.getCounsellorencounterdir().getEncounters());
@@ -340,7 +341,7 @@ private void populateName() {
         DefaultTableModel model= (DefaultTableModel) tblCounsellorEncounterDetails.getModel();
         Object[] row=new Object[2];
         model.setRowCount(0);
-        for (ConsultationFundAllocator CE: request.getConslrEncounter()){
+        for (ConsultationFundAllocator CE: request.getConslrConsultation()){
             row[0] = CE.getEn();
             row[1] = CE.getMinutes();
             model.addRow(row);
