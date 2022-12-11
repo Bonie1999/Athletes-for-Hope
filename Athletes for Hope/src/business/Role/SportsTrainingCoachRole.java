@@ -9,7 +9,7 @@ import business.Network.Network;
 import business.Organization.Organization;
 import business.UserAccount.UserAccount; 
 import javax.swing.JPanel;
-import ui.PhysicalTraining.SportsTrainingCoachJPanel;
+import ui.PhysicalTraining.PhysicalTraining;
 /**
  *
  * @author nishank
@@ -18,7 +18,7 @@ public class SportsTrainingCoachRole extends Role{
        
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business,Network network) {
-        return new SportsTrainingCoachJPanel(userProcessContainer, account, organization, enterprise,business,network);
+        return new PhysicalTraining(userProcessContainer, account, organization, enterprise,business,network);
     }
 
 }
