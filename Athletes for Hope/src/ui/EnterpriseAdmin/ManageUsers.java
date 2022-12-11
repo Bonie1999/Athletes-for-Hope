@@ -169,7 +169,7 @@ public class ManageUsers extends javax.swing.JPanel {
         jLabel6.setText("Set Password:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 160, -1));
 
-        btnCreate.setBackground(new java.awt.Color(51, 102, 255));
+        btnCreate.setBackground(new java.awt.Color(255, 146, 1));
         btnCreate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
@@ -204,7 +204,7 @@ public class ManageUsers extends javax.swing.JPanel {
         jPanel2.add(comboRoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 150, 140, -1));
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 220, 140, -1));
 
-        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setBackground(new java.awt.Color(255, 146, 1));
         btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");

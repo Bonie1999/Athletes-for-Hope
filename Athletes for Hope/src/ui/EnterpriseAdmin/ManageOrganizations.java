@@ -152,17 +152,17 @@ public class ManageOrganizations extends javax.swing.JPanel {
         lblOrgType.setText("Organization Type:");
         jPanel2.add(lblOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, -1, 26));
 
-        btnAddOrg.setBackground(new java.awt.Color(51, 102, 255));
+        btnAddOrg.setBackground(new java.awt.Color(255, 146, 1));
         btnAddOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnAddOrg.setForeground(new java.awt.Color(255, 255, 255));
         btnAddOrg.setText("Add Organization");
         btnAddOrg.setBorderPainted(false);
         btnAddOrg.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnAddOrgMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAddOrgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddOrgMouseExited(evt);
             }
         });
         btnAddOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +175,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
         comboBoxOrgType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel2.add(comboBoxOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 155, -1));
 
-        btnDltOrg.setBackground(new java.awt.Color(51, 102, 255));
+        btnDltOrg.setBackground(new java.awt.Color(255, 146, 1));
         btnDltOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDltOrg.setForeground(new java.awt.Color(255, 255, 255));
         btnDltOrg.setText("Delete Organization");

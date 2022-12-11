@@ -86,8 +86,9 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblManageCounsellorRequestDetails);
 
-        btnAssignRequest.setBackground(new java.awt.Color(129, 178, 154));
+        btnAssignRequest.setBackground(new java.awt.Color(255, 146, 1));
         btnAssignRequest.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAssignRequest.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignRequest.setText("Assign Request");
         btnAssignRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -103,8 +104,9 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnViewReport.setBackground(new java.awt.Color(129, 178, 154));
+        btnViewReport.setBackground(new java.awt.Color(255, 146, 1));
         btnViewReport.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnViewReport.setForeground(new java.awt.Color(255, 255, 255));
         btnViewReport.setText("View Report");
         btnViewReport.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -120,8 +122,9 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnEncounters.setBackground(new java.awt.Color(129, 178, 154));
+        btnEncounters.setBackground(new java.awt.Color(255, 146, 1));
         btnEncounters.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEncounters.setForeground(new java.awt.Color(255, 255, 255));
         btnEncounters.setText("Encounters");
         btnEncounters.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -137,8 +140,9 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCaseComplete.setBackground(new java.awt.Color(129, 178, 154));
+        btnCaseComplete.setBackground(new java.awt.Color(255, 146, 1));
         btnCaseComplete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCaseComplete.setForeground(new java.awt.Color(255, 255, 255));
         btnCaseComplete.setText(" Case Complete");
         btnCaseComplete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

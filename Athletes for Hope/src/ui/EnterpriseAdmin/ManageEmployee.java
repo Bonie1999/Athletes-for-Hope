@@ -138,17 +138,17 @@ public void populateOrganizationComboBox(){
         });
         jPanel2.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 120, -1));
 
-        btnCreateEmployee.setBackground(new java.awt.Color(51, 102, 255));
+        btnCreateEmployee.setBackground(new java.awt.Color(255, 146, 1));
         btnCreateEmployee.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnCreateEmployee.setForeground(new java.awt.Color(255, 255, 255));
         btnCreateEmployee.setText("Create Employee");
         btnCreateEmployee.setBorderPainted(false);
         btnCreateEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCreateEmployeeMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnCreateEmployeeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCreateEmployeeMouseExited(evt);
             }
         });
         btnCreateEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -166,17 +166,17 @@ public void populateOrganizationComboBox(){
         });
         jPanel2.add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 120, 20));
 
-        Deletebtn.setBackground(new java.awt.Color(51, 102, 255));
+        Deletebtn.setBackground(new java.awt.Color(255, 146, 1));
         Deletebtn.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         Deletebtn.setForeground(new java.awt.Color(255, 255, 255));
         Deletebtn.setText("Delete Employee");
         Deletebtn.setBorderPainted(false);
         Deletebtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                DeletebtnMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 DeletebtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DeletebtnMouseExited(evt);
             }
         });
         Deletebtn.addActionListener(new java.awt.event.ActionListener() {
