@@ -310,7 +310,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(24, 310, 254, 0);
         jPanel2.add(ReportjButton, gridBagConstraints);
 
-        comboBoxIncident.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Labor", "Physical Abuse", "Sexual Abuse", "Harrassment" }));
+        comboBoxIncident.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Cricket", "Hockey", "Basket Ball", "Atheletics", "Football" }));
         comboBoxIncident.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboBoxIncidentActionPerformed(evt);
