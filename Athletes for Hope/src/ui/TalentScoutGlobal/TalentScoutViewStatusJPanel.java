@@ -206,9 +206,9 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
         txtPsychStatus.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtPsychStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(637, 320, 145, 21));
 
-        btnCheckStatus.setBackground(new java.awt.Color(129, 178, 154));
+        btnCheckStatus.setBackground(new java.awt.Color(255, 146, 1));
         btnCheckStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnCheckStatus.setForeground(new java.awt.Color(61, 64, 91));
+        btnCheckStatus.setForeground(new java.awt.Color(255, 255, 255));
         btnCheckStatus.setText("Check Status");
         btnCheckStatus.setBorderPainted(false);
         btnCheckStatus.addMouseListener(new java.awt.event.MouseAdapter() {

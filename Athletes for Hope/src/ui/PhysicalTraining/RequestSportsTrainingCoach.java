@@ -89,8 +89,9 @@ JPanel userProcessContainer;
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton1.setBackground(new java.awt.Color(129, 178, 154));
+        jButton1.setBackground(new java.awt.Color(255, 146, 1));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Assign Request");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -106,8 +107,9 @@ JPanel userProcessContainer;
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(129, 178, 154));
+        jButton4.setBackground(new java.awt.Color(255, 146, 1));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("View Case Report");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,8 +117,9 @@ JPanel userProcessContainer;
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(129, 178, 154));
+        jButton2.setBackground(new java.awt.Color(255, 146, 1));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Case Complete");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

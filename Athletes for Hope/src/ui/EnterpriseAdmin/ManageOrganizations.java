@@ -143,7 +143,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 210, 98));
 
-        btnAddOrg.setBackground(new java.awt.Color(51, 102, 255));
+        btnAddOrg.setBackground(new java.awt.Color(255, 146, 1));
         btnAddOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnAddOrg.setForeground(new java.awt.Color(255, 255, 255));
         btnAddOrg.setText("Add Organization");
@@ -163,7 +163,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
         });
         jPanel1.add(btnAddOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, -1));
 
-        btnDltOrg.setBackground(new java.awt.Color(51, 102, 255));
+        btnDltOrg.setBackground(new java.awt.Color(255, 146, 1));
         btnDltOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDltOrg.setForeground(new java.awt.Color(255, 255, 255));
         btnDltOrg.setText("Delete Organization");

@@ -143,7 +143,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 230, 50));
 
-        ReportjButton.setBackground(new java.awt.Color(51, 102, 255));
+        ReportjButton.setBackground(new java.awt.Color(255, 146, 1));
         ReportjButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         ReportjButton.setForeground(new java.awt.Color(255, 255, 255));
         ReportjButton.setText("Enroll");

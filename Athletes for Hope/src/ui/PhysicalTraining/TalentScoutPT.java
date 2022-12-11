@@ -144,8 +144,9 @@ public class TalentScoutPT extends javax.swing.JPanel {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(129, 178, 154));
+        jButton1.setBackground(new java.awt.Color(255, 146, 1));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Request Lab Test");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -161,8 +162,9 @@ public class TalentScoutPT extends javax.swing.JPanel {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(129, 178, 154));
+        jButton3.setBackground(new java.awt.Color(255, 146, 1));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("View Lab Test");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -178,8 +180,9 @@ public class TalentScoutPT extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(129, 178, 154));
+        jButton2.setBackground(new java.awt.Color(255, 146, 1));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Prescribe Medicines");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -195,8 +198,9 @@ public class TalentScoutPT extends javax.swing.JPanel {
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(129, 178, 154));
+        jButton4.setBackground(new java.awt.Color(255, 146, 1));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Send Invite");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,8 +208,9 @@ public class TalentScoutPT extends javax.swing.JPanel {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(129, 178, 154));
+        jButton5.setBackground(new java.awt.Color(255, 146, 1));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Back");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

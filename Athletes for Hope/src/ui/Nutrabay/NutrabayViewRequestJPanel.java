@@ -83,9 +83,9 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPharmaViewRequest);
 
-        btnAssignRequest.setBackground(new java.awt.Color(129, 178, 154));
+        btnAssignRequest.setBackground(new java.awt.Color(255, 146, 1));
         btnAssignRequest.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnAssignRequest.setForeground(new java.awt.Color(61, 64, 58));
+        btnAssignRequest.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignRequest.setText("Assign Request");
         btnAssignRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -101,9 +101,9 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setBackground(new java.awt.Color(129, 178, 154));
+        btnView.setBackground(new java.awt.Color(255, 146, 1));
         btnView.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnView.setForeground(new java.awt.Color(61, 64, 58));
+        btnView.setForeground(new java.awt.Color(255, 255, 255));
         btnView.setText("View");
         btnView.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
