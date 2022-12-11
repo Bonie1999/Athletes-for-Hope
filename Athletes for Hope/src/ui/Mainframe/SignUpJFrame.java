@@ -374,7 +374,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
             if(x==true){
                 Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.TalentScoutGlobal);
                 System.out.println("start2");
-                if(enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization")==null){
+                if(enterprise.getOrganizationDirectory().searchOrganizationbyname("TalentScoutOrganization")==null){
                     System.out.println("start3");
                     Organization.Type type = (Organization.Type) Organization.Type.TalentScout;
                     Organization org= enterprise.getOrganizationDirectory().createOrganization(type);
@@ -383,7 +383,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
                 else{
                     System.out.println("start4");
 
-                    Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization");
+                    Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("TalentScoutOrganization");
                     Employee employee= org.getEmployeeDirectory().createEmployee(name);
                     if(org.getUserAccountDirectory().CheckIsValidInput(password)){
                         UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new TalentScoutRole());
@@ -397,7 +397,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
             }
             else{
                 Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise("HS", Enterprise.EnterpriseType.TalentScoutGlobal);
-                if(enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization")==null){
+                if(enterprise.getOrganizationDirectory().searchOrganizationbyname("TalentScoutOrganization")==null){
                     System.out.println("start3");
                     Organization.Type type = (Organization.Type) Organization.Type.TalentScout;
                     Organization org= enterprise.getOrganizationDirectory().createOrganization(type);
@@ -429,7 +429,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
 
             this.setVisible(false);
             Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.TalentScoutGlobal);
-            Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization");
+            Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("TalentScoutOrganization");
             UserAccount ua= org.getUserAccountDirectory().authenticateUserAccnt(username, password);
             //ReportJFrame r = new ReportJFrame(system,network,ua,org);
             dB4OUtil.storeSystem(system);

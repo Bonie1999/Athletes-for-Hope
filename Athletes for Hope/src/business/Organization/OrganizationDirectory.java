@@ -25,6 +25,7 @@ public class OrganizationDirectory {
         Organization organization = null;
          if (type.getValue().equals(Type.TalentScout.getValue())){
             organization = new TalentScoutOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.PhysicalTraining.getValue())){
             organization = new PhysicalTrainingOrganization();
