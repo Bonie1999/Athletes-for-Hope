@@ -93,8 +93,9 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblPsychiatristRequestDetails);
 
-        btnAssignRequest.setBackground(new java.awt.Color(129, 178, 154));
+        btnAssignRequest.setBackground(new java.awt.Color(255, 146, 1));
         btnAssignRequest.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        btnAssignRequest.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignRequest.setText("Assign Request");
         btnAssignRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -110,8 +111,9 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnEncounters.setBackground(new java.awt.Color(129, 178, 154));
+        btnEncounters.setBackground(new java.awt.Color(255, 146, 1));
         btnEncounters.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        btnEncounters.setForeground(new java.awt.Color(255, 255, 255));
         btnEncounters.setText("Encounters");
         btnEncounters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,8 +121,9 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCaseComplete.setBackground(new java.awt.Color(129, 178, 154));
+        btnCaseComplete.setBackground(new java.awt.Color(255, 146, 1));
         btnCaseComplete.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        btnCaseComplete.setForeground(new java.awt.Color(255, 255, 255));
         btnCaseComplete.setText("Case Complete");
         btnCaseComplete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

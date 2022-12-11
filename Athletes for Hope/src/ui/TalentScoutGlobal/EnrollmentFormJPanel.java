@@ -292,7 +292,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(4, 12, 0, 122);
         jPanel2.add(otherRadioButton, gridBagConstraints);
 
-        ReportjButton.setBackground(new java.awt.Color(51, 102, 255));
+        ReportjButton.setBackground(new java.awt.Color(255, 146, 1));
         ReportjButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         ReportjButton.setForeground(new java.awt.Color(255, 255, 255));
         ReportjButton.setText("Report");

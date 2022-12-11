@@ -102,8 +102,9 @@ LabTechnicianWorkRequest request;
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Lab Official Name:");
 
-        jButton2.setBackground(new java.awt.Color(129, 178, 154));
+        jButton2.setBackground(new java.awt.Color(255, 146, 1));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Back");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

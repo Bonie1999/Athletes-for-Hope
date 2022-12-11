@@ -74,7 +74,9 @@ public class ViewSupplementJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Prescription");
 
+        jButton1.setBackground(new java.awt.Color(255, 146, 1));
         jButton1.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Back");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -121,7 +123,9 @@ public class ViewSupplementJPanel extends javax.swing.JPanel {
 
         jTextField3.setEnabled(false);
 
+        jButton2.setBackground(new java.awt.Color(255, 146, 1));
         jButton2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Process ");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
