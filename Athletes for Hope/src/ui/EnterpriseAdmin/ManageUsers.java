@@ -4,6 +4,17 @@
  */
 package ui.EnterpriseAdmin;
 
+import business.EcoSystem;
+import business.Employee.Employee;
+import business.Enterprise.Enterprise;
+import business.Organization.Organization;
+import business.Role.Role;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author nishank
@@ -13,8 +24,57 @@ public class ManageUsers extends javax.swing.JPanel {
     /**
      * Creates new form ManageUsers
      */
-    public ManageUsers() {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    public ManageUsers(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.system = system;
+        
+        popOrganizationComboBox();
+        //employeeJComboBox.removeAllItems();
+        popData();
+        this.setSize(1080, 680);
+    }
+ public void popOrganizationComboBox() {
+        comboOrgSel.removeAllItems();
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            comboOrgSel.addItem(organization);
+        }
+    }
+    
+    public void populateEmployeeComboBox(Organization organization){
+        comboEmployeeSel.removeAllItems();
+        
+        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+            comboEmployeeSel.addItem(employee);
+        }
+    }
+    
+    private void populateRoleComboBox(Organization organization){
+        comboRoleSel.removeAllItems();
+        for (Role role : organization.getSupportedRole()){
+            comboRoleSel.addItem(role);
+        }
+    }
+
+    public void popData() {
+
+        DefaultTableModel model = (DefaultTableModel) tableUsers.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
+            for (UserAccount ua : organization.getUserAccountDirectory().getUserAccntList()) {
+                Object row[] = new Object[2];
+                row[0] = ua;
+                row[1] = ua.getRole();
+                ((DefaultTableModel) tableUsers.getModel()).addRow(row);
+            }
+        }
     }
 
     /**
@@ -283,4 +343,5 @@ public class ManageUsers extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
 }

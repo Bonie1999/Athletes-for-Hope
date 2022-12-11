@@ -3,18 +3,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.PhysicalTraining;
+import ui.LabTechnician.*;
+import business.EcoSystem;
+import business.WorkQueue.LabTechnicianWorkRequest;
+import business.WorkQueue.LabTest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author nishank
  */
 public class LabTestResults extends javax.swing.JPanel {
+JPanel userProcessContainer;
+EcoSystem system;
+LabTechnicianWorkRequest request;
 
     /**
      * Creates new form LabTestResults
      */
-    public LabTestResults() {
+    public LabTestResults(JPanel userProcessContainer, EcoSystem system,LabTechnicianWorkRequest request) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.request = request;
+        PopulateReport();
     }
 
     /**
@@ -218,4 +237,27 @@ public class LabTestResults extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+private void PopulateReport() {
+        jTextField1.setText(request.getSender().toString());
+        jTextField2.setText(request.getTrainingCoachWorkRequest().getTalentScoutWorkRequest().getChildName());
+        jTextField3.setText(request.getReceiver().toString());
+        PopulateTable();
+    }
+
+    private void PopulateTable() {
+        DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[2];
+        model.setRowCount(0);
+        
+         for(LabTest LT: request.getLabTestList())
+         {
+         
+            row[0]= LT;
+            row[1] = LT.getResult();
+            
+            model.addRow(row);
+        }
+        
+    }
+
 }

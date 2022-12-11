@@ -4,6 +4,28 @@
  */
 package ui.FundAllocator;
 
+import business.EcoSystem;
+import business.Consultation.ConsultationFundAllocator;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.FundAllocatorWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author nishank
@@ -13,8 +35,22 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
     /**
      * Creates new form FundAllocatorConsultation
      */
-    public FundAllocatorConsultation() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    FundAllocatorWorkRequest request;
+    UserAccount userAccount;
+    Network network;
+    Organization organization;
+    public FundAllocatorConsultation(JPanel userProcessContainer, EcoSystem system,UserAccount userAccount,Network network, Organization organization, FundAllocatorWorkRequest request) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+      
+        this.userAccount = userAccount;
+        this.network = network;
+        this.organization=organization;
+        this.request=request;
+        populateName();
     }
 
     /**
@@ -220,10 +256,10 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please fill out the necessary fields");
         }
         else{
-            EncounterCounsellor en=new EncounterCounsellor();
+            ConsultationFundAllocator en=new ConsultationFundAllocator();
             en.setEn(txtEncounterNo.getText());
             en.setMinutes(txtAreaMinutesofMeeting.getText());
-            request.getConslrEncounter().add(en);
+            request.getConslrConsultation().add(en);
             //organization.getCounsellorencounterdir().getEncounters().add(en);
             // for(CounsellarWorkRequest request : organization.getWorkQueue().getCounsellarworkRequestList()){
                 //organization.getCounsellorencounterdir().getEncounterDirectory().put(request.getHelpSeekerWorkRequest().getNameofvictim(), organization.getCounsellorencounterdir().getEncounters());
@@ -287,7 +323,7 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        CounsellorJPanel sysAdminwjp = (CounsellorJPanel) component;
+        FundAllocator sysAdminwjp = (FundAllocator) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
@@ -297,6 +333,20 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
     private void txtEncounterNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEncounterNoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEncounterNoActionPerformed
+private void populateName() {
+        
+        txtName.setText(request.getHswr().getChildName());
+       
+        
+        DefaultTableModel model= (DefaultTableModel) tblCounsellorEncounterDetails.getModel();
+        Object[] row=new Object[2];
+        model.setRowCount(0);
+        for (ConsultationFundAllocator CE: request.getConslrConsultation()){
+            row[0] = CE.getEn();
+            row[1] = CE.getMinutes();
+            model.addRow(row);
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
