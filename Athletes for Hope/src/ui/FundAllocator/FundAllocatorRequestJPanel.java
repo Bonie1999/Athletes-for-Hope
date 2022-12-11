@@ -20,10 +20,10 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author nishank
  */
-public class FundAllocatorRequest extends javax.swing.JPanel {
+public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form FundAllocatorRequest
+     * Creates new form FundAllocatorRequestJPanel
      */
     JPanel userProcessContainer;
     EcoSystem system;
@@ -31,7 +31,7 @@ public class FundAllocatorRequest extends javax.swing.JPanel {
     Organization organization;
     FundAllocatorWorkRequest request;
     Network network;
-    public FundAllocatorRequest(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount,Organization organization,Network network) {
+    public FundAllocatorRequestJPanel(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount,Organization organization,Network network) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;

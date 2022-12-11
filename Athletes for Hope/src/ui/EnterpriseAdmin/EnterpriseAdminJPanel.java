@@ -12,15 +12,15 @@ import javax.swing.JPanel;
  *
  * @author nishank
  */
-public class EnterpriseAdmin extends javax.swing.JPanel {
+public class EnterpriseAdminJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form EnterpriseAdmin
+     * Creates new form EnterpriseAdminJPanel
      */
     JPanel userProcessContainer;
     Enterprise enterprise;
     EcoSystem system;
-    public EnterpriseAdmin(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
+    public EnterpriseAdminJPanel(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;

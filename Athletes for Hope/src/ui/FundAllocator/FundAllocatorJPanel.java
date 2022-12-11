@@ -4,17 +4,43 @@
  */
 package ui.FundAllocator;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Enterprise.HealthWellBeingEnterprise;
+import business.Enterprise.NGOEnterprise;
+import business.Organization.SportsFundOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author nishank
  */
-public class FundAllocator extends javax.swing.JPanel {
+public class FundAllocatorJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form FundAllocator
      */
-    public FundAllocator() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private SportsFundOrganization COrganization; 
+    private NGOEnterprise Henterprise;
+    private Network network;
+    public FundAllocatorJPanel(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise,EcoSystem business, Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.COrganization = (SportsFundOrganization)organization;
+        this.Henterprise = (NGOEnterprise) enterprise;
+        this.network = network;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(100);
+        populateBottom();
     }
 
     /**
@@ -97,7 +123,11 @@ public class FundAllocator extends javax.swing.JPanel {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void populateBottom() {
+        FundAllocatorRequestJPanel crJPanel=new FundAllocatorRequestJPanel(userProcessContainer,business,userAccount,COrganization,network);
+        jSplitPane1.setBottomComponent(crJPanel);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
