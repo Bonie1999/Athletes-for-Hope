@@ -100,8 +100,9 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblCounsellorEncounterDetails);
 
-        btnUpdate.setBackground(new java.awt.Color(129, 178, 154));
+        btnUpdate.setBackground(new java.awt.Color(255, 146, 1));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
         btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -117,8 +118,9 @@ public class FundAllocatorConsultation extends javax.swing.JPanel {
             }
         });
 
-        btnBack.setBackground(new java.awt.Color(129, 178, 154));
+        btnBack.setBackground(new java.awt.Color(255, 146, 1));
         btnBack.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

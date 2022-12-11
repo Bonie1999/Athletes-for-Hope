@@ -80,9 +80,9 @@ public class RecruitmentManagerPJPanel extends javax.swing.JPanel {
 
         jCasePanel.add(jCaseVolunteerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 580, 100));
 
-        btnViewReport.setBackground(new java.awt.Color(129, 178, 154));
+        btnViewReport.setBackground(new java.awt.Color(255, 146, 1));
         btnViewReport.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnViewReport.setForeground(new java.awt.Color(61, 64, 91));
+        btnViewReport.setForeground(new java.awt.Color(255, 255, 255));
         btnViewReport.setText("View Report");
         btnViewReport.setBorderPainted(false);
         btnViewReport.addMouseListener(new java.awt.event.MouseAdapter() {

@@ -164,7 +164,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel6.setText("Set Password:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 110, -1));
 
-        btnSubmit.setBackground(new java.awt.Color(51, 102, 255));
+        btnSubmit.setBackground(new java.awt.Color(255, 146, 1));
         btnSubmit.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
@@ -196,7 +196,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         comboBoxSelectEnterprise.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel1.add(comboBoxSelectEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 130, -1));
 
-        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setBackground(new java.awt.Color(255, 146, 1));
         btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");

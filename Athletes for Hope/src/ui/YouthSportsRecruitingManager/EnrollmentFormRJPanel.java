@@ -214,9 +214,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
 
         jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 62, -1, -1));
 
-        btnBack.setBackground(new java.awt.Color(129, 178, 154));
+        btnBack.setBackground(new java.awt.Color(255, 146, 1));
         btnBack.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(61, 64, 91));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.setBorderPainted(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -241,7 +241,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, -1, 500));
 
-        btnReqLawyer.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqLawyer.setBackground(new java.awt.Color(255, 146, 1));
         btnReqLawyer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnReqLawyer.setForeground(new java.awt.Color(61, 64, 91));
         btnReqLawyer.setText("Insurance Agent");
@@ -261,7 +261,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, 190, 40));
 
-        btnReqCounsellar.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqCounsellar.setBackground(new java.awt.Color(255, 146, 1));
         btnReqCounsellar.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnReqCounsellar.setForeground(new java.awt.Color(61, 64, 91));
         btnReqCounsellar.setText("Fund Allocator");
@@ -281,7 +281,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqCounsellar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 190, 40));
 
-        btnReqDoc.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqDoc.setBackground(new java.awt.Color(255, 146, 1));
         btnReqDoc.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnReqDoc.setForeground(new java.awt.Color(61, 64, 91));
         btnReqDoc.setText("Training Coach");
@@ -301,7 +301,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, 190, 41));
 
-        btnReqPsych.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqPsych.setBackground(new java.awt.Color(255, 146, 1));
         btnReqPsych.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnReqPsych.setForeground(new java.awt.Color(61, 64, 91));
         btnReqPsych.setText("Mental Health Coach");

@@ -129,7 +129,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(txtEnterNameOfNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 216, -1));
 
-        btnAddNewNetwork.setBackground(new java.awt.Color(51, 102, 255));
+        btnAddNewNetwork.setBackground(new java.awt.Color(255, 146, 1));
         btnAddNewNetwork.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnAddNewNetwork.setForeground(new java.awt.Color(255, 255, 255));
         btnAddNewNetwork.setText("ADD");
@@ -148,16 +148,16 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnAddNewNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 90, -1));
 
-        btnDeleteNetwork.setBackground(new java.awt.Color(51, 102, 255));
+        btnDeleteNetwork.setBackground(new java.awt.Color(255, 146, 1));
         btnDeleteNetwork.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDeleteNetwork.setForeground(new java.awt.Color(255, 255, 255));
         btnDeleteNetwork.setText("Remove");
         btnDeleteNetwork.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnDeleteNetworkMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDeleteNetworkMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeleteNetworkMouseExited(evt);
             }
         });
         btnDeleteNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +167,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnDeleteNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 120, -1));
 
-        jButton2.setBackground(new java.awt.Color(51, 102, 255));
+        jButton2.setBackground(new java.awt.Color(255, 146, 1));
         jButton2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("View Cases");
@@ -178,7 +178,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(51, 102, 255));
+        jButton3.setBackground(new java.awt.Color(255, 146, 1));
         jButton3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Report");

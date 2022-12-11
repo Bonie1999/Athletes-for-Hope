@@ -130,7 +130,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel3.setText("Network:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, -1, -1));
 
-        btnSubmit.setBackground(new java.awt.Color(51, 102, 255));
+        btnSubmit.setBackground(new java.awt.Color(255, 146, 1));
         btnSubmit.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
         btnSubmit.setText("Submit");
@@ -171,7 +171,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(comboBoxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 120, -1));
 
-        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setBackground(new java.awt.Color(255, 146, 1));
         btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");

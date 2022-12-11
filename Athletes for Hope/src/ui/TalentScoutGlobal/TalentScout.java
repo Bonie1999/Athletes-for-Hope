@@ -47,7 +47,6 @@ public class TalentScout extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -70,22 +69,14 @@ public class TalentScout extends javax.swing.JPanel {
 
         jVolunteerSplitPanel.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        jPanel09.setBackground(new java.awt.Color(129, 178, 154));
-        jPanel09.setLayout(new java.awt.GridBagLayout());
+        jPanel09.setBackground(new java.awt.Color(1, 81, 92));
 
         lblCaseReporter.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        lblCaseReporter.setForeground(new java.awt.Color(61, 64, 91));
+        lblCaseReporter.setForeground(new java.awt.Color(255, 146, 1));
         lblCaseReporter.setText("Welcome Case Reporter");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 112, 0, 0);
-        jPanel09.add(lblCaseReporter, gridBagConstraints);
 
         btnViewStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnViewStatus.setForeground(new java.awt.Color(61, 64, 91));
+        btnViewStatus.setForeground(new java.awt.Color(255, 146, 1));
         btnViewStatus.setText("View Status");
         btnViewStatus.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnViewStatus.setBorderPainted(false);
@@ -103,17 +94,9 @@ public class TalentScout extends javax.swing.JPanel {
                 btnViewStatusActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 47, 11, 84);
-        jPanel09.add(btnViewStatus, gridBagConstraints);
 
         btnReport.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReport.setForeground(new java.awt.Color(61, 64, 91));
+        btnReport.setForeground(new java.awt.Color(255, 146, 1));
         btnReport.setText("Report");
         btnReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnReport.setBorderPainted(false);
@@ -131,13 +114,30 @@ public class TalentScout extends javax.swing.JPanel {
                 btnReportActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 57;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 74, 11, 0);
-        jPanel09.add(btnReport, gridBagConstraints);
+
+        javax.swing.GroupLayout jPanel09Layout = new javax.swing.GroupLayout(jPanel09);
+        jPanel09.setLayout(jPanel09Layout);
+        jPanel09Layout.setHorizontalGroup(
+            jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel09Layout.createSequentialGroup()
+                .addGap(498, 498, 498)
+                .addComponent(lblCaseReporter))
+            .addGroup(jPanel09Layout.createSequentialGroup()
+                .addGap(460, 460, 460)
+                .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(btnViewStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel09Layout.setVerticalGroup(
+            jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel09Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(lblCaseReporter)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnReport)
+                    .addComponent(btnViewStatus)))
+        );
 
         jVolunteerSplitPanel.setTopComponent(jPanel09);
 
@@ -145,9 +145,9 @@ public class TalentScout extends javax.swing.JPanel {
         jPanel10.setLayout(new java.awt.GridBagLayout());
         jVolunteerSplitPanel.setRightComponent(jPanel10);
 
-        jPanel8.add(jVolunteerSplitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 0, 1110, 530));
+        jPanel8.add(jVolunteerSplitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 0, 1200, 530));
 
-        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 530));
+        jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 530));
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, -5, 1110, 530));
 
@@ -158,18 +158,16 @@ public class TalentScout extends javax.swing.JPanel {
             .addGap(0, 1300, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 95, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -89,8 +89,6 @@ public class ManageUsers extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableUsers = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -103,6 +101,8 @@ public class ManageUsers extends javax.swing.JPanel {
         comboRoleSel = new javax.swing.JComboBox();
         txtPassword = new javax.swing.JPasswordField();
         btnDelete = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableUsers = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(1300, 700));
 
@@ -118,7 +118,88 @@ public class ManageUsers extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(230, 126, 34));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage User");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 650, 39));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 650, 39));
+
+        jLabel2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Select Organization:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel3.setText("Select Employee:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 160, -1));
+
+        jLabel4.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel4.setText("Select Role:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 160, -1));
+
+        jLabel5.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel5.setText("Set Username:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 160, -1));
+        jPanel2.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 140, -1));
+
+        jLabel6.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel6.setText("Set Password:");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 160, -1));
+
+        btnCreate.setBackground(new java.awt.Color(51, 102, 255));
+        btnCreate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setText("Create");
+        btnCreate.setBorderPainted(false);
+        btnCreate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCreateMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCreateMouseEntered(evt);
+            }
+        });
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, -1, -1));
+
+        comboOrgSel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboOrgSel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboOrgSelActionPerformed(evt);
+            }
+        });
+        jPanel2.add(comboOrgSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 150, 140, 26));
+
+        comboEmployeeSel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(comboEmployeeSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 140, 26));
+
+        comboRoleSel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel2.add(comboRoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 140, -1));
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 140, -1));
+
+        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("Delete");
+        btnDelete.setBorderPainted(false);
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseEntered(evt);
+            }
+        });
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 100, -1));
 
         tableUsers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -141,88 +222,7 @@ public class ManageUsers extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableUsers);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 240, 170));
-
-        jLabel2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Select Organization:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel3.setText("Select Employee:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 160, -1));
-
-        jLabel4.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel4.setText("Select Role:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 160, -1));
-
-        jLabel5.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel5.setText("Set Username:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 160, -1));
-        jPanel2.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 180, 140, -1));
-
-        jLabel6.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel6.setText("Set Password:");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 160, -1));
-
-        btnCreate.setBackground(new java.awt.Color(51, 102, 255));
-        btnCreate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
-        btnCreate.setText("Create");
-        btnCreate.setBorderPainted(false);
-        btnCreate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCreateMouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnCreateMouseEntered(evt);
-            }
-        });
-        btnCreate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
-
-        comboOrgSel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        comboOrgSel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboOrgSelActionPerformed(evt);
-            }
-        });
-        jPanel2.add(comboOrgSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 140, 26));
-
-        comboEmployeeSel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(comboEmployeeSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 140, 26));
-
-        comboRoleSel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(comboRoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 150, 140, -1));
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 220, 140, -1));
-
-        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
-        btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setText("Delete");
-        btnDelete.setBorderPainted(false);
-        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnDeleteMouseExited(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnDeleteMouseEntered(evt);
-            }
-        });
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 260, 100, -1));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 240, 200));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 14, -1, -1));
 
@@ -232,19 +232,15 @@ public class ManageUsers extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1300, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(256, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(450, Short.MAX_VALUE)))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1062, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 238, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(129, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(200, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

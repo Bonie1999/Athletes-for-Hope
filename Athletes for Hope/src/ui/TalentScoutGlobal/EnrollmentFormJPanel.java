@@ -77,23 +77,23 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
 
         namesurvivorjLabel.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         namesurvivorjLabel.setText("Name of Child : ");
-        jPanel2.add(namesurvivorjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 135, -1));
+        jPanel2.add(namesurvivorjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 135, -1));
 
         relationjLabel.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         relationjLabel.setText("                Gender : ");
-        jPanel2.add(relationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 76, 210, -1));
+        jPanel2.add(relationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 210, -1));
 
         lblType.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblType.setText("         Sport :");
-        jPanel2.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 142, 20));
+        jPanel2.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 142, 20));
 
         lblLocation.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblLocation.setText("            Address : ");
-        jPanel2.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 180, -1));
+        jPanel2.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 180, -1));
 
         lblDate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblDate.setText("Date of Enrollment :");
-        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 170, 20));
+        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 170, 20));
 
         lblDetails.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblDetails.setText("Parent Name :");
@@ -101,7 +101,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
 
         lblNameofSuspect.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblNameofSuspect.setText("         Weight :");
-        jPanel2.add(lblNameofSuspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 140, -1));
+        jPanel2.add(lblNameofSuspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 140, -1));
 
         txtChildName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +143,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 230, 50));
 
-        ReportjButton.setBackground(new java.awt.Color(51, 102, 255));
+        ReportjButton.setBackground(new java.awt.Color(255, 146, 1));
         ReportjButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         ReportjButton.setForeground(new java.awt.Color(255, 255, 255));
         ReportjButton.setText("Enroll");
@@ -165,7 +165,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
 
         lblAgeofChild.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblAgeofChild.setText("Age :");
-        jPanel2.add(lblAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 49, 50, -1));
+        jPanel2.add(lblAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 50, -1));
         jPanel2.add(dateOfIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 230, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 844, 633));
@@ -177,18 +177,14 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             .addGap(0, 1300, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1082, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 218, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
