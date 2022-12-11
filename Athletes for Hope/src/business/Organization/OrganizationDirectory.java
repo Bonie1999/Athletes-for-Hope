@@ -29,6 +29,7 @@ public class OrganizationDirectory {
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.PhysicalTraining.getValue())){
             organization = new PhysicalTrainingOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Diagnostic.getValue())){
@@ -37,22 +38,27 @@ public class OrganizationDirectory {
         }
         else if (type.getValue().equals(Type.SportsFund.getValue())){
             organization = new SportsFundOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Health.getValue())){
             organization = new HealthOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.TalentRecruitment.getValue())){
             organization = new TalentRecruitmentOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.MentalHealth.getValue())){
             organization = new MentalHealthOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Nutrabay.getValue())){
             organization = new NutrabayOrganization();
+            System.out.println(organization);
             organizationList.add(organization);
         }
         return organization;

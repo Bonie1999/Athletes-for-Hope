@@ -47,28 +47,22 @@ public class ManageOrganizations extends javax.swing.JPanel {
                     comboBoxOrgType.addItem(type);
                 }
             }
-        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Wellness")){
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("HealthWellBeing")){
             for (Organization.Type type : Organization.Type.values()){
                 if (type.getValue().equals(Organization.Type.PhysicalTraining.getValue()) || type.getValue().equals(Organization.Type.Diagnostic.getValue())
                         || type.getValue().equals(Organization.Type.MentalHealth.getValue())){
                     comboBoxOrgType.addItem(type);
                 }
             }
-        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Justice")){
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Insurance")){
             for (Organization.Type type : Organization.Type.values()){
                 if (type.getValue().equals(Organization.Type.Health.getValue())){
                     comboBoxOrgType.addItem(type);
                 }
             }
-        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Pharmaceutical")){
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Nutrition")){
             for (Organization.Type type : Organization.Type.values()){
                 if (type.getValue().equals(Organization.Type.Nutrabay.getValue())){
-                    comboBoxOrgType.addItem(type);
-                }
-            }
-        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Psychiatrist")){
-            for (Organization.Type type : Organization.Type.values()){
-                if (type.getValue().equals(Organization.Type.MentalHealth.getValue())){
                     comboBoxOrgType.addItem(type);
                 }
             }
