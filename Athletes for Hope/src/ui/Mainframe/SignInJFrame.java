@@ -4,6 +4,15 @@
  */
 package ui.Mainframe;
 
+import business.EcoSystem;
+import business.DB4OUtil.DB4OUtil;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +22,16 @@ public class SignInJFrame extends javax.swing.JFrame {
     /**
      * Creates new form SignInJFrame
      */
+    private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public SignInJFrame() {
         initComponents();
+        initComponents();
+        system = dB4OUtil.retrieveSystem();
+        this.setSize(1080, 680);
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(230);
+        this.setExtendedState(SignInJFrame.MAXIMIZED_BOTH);
     }
 
     /**

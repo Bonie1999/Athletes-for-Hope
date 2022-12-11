@@ -4,6 +4,32 @@
  */
 package ui.Mainframe;
 
+import ui.Mainframe.MainJFrame;
+import business.DB4OUtil.DB4OUtil;
+import business.EcoSystem;
+import business.Employee.Employee;
+import business.Enterprise.Enterprise;
+import business.Enterprise.EnterpriseDirectory;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.Role.TalentScoutRole;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import static java.time.Clock.system;
+import java.util.Properties;
+import javax.imageio.ImageIO;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.swing.ImageIcon;
+import javax.mail.PasswordAuthentication;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Transport;
+import javax.swing.JOptionPane;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +39,24 @@ public class SignUpJFrame extends javax.swing.JFrame {
     /**
      * Creates new form SignUpJFrame
      */
+    EnterpriseDirectory enterpriseDirectory;
+    private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public SignUpJFrame() {
         initComponents();
+        initComponents();
+        system = dB4OUtil.retrieveSystem();
+        this.setSize(1080, 680);
+        this.setExtendedState(MainJFrame.MAXIMIZED_BOTH);
+        populateNetworkComboBox();
+    }
+    
+    private void populateNetworkComboBox(){
+        networkJComboBox.removeAllItems();
+        
+        for (Network network : system.getNetworkList()){
+            networkJComboBox.addItem(network);
+        }
     }
 
     /**
@@ -325,16 +367,16 @@ public class SignUpJFrame extends javax.swing.JFrame {
             System.out.println("start1");
             boolean x = true;
 
-            if(network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.CaseReporter)==null){
+            if(network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.TalentScoutGlobal)==null){
                 x=false;
             }
 
             if(x==true){
-                Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.CaseReporter);
+                Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.TalentScoutGlobal);
                 System.out.println("start2");
                 if(enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization")==null){
                     System.out.println("start3");
-                    Organization.Type type = (Organization.Type) Organization.Type.CaseReporter;
+                    Organization.Type type = (Organization.Type) Organization.Type.TalentScout;
                     Organization org= enterprise.getOrganizationDirectory().createOrganization(type);
                     Employee employee= org.getEmployeeDirectory().createEmployee(name);
                 }
@@ -344,7 +386,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
                     Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization");
                     Employee employee= org.getEmployeeDirectory().createEmployee(name);
                     if(org.getUserAccountDirectory().CheckIsValidInput(password)){
-                        UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new CaseReporterRole());
+                        UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new TalentScoutRole());
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
@@ -354,14 +396,14 @@ public class SignUpJFrame extends javax.swing.JFrame {
                 }
             }
             else{
-                Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise("HS", Enterprise.EnterpriseType.CaseReporter);
+                Enterprise enterprise = network.getEnterpriseDirectory().createAndAddEnterprise("HS", Enterprise.EnterpriseType.TalentScoutGlobal);
                 if(enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization")==null){
                     System.out.println("start3");
-                    Organization.Type type = (Organization.Type) Organization.Type.CaseReporter;
+                    Organization.Type type = (Organization.Type) Organization.Type.TalentScout;
                     Organization org= enterprise.getOrganizationDirectory().createOrganization(type);
                     Employee employee= org.getEmployeeDirectory().createEmployee(name);
                     if(org.getUserAccountDirectory().CheckIsValidInput(password)){
-                        UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new CaseReporterRole());
+                        UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new TalentScoutRole());
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
@@ -375,7 +417,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
                     Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization");
                     Employee employee= org.getEmployeeDirectory().createEmployee(name);
                     if(org.getUserAccountDirectory().CheckIsValidInput(password)){
-                        UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new CaseReporterRole());
+                        UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new TalentScoutRole());
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
@@ -386,7 +428,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
             }
 
             this.setVisible(false);
-            Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.CaseReporter);
+            Enterprise enterprise = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.TalentScoutGlobal);
             Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization");
             UserAccount ua= org.getUserAccountDirectory().authenticateUserAccnt(username, password);
             //ReportJFrame r = new ReportJFrame(system,network,ua,org);
@@ -443,6 +485,17 @@ public class SignUpJFrame extends javax.swing.JFrame {
                 new SignUpJFrame().setVisible(true);
             }
         });
+    }
+    
+    public static boolean isNumber(String price){
+        try{
+            Long.parseLong(price);
+            return true;    
+        }
+        catch(Exception e)
+        {
+             return false;
+        }  
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

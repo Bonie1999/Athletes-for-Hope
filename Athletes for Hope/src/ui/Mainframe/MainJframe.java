@@ -4,17 +4,29 @@
  */
 package ui.Mainframe;
 
+import business.DB4OUtil.DB4OUtil;
+import business.EcoSystem;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import business.EcoSystem;
 /**
  *
  * @author puranjaimendiratta
  */
-public class MainJframe extends javax.swing.JFrame {
+public class MainJFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainJframe
+     * Creates new form MainJFrame
      */
-    public MainJframe() {
+    private EcoSystem system;
+    private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
+    public MainJFrame() {
         initComponents();
+        
+        system = dB4OUtil.retrieveSystem();
+        this.setSize(1080, 680);
+        this.setExtendedState(MainJFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -34,7 +46,6 @@ public class MainJframe extends javax.swing.JFrame {
         SigninjButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1300, 700));
 
         TopPanel.setBackground(new java.awt.Color(129, 178, 154));
         TopPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -137,20 +148,21 @@ public class MainJframe extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainJframe().setVisible(true);
+                new MainJFrame().setVisible(true);
             }
         });
     }
