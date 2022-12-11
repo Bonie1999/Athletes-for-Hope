@@ -66,7 +66,6 @@ public class SignUpJFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -89,11 +88,15 @@ public class SignUpJFrame extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/Mainframe/Volunteer-scaled.jpg"))); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Monaco", 1, 36)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(1, 81, 92));
+
+        jLabel5.setFont(new java.awt.Font("Monaco", 1, 48)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 146, 1));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Talent Scout Volunteer");
 
         fnamejLabel.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        fnamejLabel.setForeground(new java.awt.Color(255, 146, 1));
         fnamejLabel.setText("Full Name");
 
         passwordJPasswordField.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +106,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
         });
 
         contactjLabel.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        contactjLabel.setForeground(new java.awt.Color(255, 146, 1));
         contactjLabel.setText("Contact Number");
 
         contactTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -119,17 +123,20 @@ public class SignUpJFrame extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 146, 1));
         jLabel2.setText("City");
 
         usernamejLabel.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        usernamejLabel.setForeground(new java.awt.Color(255, 146, 1));
         usernamejLabel.setText("Username");
 
         passwordjLabel.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        passwordjLabel.setForeground(new java.awt.Color(255, 146, 1));
         passwordjLabel.setText("Password");
 
-        signupjButton.setBackground(java.awt.SystemColor.controlShadow);
+        signupjButton.setBackground(new java.awt.Color(255, 146, 1));
         signupjButton.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        signupjButton.setForeground(new java.awt.Color(61, 64, 91));
+        signupjButton.setForeground(new java.awt.Color(255, 255, 255));
         signupjButton.setText("Submit ");
         signupjButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -146,11 +153,12 @@ public class SignUpJFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 146, 1));
         jLabel1.setText("Enter your details");
 
-        signupjButton1.setBackground(java.awt.SystemColor.controlShadow);
+        signupjButton1.setBackground(new java.awt.Color(255, 146, 1));
         signupjButton1.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        signupjButton1.setForeground(new java.awt.Color(61, 64, 91));
+        signupjButton1.setForeground(new java.awt.Color(255, 255, 255));
         signupjButton1.setText("Sign In");
         signupjButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -217,9 +225,9 @@ public class SignUpJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -268,11 +276,8 @@ public class SignUpJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
