@@ -100,7 +100,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         jPanel2.add(lblDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 110, -1));
 
         lblNameofSuspect.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblNameofSuspect.setText("         Height :");
+        lblNameofSuspect.setText("         Weight :");
         jPanel2.add(lblNameofSuspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 140, -1));
 
         txtChildName.addActionListener(new java.awt.event.ActionListener() {
@@ -211,30 +211,22 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         //for choosing relations
         if(friendRadioButton.isSelected())
         {
-            request.setRelation("Friend");
+            request.setRelation("Male");
         }
         else if(parentRadioButton.isSelected())
         {
-            request.setRelation("Parent");
+            request.setRelation("Female");
         }
-        else if(Selfradiobutton.isSelected())
-        {
-            request.setRelation("Self");
-
-        }
-        else if(otherRadioButton.isSelected())
-        {
-            request.setRelation("Other");
-        }
+      
         else
         {
-            JOptionPane.showMessageDialog(null, "Please select a relation");
+            JOptionPane.showMessageDialog(null, "Please select a gender");
 
         }
         //for choosing type
         if(comboBoxIncident.getSelectedItem().toString().equalsIgnoreCase("Select one"))
         {
-            JOptionPane.showMessageDialog(null, "Please select a type");
+            JOptionPane.showMessageDialog(null, "Please select a Sport");
         }
         else{
             request.setSportType(comboBoxIncident.getSelectedItem().toString());
@@ -251,19 +243,19 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         //more detaisl
         if(txtMoreDetails.getText()==null)
         {
-            JOptionPane.showMessageDialog(null, "Please fill more details");
+            JOptionPane.showMessageDialog(null, "Please enter parent name");
             return;
         }
         request.setParentName(txtMoreDetails.getText());
         //suspect
-        if(knownRadioButton.isSelected())
-        {
-            request.setHeight("Known");
-        }
-        else if(unknownRadioButton.isSelected())
-        {
-            request.setHeight("Unknown");
-        }else{JOptionPane.showMessageDialog(null, "Please select a suspect type");}
+//        if(knownRadioButton.isSelected())
+//        {
+//            request.setHeight("Known");
+//        }
+//        else if(unknownRadioButton.isSelected())
+//        {
+//            request.setHeight("Unknown");
+//        }else{JOptionPane.showMessageDialog(null, "Please select a suspect type");}
 
         //name of suspect
         request.setWeight(txtSuspectName.getText());
@@ -291,10 +283,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             txtAgeofChild.setText("");
             friendRadioButton.setSelected(false);
             parentRadioButton.setSelected(false);
-            Selfradiobutton.setSelected(false);
-            otherRadioButton.setSelected(false);
-            knownRadioButton.setSelected(false);
-            unknownRadioButton.setSelected(false);
+           
             comboBoxIncident.setSelectedIndex(0);
             // dateOfIncident.setDate(null);
             userAccount.getWrkQue().getTalentScoutWorkRequestList().add(request);
