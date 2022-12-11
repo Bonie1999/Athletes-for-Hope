@@ -52,17 +52,16 @@ public class SignInJFrame extends javax.swing.JFrame {
         logoutJButton = new javax.swing.JButton();
         logoutJButton1 = new javax.swing.JButton();
         container = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(242, 204, 143));
+        jPanel1.setBackground(new java.awt.Color(1, 81, 92));
         jPanel1.setMinimumSize(new java.awt.Dimension(200, 100));
+        jPanel1.setPreferredSize(new java.awt.Dimension(172, 501));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         UsernamejLabel.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        UsernamejLabel.setForeground(new java.awt.Color(61, 64, 91));
+        UsernamejLabel.setForeground(new java.awt.Color(255, 146, 1));
         UsernamejLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UsernamejLabel.setText("UserName");
         jPanel1.add(UsernamejLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 140, 22));
@@ -75,7 +74,7 @@ public class SignInJFrame extends javax.swing.JFrame {
         jPanel1.add(userNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 78, 140, 30));
 
         PasswordjLabel.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        PasswordjLabel.setForeground(new java.awt.Color(61, 64, 91));
+        PasswordjLabel.setForeground(new java.awt.Color(255, 146, 1));
         PasswordjLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PasswordjLabel.setText("Password");
         jPanel1.add(PasswordjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 130, 21));
@@ -87,9 +86,9 @@ public class SignInJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 140, 30));
 
-        loginJButton.setBackground(new java.awt.Color(129, 178, 154));
+        loginJButton.setBackground(new java.awt.Color(255, 146, 1));
         loginJButton.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        loginJButton.setForeground(new java.awt.Color(61, 64, 91));
+        loginJButton.setForeground(new java.awt.Color(255, 255, 255));
         loginJButton.setText("Sign In");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,9 +97,9 @@ public class SignInJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(loginJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 130, -1));
 
-        logoutJButton.setBackground(new java.awt.Color(129, 178, 154));
+        logoutJButton.setBackground(new java.awt.Color(255, 146, 1));
         logoutJButton.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        logoutJButton.setForeground(new java.awt.Color(61, 64, 91));
+        logoutJButton.setForeground(new java.awt.Color(255, 255, 255));
         logoutJButton.setText("Sign Out");
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,9 +108,9 @@ public class SignInJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(logoutJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 130, -1));
 
-        logoutJButton1.setBackground(new java.awt.Color(129, 178, 154));
+        logoutJButton1.setBackground(new java.awt.Color(255, 146, 1));
         logoutJButton1.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        logoutJButton1.setForeground(new java.awt.Color(61, 64, 91));
+        logoutJButton1.setForeground(new java.awt.Color(255, 255, 255));
         logoutJButton1.setText("Sign Up");
         logoutJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,36 +126,21 @@ public class SignInJFrame extends javax.swing.JFrame {
         container.setLayout(new java.awt.CardLayout());
         jSplitPane1.setRightComponent(container);
 
-        jPanel2.setBackground(new java.awt.Color(129, 178, 154));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Every Kid Sports");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 0, -1, 50));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 11, Short.MAX_VALUE)))
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 644, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(50, 59, Short.MAX_VALUE)
-                    .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 0, 0)
+                .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -300,9 +284,7 @@ public class SignInJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel PasswordjLabel;
     private javax.swing.JLabel UsernamejLabel;
     private javax.swing.JPanel container;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginJButton;
     private javax.swing.JButton logoutJButton;

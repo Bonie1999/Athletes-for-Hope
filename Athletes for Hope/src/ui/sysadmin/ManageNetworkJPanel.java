@@ -346,18 +346,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private void UpdatePieData(Organization org) {
      
        
-//      piechartsea.clear();
-//      piechartsea.put("Labor",org.getWorkQueue().getcountbytypesa("Labor"));
-//      piechartsea.put("Physical Abuse", org.getWorkQueue().getcountbytypesa("Physical Abuse"));
-//      piechartsea.put("Sexual Abuse", org.getWorkQueue().getcountbytypesa("Sexual Abuse"));
-//      piechartsea.put("Harrassment", org.getWorkQueue().getcountbytypesa("Harrassment"));
-//      piechartsea.put("Other", org.getWorkQueue().getcountbytypesa("Other"));
+
       piechartsea.clear();
-      piechartsea.put("Labor",org.getWorkQueue().getcountbytypesa("Labor"));
-      piechartsea.put("Physical Abuse", org.getWorkQueue().getcountbytypesa("Physical Abuse"));
-      piechartsea.put("Sexual Abuse", org.getWorkQueue().getcountbytypesa("Sexual Abuse"));
-      piechartsea.put("Harrassment", org.getWorkQueue().getcountbytypesa("Harrassment"));
-      piechartsea.put("Other", org.getWorkQueue().getcountbytypesa("Other"));
+      piechartsea.put("Cricket",org.getWorkQueue().getcountbytypesa("Cricket"));
+      piechartsea.put("Hockey", org.getWorkQueue().getcountbytypesa("Hockey"));
+      piechartsea.put("Football", org.getWorkQueue().getcountbytypesa("Football"));
+      piechartsea.put("Basket Ball", org.getWorkQueue().getcountbytypesa("Basket Ball"));
+      piechartsea.put("Atheletics", org.getWorkQueue().getcountbytypesa("Atheletics"));
       //this.updateSeattlePieChart();
         
     }

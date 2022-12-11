@@ -43,6 +43,7 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnManageOrg = new javax.swing.JButton();
@@ -50,7 +51,6 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         btnManageEmployeeAccess = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtFieldEnterpriseName = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1300, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,6 +59,21 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 942, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 676, Short.MAX_VALUE)
+        );
+
+        jSplitPane1.setRightComponent(jPanel4);
 
         jPanel3.setBackground(new java.awt.Color(253, 235, 208));
         jPanel3.setForeground(new java.awt.Color(51, 102, 255));
@@ -178,22 +193,7 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(11, 4, 0, 0);
         jPanel3.add(txtFieldEnterpriseName, gridBagConstraints);
 
-        jSplitPane1.setTopComponent(jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 918, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 453, Short.MAX_VALUE)
-        );
-
-        jSplitPane1.setRightComponent(jPanel4);
+        jSplitPane1.setLeftComponent(jPanel3);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -208,51 +208,51 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 57, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 11, 1020, 677));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, 1300, 700));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnManageOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageOrgMouseExited
-        btnManageOrg.setForeground(Color.white);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageOrgMouseExited
-
-    private void btnManageOrgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageOrgMouseEntered
-        btnManageOrg.setForeground(Color.black);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageOrgMouseEntered
-
-    private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
-        ManageOrganizations manageorganizationsJPanel=new ManageOrganizations(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
-        jSplitPane1.setBottomComponent(manageorganizationsJPanel);
-    }//GEN-LAST:event_btnManageOrgActionPerformed
-
-    private void btnManageEmployeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeMouseExited
-        btnManageEmployee.setForeground(Color.white);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageEmployeeMouseExited
-
-    private void btnManageEmployeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeMouseEntered
-        btnManageEmployee.setForeground(Color.black);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageEmployeeMouseEntered
-
-    private void btnManageEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployeeActionPerformed
-        ManageEmployee manageemployeeJPanel=new ManageEmployee(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
-        jSplitPane1.setBottomComponent(manageemployeeJPanel);
-    }//GEN-LAST:event_btnManageEmployeeActionPerformed
-
-    private void btnManageEmployeeAccessMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeAccessMouseExited
-        btnManageEmployeeAccess.setForeground(Color.white);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageEmployeeAccessMouseExited
-
-    private void btnManageEmployeeAccessMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeAccessMouseEntered
-        btnManageEmployeeAccess.setForeground(Color.black);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnManageEmployeeAccessMouseEntered
+    private void txtFieldEnterpriseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldEnterpriseNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFieldEnterpriseNameActionPerformed
 
     private void btnManageEmployeeAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployeeAccessActionPerformed
         ManageUsers manageuserJPanel=new ManageUsers(userProcessContainer,enterprise, system);
         jSplitPane1.setBottomComponent(manageuserJPanel);
     }//GEN-LAST:event_btnManageEmployeeAccessActionPerformed
 
-    private void txtFieldEnterpriseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldEnterpriseNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFieldEnterpriseNameActionPerformed
+    private void btnManageEmployeeAccessMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeAccessMouseEntered
+        btnManageEmployeeAccess.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageEmployeeAccessMouseEntered
+
+    private void btnManageEmployeeAccessMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeAccessMouseExited
+        btnManageEmployeeAccess.setForeground(Color.white);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageEmployeeAccessMouseExited
+
+    private void btnManageEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployeeActionPerformed
+        ManageEmployee manageemployeeJPanel=new ManageEmployee(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
+        jSplitPane1.setBottomComponent(manageemployeeJPanel);
+    }//GEN-LAST:event_btnManageEmployeeActionPerformed
+
+    private void btnManageEmployeeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeMouseEntered
+        btnManageEmployee.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageEmployeeMouseEntered
+
+    private void btnManageEmployeeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageEmployeeMouseExited
+        btnManageEmployee.setForeground(Color.white);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageEmployeeMouseExited
+
+    private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
+        ManageOrganizations manageorganizationsJPanel=new ManageOrganizations(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
+        jSplitPane1.setBottomComponent(manageorganizationsJPanel);
+    }//GEN-LAST:event_btnManageOrgActionPerformed
+
+    private void btnManageOrgMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageOrgMouseEntered
+        btnManageOrg.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageOrgMouseEntered
+
+    private void btnManageOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageOrgMouseExited
+        btnManageOrg.setForeground(Color.white);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnManageOrgMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
