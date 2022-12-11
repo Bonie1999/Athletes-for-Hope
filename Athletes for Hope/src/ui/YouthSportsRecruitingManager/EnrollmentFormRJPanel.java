@@ -77,21 +77,21 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         txtVolunteerName = new javax.swing.JTextField();
         txtTypeofAssault = new javax.swing.JTextField();
         txtDateofIncident = new javax.swing.JTextField();
-        btnBack = new javax.swing.JButton();
-        lblVictimInfo = new javax.swing.JLabel();
         btnReqLawyer = new javax.swing.JButton();
-        btnReqCounsellar = new javax.swing.JButton();
         btnReqDoc = new javax.swing.JButton();
         btnReqPsych = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnReqCounsellar = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        lblVictimInfo = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(244, 241, 222));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(242, 204, 143));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblDate.setBackground(new java.awt.Color(242, 204, 143));
+        lblDate.setBackground(new java.awt.Color(255, 255, 255));
+        lblDate.setForeground(new java.awt.Color(255, 255, 255));
 
         lblVictimName.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblVictimName.setText("Child name : ");
@@ -144,6 +144,82 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnReqLawyer.setBackground(new java.awt.Color(255, 146, 1));
+        btnReqLawyer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnReqLawyer.setForeground(new java.awt.Color(255, 255, 255));
+        btnReqLawyer.setText("Insurance Agent");
+        btnReqLawyer.setBorderPainted(false);
+        btnReqLawyer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnReqLawyerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnReqLawyerMouseExited(evt);
+            }
+        });
+        btnReqLawyer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReqLawyerActionPerformed(evt);
+            }
+        });
+
+        btnReqDoc.setBackground(new java.awt.Color(255, 146, 1));
+        btnReqDoc.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnReqDoc.setForeground(new java.awt.Color(255, 255, 255));
+        btnReqDoc.setText("Training Coach");
+        btnReqDoc.setBorderPainted(false);
+        btnReqDoc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnReqDocMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnReqDocMouseExited(evt);
+            }
+        });
+        btnReqDoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReqDocActionPerformed(evt);
+            }
+        });
+
+        btnReqPsych.setBackground(new java.awt.Color(255, 146, 1));
+        btnReqPsych.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnReqPsych.setForeground(new java.awt.Color(255, 255, 255));
+        btnReqPsych.setText("Mental Health Coach");
+        btnReqPsych.setBorderPainted(false);
+        btnReqPsych.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnReqPsychMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnReqPsychMouseExited(evt);
+            }
+        });
+        btnReqPsych.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReqPsychActionPerformed(evt);
+            }
+        });
+
+        btnReqCounsellar.setBackground(new java.awt.Color(255, 146, 1));
+        btnReqCounsellar.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnReqCounsellar.setForeground(new java.awt.Color(255, 255, 255));
+        btnReqCounsellar.setText("Fund Allocator");
+        btnReqCounsellar.setBorderPainted(false);
+        btnReqCounsellar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnReqCounsellarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnReqCounsellarMouseExited(evt);
+            }
+        });
+        btnReqCounsellar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReqCounsellarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout lblDateLayout = new javax.swing.GroupLayout(lblDate);
         lblDate.setLayout(lblDateLayout);
         lblDateLayout.setHorizontalGroup(
@@ -152,31 +228,49 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(lblDateLayout.createSequentialGroup()
-                        .addComponent(lblNameSuspect, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtNameofSuspect, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(lblDateLayout.createSequentialGroup()
-                        .addComponent(timejLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtDateofIncident, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnReqLawyer, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(lblDateLayout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addComponent(btnReqDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnReqPsych, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnReqCounsellar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(lblDateLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNameofSuspect, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(lblDateLayout.createSequentialGroup()
                         .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblVictimName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblTypeofAssault, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblRelation, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                        .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtTypeofAssault, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
-                            .addComponent(txtLocation, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtVolunteerName)
-                            .addComponent(txtVictimName)))
-                    .addGroup(lblDateLayout.createSequentialGroup()
-                        .addComponent(lblMoreDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtMoreDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(84, 84, 84))
+                            .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(lblDateLayout.createSequentialGroup()
+                                    .addComponent(lblNameSuspect, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(78, 78, 78))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, lblDateLayout.createSequentialGroup()
+                                    .addGap(38, 38, 38)
+                                    .addComponent(lblVictimName, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(lblDateLayout.createSequentialGroup()
+                                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(timejLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblTypeofAssault, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblRelation)))
+                                .addGap(68, 68, 68)
+                                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDateofIncident, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtVictimName, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtVolunteerName, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTypeofAssault, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(lblDateLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(lblMoreDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46)
+                                .addComponent(txtMoreDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(477, Short.MAX_VALUE))))
         );
         lblDateLayout.setVerticalGroup(
             lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,11 +288,11 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
                     .addComponent(lblTypeofAssault)
                     .addComponent(txtTypeofAssault, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLocation)
-                    .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLocation))
+                .addGap(23, 23, 23)
+                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(timejLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDateofIncident, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -209,10 +303,16 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
                 .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNameSuspect)
                     .addComponent(txtNameofSuspect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(lblDateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReqLawyer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReqDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReqPsych, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReqCounsellar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
         );
 
-        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 62, -1, -1));
+        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 62, 850, -1));
 
         btnBack.setBackground(new java.awt.Color(255, 146, 1));
         btnBack.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -234,112 +334,24 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 14, 82, -1));
 
-        lblVictimInfo.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        lblVictimInfo.setForeground(new java.awt.Color(61, 64, 91));
+        lblVictimInfo.setFont(new java.awt.Font("Monaco", 1, 24)); // NOI18N
+        lblVictimInfo.setForeground(new java.awt.Color(255, 146, 1));
         lblVictimInfo.setText("Child Information");
-        jPanel2.add(lblVictimInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 14, 190, 42));
+        jPanel2.add(lblVictimInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 14, 230, 42));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, -1, 500));
-
-        btnReqLawyer.setBackground(new java.awt.Color(255, 146, 1));
-        btnReqLawyer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqLawyer.setForeground(new java.awt.Color(61, 64, 91));
-        btnReqLawyer.setText("Insurance Agent");
-        btnReqLawyer.setBorderPainted(false);
-        btnReqLawyer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnReqLawyerMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnReqLawyerMouseExited(evt);
-            }
-        });
-        btnReqLawyer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReqLawyerActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnReqLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 210, 190, 40));
-
-        btnReqCounsellar.setBackground(new java.awt.Color(255, 146, 1));
-        btnReqCounsellar.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqCounsellar.setForeground(new java.awt.Color(61, 64, 91));
-        btnReqCounsellar.setText("Fund Allocator");
-        btnReqCounsellar.setBorderPainted(false);
-        btnReqCounsellar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnReqCounsellarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnReqCounsellarMouseExited(evt);
-            }
-        });
-        btnReqCounsellar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReqCounsellarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnReqCounsellar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 390, 190, 40));
-
-        btnReqDoc.setBackground(new java.awt.Color(255, 146, 1));
-        btnReqDoc.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqDoc.setForeground(new java.awt.Color(61, 64, 91));
-        btnReqDoc.setText("Training Coach");
-        btnReqDoc.setBorderPainted(false);
-        btnReqDoc.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnReqDocMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnReqDocMouseExited(evt);
-            }
-        });
-        btnReqDoc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReqDocActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnReqDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 270, 190, 41));
-
-        btnReqPsych.setBackground(new java.awt.Color(255, 146, 1));
-        btnReqPsych.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqPsych.setForeground(new java.awt.Color(61, 64, 91));
-        btnReqPsych.setText("Mental Health Coach");
-        btnReqPsych.setBorderPainted(false);
-        btnReqPsych.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnReqPsychMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnReqPsychMouseExited(evt);
-            }
-        });
-        btnReqPsych.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReqPsychActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnReqPsych, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 330, 190, 40));
-
-        jLabel1.setFont(new java.awt.Font("Monaco", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("REQUEST");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 150, 140, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 20, 940, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 992, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -405,7 +417,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
             userAccount.getWrkQue().getInsuranceAgentWorkRequestList().add(legalawyerequest);
         }
 
-        JOptionPane.showMessageDialog(null, "Request submitted to Lawyer.");
+        JOptionPane.showMessageDialog(null, "Request submitted to Insurance Agent.");
         // TODO add your handling code here:
     }//GEN-LAST:event_btnReqLawyerActionPerformed
 
@@ -438,7 +450,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
             userAccount.getWrkQue().getFundAllocatorWorkRequestList().add(counsellarreq);
         }
 
-        JOptionPane.showMessageDialog(null, "Request submitted to Counsellar");
+        JOptionPane.showMessageDialog(null, "Request submitted to Fund Allocator");
         // TODO add your handling code here:
 
     }//GEN-LAST:event_btnReqCounsellarActionPerformed
@@ -472,7 +484,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
             userAccount.getWrkQue().getTrainingCoachWorkRequestList().add(docrequest);
         }
 
-        JOptionPane.showMessageDialog(null, "Request submitted to Hosptital.");
+        JOptionPane.showMessageDialog(null, "Request submitted to Training Coach.");
     }//GEN-LAST:event_btnReqDocActionPerformed
 
     private void btnReqPsychMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReqPsychMouseEntered
@@ -505,7 +517,7 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
             userAccount.getWrkQue().getMentalHealthCoachWorkRequestList().add(psychrequest);
         }
 
-        JOptionPane.showMessageDialog(null, "Request submitted to Psychiatrist");
+        JOptionPane.showMessageDialog(null, "Request submitted to Mental Health Coach");
     }//GEN-LAST:event_btnReqPsychActionPerformed
 
     private void txtMoreDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMoreDetailsActionPerformed
@@ -531,7 +543,6 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnReqDoc;
     private javax.swing.JButton btnReqLawyer;
     private javax.swing.JButton btnReqPsych;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel lblDate;
