@@ -169,11 +169,11 @@ public class ManageOrganizations extends javax.swing.JPanel {
         btnDltOrg.setText("Delete Organization");
         btnDltOrg.setBorderPainted(false);
         btnDltOrg.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnDltOrgMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDltOrgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDltOrgMouseExited(evt);
             }
         });
         btnDltOrg.addActionListener(new java.awt.event.ActionListener() {
