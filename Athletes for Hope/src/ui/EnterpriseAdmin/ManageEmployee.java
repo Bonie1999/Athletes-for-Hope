@@ -96,7 +96,7 @@ public void populateOrganizationComboBox(){
         jLabel1.setForeground(new java.awt.Color(230, 126, 34));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Employee");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 671, 37));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 671, 37));
 
         tableOrg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,24 +119,24 @@ public void populateOrganizationComboBox(){
         });
         jScrollPane1.setViewportView(tableOrg);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 220, 100));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 180, 220, 100));
 
         lblSelectOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblSelectOrg.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         lblSelectOrg.setText("Select Organization:");
-        jPanel2.add(lblSelectOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 120, 180, 20));
+        jPanel2.add(lblSelectOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 180, 20));
 
         jLabel3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         jLabel3.setText("Name:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 139, 22));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 139, 22));
 
         nameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameJTextFieldActionPerformed(evt);
             }
         });
-        jPanel2.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 120, -1));
+        jPanel2.add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 120, -1));
 
         btnCreateEmployee.setBackground(new java.awt.Color(255, 146, 1));
         btnCreateEmployee.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -156,7 +156,7 @@ public void populateOrganizationComboBox(){
                 btnCreateEmployeeActionPerformed(evt);
             }
         });
-        jPanel2.add(btnCreateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 202, -1, -1));
+        jPanel2.add(btnCreateEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, -1, -1));
 
         organizationEmpJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationEmpJComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +164,7 @@ public void populateOrganizationComboBox(){
                 organizationEmpJComboBoxActionPerformed(evt);
             }
         });
-        jPanel2.add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 120, 20));
+        jPanel2.add(organizationEmpJComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 120, 20));
 
         Deletebtn.setBackground(new java.awt.Color(255, 146, 1));
         Deletebtn.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -184,22 +184,20 @@ public void populateOrganizationComboBox(){
                 DeletebtnActionPerformed(evt);
             }
         });
-        jPanel2.add(Deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
+        jPanel2.add(Deletebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(483, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 483, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

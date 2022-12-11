@@ -102,13 +102,13 @@ public class ManageOrganizations extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableOrg = new javax.swing.JTable();
-        lblOrgType = new javax.swing.JLabel();
         btnAddOrg = new javax.swing.JButton();
-        comboBoxOrgType = new javax.swing.JComboBox();
         btnDltOrg = new javax.swing.JButton();
+        lblOrgType = new javax.swing.JLabel();
+        comboBoxOrgType = new javax.swing.JComboBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1300, 700));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -118,12 +118,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(230, 126, 34));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Manage Organization(s)");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 656, 41));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 38, -1, -1));
 
         tableOrg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -146,11 +141,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableOrg);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 210, 98));
-
-        lblOrgType.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblOrgType.setText("Organization Type:");
-        jPanel2.add(lblOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, -1, 26));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 210, 98));
 
         btnAddOrg.setBackground(new java.awt.Color(255, 146, 1));
         btnAddOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -170,10 +161,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
                 btnAddOrgActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAddOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
-
-        comboBoxOrgType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(comboBoxOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 155, -1));
+        jPanel1.add(btnAddOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, -1));
 
         btnDltOrg.setBackground(new java.awt.Color(255, 146, 1));
         btnDltOrg.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -193,11 +181,22 @@ public class ManageOrganizations extends javax.swing.JPanel {
                 btnDltOrgActionPerformed(evt);
             }
         });
-        jPanel2.add(btnDltOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 140, -1, -1));
+        jPanel1.add(btnDltOrg, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 38, -1, -1));
+        lblOrgType.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        lblOrgType.setText("Organization Type:");
+        jPanel1.add(lblOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, 26));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 138, 676, 423));
+        comboBoxOrgType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel1.add(comboBoxOrgType, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 155, 30));
+
+        jLabel1.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(230, 126, 34));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Manage Organization(s)");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 656, 41));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-2, 1, 1300, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddOrgMouseExited
