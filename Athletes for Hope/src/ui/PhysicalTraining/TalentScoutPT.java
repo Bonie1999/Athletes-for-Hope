@@ -12,7 +12,7 @@ import business.Organization.NutrabayOrganization;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.TalentScoutWorkRequest;
 import business.WorkQueue.LabTechnicianWorkRequest;
-import business.WorkQueue.MentalHealthCoachWorkRequest;
+import business.WorkQueue.SupplementSalesRepWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -410,7 +410,7 @@ public class TalentScoutPT extends javax.swing.JPanel {
             userAccount.getWrkQue().getLabTechnicianWorkRequest().add(labrequest);
         }
 
-        RequestLabTestJPanel requestLabTestJPanel = new RequestLabTestJPanel(userProcessContainer,system,labrequest,userAccount,network);
+        RequestLabTest requestLabTestJPanel = new RequestLabTest(userProcessContainer,system,labrequest,userAccount,network);
         userProcessContainer.add("caseReportJPanel", requestLabTestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -448,34 +448,34 @@ public class TalentScoutPT extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        PharmacistWorkRequest prequest = new PharmacistWorkRequest();
-        prequest.setDoctorWorkRequest(request.getDoctorWorkRequest());
-        request.getDoctorWorkRequest().setPharmacistWorkRequest(prequest);
+        SupplementSalesRepWorkRequest prequest = new SupplementSalesRepWorkRequest();
+        prequest.setTrainingCoachWorkRequest(request.getTrainingCoachWorkRequest());
+        request.getTrainingCoachWorkRequest().setSupplementSalesRepWorkRequest(prequest);
         prequest.setSender(userAccount);
         prequest.setStatus("Waiting");
         if (userAccount==null){
             System.out.println("userAccount is not set");
         }
 
-        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Pharmaceutical);
+        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Nutrition);
         Organization org = null;
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof PharmacyOrganization){
+            if (organization instanceof NutrabayOrganization){
                 org = organization;
                 break;
             }
         }
         if (org!=null){
-            org.getWorkQueue().getPharmacistWorkRequest().add(prequest);
+            org.getWorkQueue().getSupplementSalesRepWorkRequest().add(prequest);
             //userAccount.getWorkQueue().getHelpSeekerworkRequestList().add(request);
-            if(userAccount.getWrkQue().getLabAssistanceWorkRequest()==null){
+            if(userAccount.getWrkQue().getLabTechnicianWorkRequest()==null){
                 System.out.println("True");
             }
-            userAccount.getWrkQue().getPharmacistWorkRequest().add(prequest);
+            userAccount.getWrkQue().getSupplementSalesRepWorkRequest().add(prequest);
         }
 
-        PrescribeMedicinesJPanel requestLabTestJPanel = new PrescribeMedicinesJPanel(userProcessContainer,system,prequest);
-        userProcessContainer.add("caseReportJPanel", requestLabTestJPanel);
+        //PrescribeMedicinesJPanel requestLabTestJPanel = new PrescribeMedicinesJPanel(userProcessContainer,system,prequest);
+      //  userProcessContainer.add("caseReportJPanel", requestLabTestJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -502,7 +502,7 @@ public class TalentScoutPT extends javax.swing.JPanel {
         {
             Message msg=new MimeMessage(session);
             msg.setFrom(new InternetAddress(FromEmail));
-            msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(request.getEmail()));
+//            msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(request.getEmail()));
             msg.setSubject("A Doctor has been assigned.");
             msg.setText("Dear "+ request.getChildName()+"\n"+"I am here to help you. Please schedule an appointment through the following link."+"\n"+"calendly.link"+"\n"+"Best,"+"\n"+userAccount.getEmp().getName());
             Transport.send(msg);
@@ -541,8 +541,8 @@ public class TalentScoutPT extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
         */
 
-        DoctorJPanel caseReportJPanel = new DoctorJPanel(userProcessContainer,userAccount,organization,enterprise,system,network);
-        userProcessContainer.add("caseReportJPanel", caseReportJPanel);
+        PhysicalTraining TalentScout = new PhysicalTraining(userProcessContainer,userAccount,organization,enterprise,system,network);
+        userProcessContainer.add("TalentScout", TalentScout);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -576,13 +576,13 @@ public class TalentScoutPT extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 private void PopulateReport() {
         jTextField1.setText(request.getChildName());
-        jTextField5.setText(request.getRelation());
-        jTextField6.setText(request.getAssaultType());
-        jTextField4.setText(request.getLocation());
-        jTextField7.setText(request.getDoi().toString());
-        jTextField3.setText(request.getMoredetails());
-        jTextField8.setText(request.getSuspecttype());
-        jTextField2.setText(request.getNameofsuspect());
+        jTextField5.setText(request.getGender());
+        jTextField6.setText(request.getSportType());
+        jTextField4.setText(request.getAddress());
+        jTextField7.setText(request.getDoe().toString());
+        jTextField3.setText(request.getParentName());
+        jTextField8.setText(request.getHeight());
+        jTextField2.setText(request.getWeight());
         
         
     }

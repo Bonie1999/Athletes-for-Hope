@@ -3,7 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.PhysicalTraining;
-
+import business.EcoSystem;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JPanel;
 /**
  *
  * @author nishank
@@ -13,8 +17,13 @@ public class ViewRequestLabTest extends javax.swing.JPanel {
     /**
      * Creates new form ViewRequestLabTest
      */
-    public ViewRequestLabTest() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    public ViewRequestLabTest(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        PopulateReport();
     }
 
     /**
@@ -185,4 +194,7 @@ public class ViewRequestLabTest extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+private void PopulateReport() {
+        
+    }
 }
