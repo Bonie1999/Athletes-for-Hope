@@ -66,21 +66,21 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 942, Short.MAX_VALUE)
+            .addGap(0, 969, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 676, Short.MAX_VALUE)
+            .addGap(0, 974, Short.MAX_VALUE)
         );
 
         jSplitPane1.setRightComponent(jPanel4);
 
-        jPanel3.setBackground(new java.awt.Color(253, 235, 208));
-        jPanel3.setForeground(new java.awt.Color(51, 102, 255));
+        jPanel3.setBackground(new java.awt.Color(1, 81, 92));
+        jPanel3.setForeground(new java.awt.Color(255, 146, 1));
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Monaco", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 102, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 146, 1));
         jLabel1.setText("Welcome Enterprise Admin");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -91,16 +91,16 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel3.add(jLabel1, gridBagConstraints);
 
         btnManageOrg.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        btnManageOrg.setForeground(new java.awt.Color(51, 102, 255));
+        btnManageOrg.setForeground(new java.awt.Color(255, 146, 1));
         btnManageOrg.setText("Manage Organization(s)");
         btnManageOrg.setBorderPainted(false);
         btnManageOrg.setContentAreaFilled(false);
         btnManageOrg.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnManageOrgMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnManageOrgMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnManageOrgMouseExited(evt);
             }
         });
         btnManageOrg.addActionListener(new java.awt.event.ActionListener() {
@@ -116,16 +116,16 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel3.add(btnManageOrg, gridBagConstraints);
 
         btnManageEmployee.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        btnManageEmployee.setForeground(new java.awt.Color(51, 102, 255));
+        btnManageEmployee.setForeground(new java.awt.Color(255, 146, 1));
         btnManageEmployee.setText("Manage Employee");
         btnManageEmployee.setBorderPainted(false);
         btnManageEmployee.setContentAreaFilled(false);
         btnManageEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnManageEmployeeMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnManageEmployeeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnManageEmployeeMouseExited(evt);
             }
         });
         btnManageEmployee.addActionListener(new java.awt.event.ActionListener() {
@@ -142,16 +142,16 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel3.add(btnManageEmployee, gridBagConstraints);
 
         btnManageEmployeeAccess.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        btnManageEmployeeAccess.setForeground(new java.awt.Color(51, 102, 255));
+        btnManageEmployeeAccess.setForeground(new java.awt.Color(255, 146, 1));
         btnManageEmployeeAccess.setText("Manage User");
         btnManageEmployeeAccess.setBorderPainted(false);
         btnManageEmployeeAccess.setContentAreaFilled(false);
         btnManageEmployeeAccess.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnManageEmployeeAccessMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnManageEmployeeAccessMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnManageEmployeeAccessMouseExited(evt);
             }
         });
         btnManageEmployeeAccess.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +160,7 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -168,7 +168,7 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
         jPanel3.add(btnManageEmployeeAccess, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 102, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 146, 1));
         jLabel2.setText("Your Enterprise is : ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -208,7 +208,7 @@ public class EnterpriseAdminJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 57, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, 1300, 700));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 700));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtFieldEnterpriseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldEnterpriseNameActionPerformed
