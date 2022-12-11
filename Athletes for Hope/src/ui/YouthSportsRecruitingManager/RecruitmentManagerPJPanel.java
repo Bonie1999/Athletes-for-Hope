@@ -4,6 +4,12 @@
  */
 package ui.YouthSportsRecruitingManager;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Organization.TalentRecruitmentOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import javax.swing.JPanel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +19,16 @@ public class RecruitmentManagerPJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RecruitmentManagerPJPanel
      */
-    public RecruitmentManagerPJPanel() {
+    private JPanel userProcCont;
+    private EcoSystem bus;
+    private UserAccount usrAccnt;
+    private TalentRecruitmentOrganization CVOrg; 
+    public RecruitmentManagerPJPanel(JPanel userProcCont, UserAccount usrAccnt, Organization CVOrg,Enterprise enterprise,EcoSystem bus) {
         initComponents();
+        this.userProcCont = userProcCont;
+        this.usrAccnt = usrAccnt;
+        this.bus = bus;
+        this.CVOrg = (TalentRecruitmentOrganization)CVOrg;
     }
 
     /**

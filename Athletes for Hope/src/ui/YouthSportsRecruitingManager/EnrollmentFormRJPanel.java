@@ -4,6 +4,29 @@
  */
 package ui.YouthSportsRecruitingManager;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.SportsFundOrganization;
+import business.Organization.MentalHealthOrganization;
+import business.Organization.PhysicalTrainingOrganization;
+import business.Organization.HealthOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.FundAllocatorWorkRequest;
+import business.WorkQueue.TrainingCoachWorkRequest;
+import business.WorkQueue.MentalHealthCoachWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.Child;
+import business.WorkQueue.Children;
+import business.WorkQueue.InsuranceAgentWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +36,19 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
     /**
      * Creates new form EnrollmentFormRJPanel
      */
-    public EnrollmentFormRJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    TalentScoutWorkRequest request;
+    UserAccount userAccount;
+    Network network;
+    public EnrollmentFormRJPanel(JPanel userProcessContainer, EcoSystem system, TalentScoutWorkRequest request,UserAccount userAccount, Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.request = request;
+        this.userAccount = userAccount;
+        this.network = network;
+        PopulateInfo();
     }
 
     /**
@@ -371,23 +405,23 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReqLawyerMouseExited
 
     private void btnReqLawyerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReqLawyerActionPerformed
-        LawyerWorkRequest legalawyerequest = new LawyerWorkRequest();
+        InsuranceAgentWorkRequest legalawyerequest = new InsuranceAgentWorkRequest();
         legalawyerequest.setStatus("Waiting");
         legalawyerequest.setSender(userAccount);
-        legalawyerequest.setCaseReporterWorkRequest(request);
-        legalawyerequest.getCaseReporterWorkRequest().setLawyerWorkRequest(legalawyerequest);
-        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Justice);
+        legalawyerequest.setTalentScoutWorkRequest(request);
+        legalawyerequest.getTalentScoutWorkRequest().setInsuranceAgentWorkRequest(legalawyerequest);
+        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Insurance);
         Organization org = null;
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof LegalOrganization){
+            if (organization instanceof HealthOrganization){
                 org = organization;
                 break;
             }
         }
         if (org!=null){
-            org.getWorkQueue().getLawyerworkRequestList().add(legalawyerequest);
+            org.getWorkQueue().getInsuranceAgentWorkRequestList().add(legalawyerequest);
             //userAccount.getWorkQueue().CaseReporterWorkRequestList().add(request);
-            userAccount.getWrkQue().getLawyerworkRequestList().add(legalawyerequest);
+            userAccount.getWrkQue().getInsuranceAgentWorkRequestList().add(legalawyerequest);
         }
 
         JOptionPane.showMessageDialog(null, "Request submitted to Lawyer.");
@@ -403,24 +437,24 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReqCounsellarMouseExited
 
     private void btnReqCounsellarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReqCounsellarActionPerformed
-        CounsellorWorkRequest counsellarreq = new CounsellorWorkRequest();
+        FundAllocatorWorkRequest counsellarreq = new FundAllocatorWorkRequest();
         counsellarreq.setStatus("Waiting");
         counsellarreq.setSender(userAccount);
         counsellarreq.setHswr(request);
-        counsellarreq.getHswr().setCounsellorWorkRequest(counsellarreq);
+        counsellarreq.getHswr().setFundAllocatorWorkRequest(counsellarreq);
 
         Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.NGO);
         Organization org = null;
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof CounsellingOrganization){
+            if (organization instanceof SportsFundOrganization){
                 org = organization;
                 break;
             }
         }
         if (org!=null){
-            org.getWorkQueue().getCounsellarworkRequestList().add(counsellarreq);
+            org.getWorkQueue().getFundAllocatorWorkRequestList().add(counsellarreq);
             //userAccount.getWorkQueue().CaseReporterWorkRequestList().add(request);
-            userAccount.getWrkQue().getCounsellarworkRequestList().add(counsellarreq);
+            userAccount.getWrkQue().getFundAllocatorWorkRequestList().add(counsellarreq);
         }
 
         JOptionPane.showMessageDialog(null, "Request submitted to Counsellar");
@@ -437,24 +471,24 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReqDocMouseExited
 
     private void btnReqDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReqDocActionPerformed
-        DrWorkRequest docrequest = new DrWorkRequest();
+        TrainingCoachWorkRequest docrequest = new TrainingCoachWorkRequest();
         docrequest.setStatus("Waiting");
         docrequest.setSender(userAccount);
-        docrequest.setCaseReporterWorkRequest(request);
-        docrequest.getCaseReporterWorkRequest().setDoctorWorkRequest(docrequest);
+        docrequest.setTalentScoutWorkRequest(request);
+        docrequest.getTalentScoutWorkRequest().setTrainingCoachWorkRequest(docrequest);
 
-        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Wellness);
+        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.HealthWellBeing);
         Organization org = null;
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof HospitalOrganization){
+            if (organization instanceof PhysicalTrainingOrganization){
                 org = organization;
                 break;
             }
         }
         if (org!=null){
-            org.getWorkQueue().getDoctorworkRequestList().add(docrequest);
+            org.getWorkQueue().getTrainingCoachWorkRequestList().add(docrequest);
             //userAccount.getWorkQueue().CaseReporterWorkRequestList().add(request);
-            userAccount.getWrkQue().getDoctorworkRequestList().add(docrequest);
+            userAccount.getWrkQue().getTrainingCoachWorkRequestList().add(docrequest);
         }
 
         JOptionPane.showMessageDialog(null, "Request submitted to Hosptital.");
@@ -469,25 +503,25 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReqPsychMouseExited
 
     private void btnReqPsychActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReqPsychActionPerformed
-        PsychiatristWorkRequest psychrequest = new PsychiatristWorkRequest();
+        MentalHealthCoachWorkRequest psychrequest = new MentalHealthCoachWorkRequest();
         psychrequest.setStatus("Waiting");
         psychrequest.setSender(userAccount);
-        psychrequest.setCaseReporterWorkRequest(request);
-        psychrequest.getCaseReporterWorkRequest().setHpWorkRequest(psychrequest);
+        psychrequest.setTalentScoutWorkRequest(request);
+        psychrequest.getTalentScoutWorkRequest().setMentalHealthWorkRequest(psychrequest);
 
-        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Wellness);
+        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.HealthWellBeing);
         Organization org = null;
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
             System.out.println("ex"+organization.getName());
-            if (organization instanceof PsychiatricOrganization){
+            if (organization instanceof MentalHealthOrganization){
                 org = organization;
                 break;
             }
         }
         if (org!=null){
-            org.getWorkQueue().getPsychiatristWorkRequestList().add(psychrequest);
+            org.getWorkQueue().getMentalHealthCoachWorkRequestList().add(psychrequest);
             //userAccount.getWorkQueue().CaseReporterWorkRequestList().add(request);
-            userAccount.getWrkQue().getPsychiatristWorkRequestList().add(psychrequest);
+            userAccount.getWrkQue().getMentalHealthCoachWorkRequestList().add(psychrequest);
         }
 
         JOptionPane.showMessageDialog(null, "Request submitted to Psychiatrist");
@@ -505,7 +539,19 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_btnReqRehabActionPerformed
-
+    
+    private void PopulateInfo() {
+        txtVictimName.setText(request.getChildName());
+        txtVolunteerName.setText(request.getGender());
+        txtTypeofAssault.setText(request.getSportType());
+        txtLocation.setText(request.getAddress());
+        txtDateofIncident.setText(request.getDoe().toString());
+        txtMoreDetails.setText(request.getParentName());
+        txtSuspect.setText(request.getHeight());
+        txtNameofSuspect.setText(request.getWeight());
+        
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
