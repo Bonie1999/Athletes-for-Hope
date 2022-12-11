@@ -317,10 +317,10 @@ public class TestResultsJPanel extends javax.swing.JPanel {
         DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
         Object[] row=new Object[2];
         model.setRowCount(0);
-        
+        System.out.println("something");
          for(LabTest LT: request.getLabTestList())
          {
-         
+             System.out.println("Something"+LT);
             row[0]= LT;
             row[1] = LT.getResult();
             
