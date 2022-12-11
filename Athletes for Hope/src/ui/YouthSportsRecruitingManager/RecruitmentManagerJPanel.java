@@ -4,6 +4,13 @@
  */
 package ui.YouthSportsRecruitingManager;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.TalentRecruitmentOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import javax.swing.JPanel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +20,21 @@ public class RecruitmentManagerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form RecruitmentManagerJPanel
      */
-    public RecruitmentManagerJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private TalentRecruitmentOrganization CVOrg;
+    private Network network;
+    public RecruitmentManagerJPanel(JPanel userProcessContainer, UserAccount account, Organization CVOrg,Enterprise enterprise,EcoSystem business,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.CVOrg = (TalentRecruitmentOrganization)CVOrg;
+        this.network = network;
+        popBtm();
+        CaseVolunteerSplitJPanel.setDividerSize(0);
+        CaseVolunteerSplitJPanel.setDividerLocation(100);
     }
 
     /**
@@ -109,4 +129,10 @@ public class RecruitmentManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblUpperPart;
     // End of variables declaration//GEN-END:variables
+    
+    private void popBtm() {
+        EnrollmentRequestJPanel caserequestJPanel=new EnrollmentRequestJPanel(userProcessContainer,business,CVOrg,userAccount,network);
+        System.out.println("CaseManagerJPanel"+userAccount.getUsername()+userAccount.getPwd());
+        CaseVolunteerSplitJPanel.setBottomComponent(caserequestJPanel);
+    }
 }

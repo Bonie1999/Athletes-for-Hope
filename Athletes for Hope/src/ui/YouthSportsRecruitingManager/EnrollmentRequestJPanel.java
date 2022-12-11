@@ -4,6 +4,23 @@
  */
 package ui.YouthSportsRecruitingManager;
 
+import javax.swing.JPanel; 
+import business.EcoSystem;
+import business.Network.Network;
+import business.Organization.TalentRecruitmentOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.FundAllocatorWorkRequest;
+import business.WorkQueue.TrainingCoachWorkRequest;
+import business.WorkQueue.InsuranceAgentWorkRequest;
+import business.WorkQueue.MentalHealthCoachWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +30,27 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
     /**
      * Creates new form EnrollmentRequestJPanel
      */
-    public EnrollmentRequestJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    Organization organization; 
+    UserAccount userAccount;
+    Network network; 
+    public EnrollmentRequestJPanel(JPanel userProcessContainer, EcoSystem system, Organization organization,UserAccount userAccount,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.organization=(TalentRecruitmentOrganization)organization;
+        this.userAccount=userAccount;
+        this.network = network;
+        
+        popTable();
+        lblReceiver.setVisible(false);
+        lblStatus.setVisible(false);
+        lblDate.setVisible(false);
+        lblDoctor.setVisible(false);
+        lblCounsellar.setVisible(false);
+        lblLawyer.setVisible(false);
+        lblPsychiatrist.setVisible(false);
     }
 
     /**
@@ -252,7 +288,7 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
                 return;
             }
 
-            WorkRequest request = (CaseReporterWorkRequest)tblCaseRequest.getValueAt(selectedRow, 2);
+            WorkRequest request = (TalentScoutWorkRequest)tblCaseRequest.getValueAt(selectedRow, 2);
             request.setReceiver(userAccount);
             request.setStatus("Accepted");
 
@@ -283,13 +319,13 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
             return;
         }
 
-        CaseReporterWorkRequest request = (CaseReporterWorkRequest)tblCaseRequest.getValueAt(selectedRow, 2);
+        TalentScoutWorkRequest request = (TalentScoutWorkRequest)tblCaseRequest.getValueAt(selectedRow, 2);
 
         if (request.getReceiver()!=userAccount){
             JOptionPane.showMessageDialog(this, "You cannot view the report of the case. Access Denied.");
         }else{
 
-            CaseReportJPanel caseReportJPanel = new CaseReportJPanel(userProcessContainer,system,request,userAccount,network);
+            EnrollmentFormRJPanel caseReportJPanel = new EnrollmentFormRJPanel(userProcessContainer,system,request,userAccount,network);
             userProcessContainer.add("caseReportJPanel", caseReportJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -322,10 +358,10 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
             lblCounsellar.setVisible(true);
             lblLawyer.setVisible(true);
             lblPsychiatrist.setVisible(true);
-            CaseReporterWorkRequest  CRWorkReq  = (CaseReporterWorkRequest) tblCaseRequest.getValueAt(selectedRow, 2);
+            TalentScoutWorkRequest  CRWorkReq  = (TalentScoutWorkRequest) tblCaseRequest.getValueAt(selectedRow, 2);
 
-            if(CRWorkReq.getDoctorWorkRequest()!=null){
-                DrWorkRequest D = CRWorkReq.getDoctorWorkRequest();
+            if(CRWorkReq.getTrainingCoachWorkRequest()!=null){
+                TrainingCoachWorkRequest D = CRWorkReq.getTrainingCoachWorkRequest();
                 txtDoctorDate.setText(D.getRequestDate().toString());
                 if(D.getReceiver()==null){
                     txtDocReceiver.setText("Not Assigned");
@@ -339,8 +375,8 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
                 txtDocStatus.setText("-");
             }
 
-            if(CRWorkReq.getCounsellorWorkRequest()!=null){
-                CounsellorWorkRequest C = CRWorkReq.getCounsellorWorkRequest();
+            if(CRWorkReq.getFundAllocatorWorkRequest()!=null){
+                FundAllocatorWorkRequest C = CRWorkReq.getFundAllocatorWorkRequest();
                 txtCounsellarDate.setText(C.getRequestDate().toString());
                 if(C.getReceiver()==null){
                     txtCounsellarReceiver.setText("Not Assigned");
@@ -354,8 +390,8 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
                 txtCousellarStatus.setText("-");
             }
 
-            if(CRWorkReq.getHpWorkRequest()!=null){
-                PsychiatristWorkRequest P = CRWorkReq.getHpWorkRequest();
+            if(CRWorkReq.getMentalHealthCoachWorkRequest()!=null){
+                MentalHealthCoachWorkRequest P = CRWorkReq.getMentalHealthCoachWorkRequest();
                 txtPsyhDate.setText(P.getRequestDate().toString());
                 if(P.getReceiver()==null){
                     txtPsychReceiver.setText("Not Assigned");
@@ -369,8 +405,8 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
                 txtPsychReceiver.setText("-");
             }
 
-            if(CRWorkReq.getLawyerWorkRequest()!=null){
-                LawyerWorkRequest L = CRWorkReq.getLawyerWorkRequest();
+            if(CRWorkReq.getInsuranceAgentWorkRequest()!=null){
+                InsuranceAgentWorkRequest L = CRWorkReq.getInsuranceAgentWorkRequest();
                 txtLawyerDate.setText(L.getRequestDate().toString());
                 if(L.getReceiver()==null){
                     txtLawyerReceiver.setText("Not Assigned");
@@ -386,7 +422,29 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_btnCheckStatusActionPerformed
-
+    
+    private void popTable() {
+        
+        DefaultTableModel model= (DefaultTableModel) tblCaseRequest.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+         for(TalentScoutWorkRequest request : organization.getWorkQueue().getTalentScoutWorkRequestList())
+         {
+         
+            row[0] = request.getChildName();
+            row[1] = request.getAddress();
+            row[2] = request;
+            if (request.getReceiver()==null){
+                row[3] = "Not Assigned";
+            }else{
+                row[3] = request.getReceiver();
+            }
+         
+            
+            model.addRow(row);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAssignRequest;
