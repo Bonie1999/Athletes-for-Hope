@@ -73,7 +73,7 @@ public class TalentScout extends javax.swing.JPanel {
 
         lblCaseReporter.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
         lblCaseReporter.setForeground(new java.awt.Color(255, 146, 1));
-        lblCaseReporter.setText("Welcome Case Reporter");
+        lblCaseReporter.setText("Welcome Talent Scout Volunteer");
 
         btnViewStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnViewStatus.setForeground(new java.awt.Color(255, 146, 1));
@@ -97,7 +97,7 @@ public class TalentScout extends javax.swing.JPanel {
 
         btnReport.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnReport.setForeground(new java.awt.Color(255, 146, 1));
-        btnReport.setText("Report");
+        btnReport.setText("Enrollment");
         btnReport.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnReport.setBorderPainted(false);
         btnReport.setContentAreaFilled(false);
@@ -120,20 +120,21 @@ public class TalentScout extends javax.swing.JPanel {
         jPanel09Layout.setHorizontalGroup(
             jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel09Layout.createSequentialGroup()
-                .addGap(498, 498, 498)
-                .addComponent(lblCaseReporter))
-            .addGroup(jPanel09Layout.createSequentialGroup()
                 .addGap(460, 460, 460)
-                .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(btnViewStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCaseReporter)
+                    .addGroup(jPanel09Layout.createSequentialGroup()
+                        .addComponent(btnReport, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnViewStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(453, 453, 453))
         );
         jPanel09Layout.setVerticalGroup(
             jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel09Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(15, 15, 15)
                 .addComponent(lblCaseReporter)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel09Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnReport)
                     .addComponent(btnViewStatus)))

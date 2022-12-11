@@ -146,17 +146,17 @@ public class ManageUsers extends javax.swing.JPanel {
         jLabel6.setText("Set Password:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 160, -1));
 
-        btnCreate.setBackground(new java.awt.Color(51, 102, 255));
+        btnCreate.setBackground(new java.awt.Color(255, 146, 1));
         btnCreate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnCreate.setForeground(new java.awt.Color(255, 255, 255));
         btnCreate.setText("Create");
         btnCreate.setBorderPainted(false);
         btnCreate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCreateMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnCreateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCreateMouseExited(evt);
             }
         });
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -181,7 +181,7 @@ public class ManageUsers extends javax.swing.JPanel {
         jPanel2.add(comboRoleSel, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 230, 140, -1));
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 140, -1));
 
-        btnDelete.setBackground(new java.awt.Color(51, 102, 255));
+        btnDelete.setBackground(new java.awt.Color(255, 146, 1));
         btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
