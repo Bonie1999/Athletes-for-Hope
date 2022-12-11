@@ -4,6 +4,25 @@
  */
 package ui.sysadmin;
 
+import java.awt.Color;
+import business.EcoSystem;
+import business.Employee.Employee;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Role.SportsWellbeingAdminRole;
+import business.Role.PrudentialHealthAdminRole;
+import business.Role.NGOAdminRole;
+import business.Role.NutrabayAdminRole;
+import business.Role.MentalHealthCoachRole;
+//import Business.Role.AdminRole;
+import business.UserAccount.UserAccount;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +32,55 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEnterpriseAdminJPanel
      */
-    public ManageEnterpriseAdminJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem system;
+    public ManageEnterpriseAdminJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateTable();
+        populateNetworkComboBox();
+    }
+    
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tableEnterpriseAdmins.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                for (UserAccount userAccount : enterprise.getUserAccountDirectory().getUserAccntList()) {
+                    Object[] row = new Object[4];
+                    row[0] = enterprise.getName();
+                    row[1] = network.getNameOfNetwork();
+                    row[2] = userAccount;
+                    row[3] =userAccount.getPwd();
+                    System.out.println(userAccount.getUsername());
+                       System.out.println(userAccount.getPwd());
+                    model.addRow(row);
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private void populateNetworkComboBox(){
+        comboBoxSelectNetwork.removeAllItems();
+        
+        for (Network network : system.getNetworkList()){
+            comboBoxSelectNetwork.addItem(network);
+        }
+    }
+    
+    @SuppressWarnings("unchecked")
+    private void populateEnterpriseComboBox(Network network){
+        comboBoxSelectEnterprise.removeAllItems();
+        
+        for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()){
+            comboBoxSelectEnterprise.addItem(enterprise);
+        }
+        
     }
 
     /**
@@ -200,7 +266,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Wellness")){
             if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
-                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new HealthAdminRole());
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new SportsWellbeingAdminRole());
             }
             else{
                 JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
@@ -210,7 +276,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new HealthAdminRole());
         } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Justice")){
             if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
-                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new LegalAdminRole());
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PrudentialHealthAdminRole());
             }
             else{
                 JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
@@ -230,18 +296,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NGOAdminRole());
         }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Pharmaceutical")){
             if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
-                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PharmacyAdminRole());
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
-                txtPassword.setText("");
-                return;
-            }
-            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PharmacyAdminRole());
-        }
-        else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Rehabilitation")){
-            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
-                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new RehabilitationCaretaker());
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NutrabayAdminRole());
             }
             else{
                 JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
