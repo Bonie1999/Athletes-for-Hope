@@ -4,17 +4,27 @@
  */
 package ui.sysadmin;
 
+import business.EcoSystem;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author puranjaimendiratta
  */
-public class SysAdminJPanel extends javax.swing.JPanel {
+public class sysadminJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form SysAdminJPanel
      */
-    public SysAdminJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem ecosystem;
+    public sysadminJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
+        this.userProcessContainer=userProcessContainer;
+        this.ecosystem=ecosystem;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(120);
     }
 
     /**
@@ -162,7 +172,7 @@ public class SysAdminJPanel extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

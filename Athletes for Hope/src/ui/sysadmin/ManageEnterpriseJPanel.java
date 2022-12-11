@@ -4,6 +4,15 @@
  */
 package ui.sysadmin;
 
+import java.awt.Color;
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +22,49 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManageEnterpriseJPanel
      */
-    public ManageEnterpriseJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem system;
+    public ManageEnterpriseJPanel(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+
+        populateTable();
+        populateComboBox();
+    }
+    
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) tableEnterprises.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                Object[] row = new Object[3];
+                row[0] = enterprise;
+                row[1] = network.getNameOfNetwork();
+                row[2] = enterprise.getEnterpriseType().getValue();
+
+                model.addRow(row);
+            }
+        }
+    }
+    
+    @SuppressWarnings("unchecked")
+    private void populateComboBox() {
+        comboBoxNetworkName.removeAllItems();
+        comboBoxEnterpriseType.removeAllItems();
+
+        for (Network network : system.getNetworkList()) {
+            comboBoxNetworkName.addItem(network);
+        }
+
+        for (Enterprise.EnterpriseType type : Enterprise.EnterpriseType.values()) {
+            if (!type.getValue().equals(Enterprise.EnterpriseType.TalentScoutGlobal.getValue())){
+                 if (!type.getValue().equals(Enterprise.EnterpriseType.MentalHealth.getValue())){
+                comboBoxEnterpriseType.addItem(type);
+            }}
+        }
+
     }
 
     /**
