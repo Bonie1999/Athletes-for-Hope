@@ -4,6 +4,18 @@
  */
 package ui.TalentScoutGlobal;
 
+import ui.PhysicalTraining.*;
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.TalentRecruitmentOrganization;
+import business.Organization.TalentScoutOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import business.WorkQueue.TalentScoutWorkRequest;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +25,18 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
     /**
      * Creates new form EnrollmentFormJPanel
      */
-    public EnrollmentFormJPanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    TalentScoutOrganization organization;
+    Network network;
+    public EnrollmentFormJPanel(JPanel userProcessContainer, EcoSystem system,UserAccount userAccount,Organization organization, Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.userAccount = userAccount;
+        this.organization = (TalentScoutOrganization) organization;
+        this.network = network;
     }
 
     /**
@@ -47,11 +69,11 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         txtLocation = new javax.swing.JTextField();
         Selfradiobutton = new javax.swing.JRadioButton();
         otherRadioButton = new javax.swing.JRadioButton();
-        dateOfIncident = new org.netbeans.modules.form.InvalidComponent();
         ReportjButton = new javax.swing.JButton();
         comboBoxIncident = new javax.swing.JComboBox<>();
         txtAgeofChild = new javax.swing.JTextField();
         lblAgeofChild = new javax.swing.JLabel();
+        dateOfIncident = new com.toedter.calendar.JDateChooser();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -269,15 +291,6 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(4, 12, 0, 122);
         jPanel2.add(otherRadioButton, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 114;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 261;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 23, 0, 0);
-        jPanel2.add(dateOfIncident, gridBagConstraints);
 
         ReportjButton.setBackground(new java.awt.Color(51, 102, 255));
         ReportjButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -329,6 +342,15 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(1, 280, 0, 0);
         jPanel2.add(lblAgeofChild, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 114;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 261;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 23, 0, 0);
+        jPanel2.add(dateOfIncident, gridBagConstraints);
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 844, 633));
 
@@ -368,12 +390,12 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
 
     private void ReportjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportjButtonActionPerformed
 
-        CaseReporterWorkRequest request = new CaseReporterWorkRequest();
+        TalentScoutWorkRequest request = new TalentScoutWorkRequest();
         request.setStatus("Waiting");
         request.setSender(userAccount);
 
         request.setChildName(txtChildName.getText());
-        request.setEmail(txtAgeofChild.getText());
+//        request.setEmail(txtAgeofChild.getText());
         //for choosing relations
         if(friendRadioButton.isSelected())
         {
@@ -403,16 +425,16 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a type");
         }
         else{
-            request.setAssaultType(comboBoxIncident.getSelectedItem().toString());
+            request.setSportType(comboBoxIncident.getSelectedItem().toString());
         }
         //location
-        request.setLocation(txtLocation.getText());
+        request.setAddress(txtLocation.getText());
         //date
         if(dateOfIncident.getDate()==null)
         {
             JOptionPane.showMessageDialog(null, "Please select a date");
         }else{
-            request.setDoi(dateOfIncident.getDate());
+            request.setDoe(dateOfIncident.getDate());
         }
         //more detaisl
         if(txtMoreDetails.getText()==null)
@@ -420,33 +442,33 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please fill more details");
             return;
         }
-        request.setMoredetails(txtMoreDetails.getText());
+        request.setParentName(txtMoreDetails.getText());
         //suspect
         if(knownRadioButton.isSelected())
         {
-            request.setSuspecttype("Known");
+            request.setHeight("Known");
         }
         else if(unknownRadioButton.isSelected())
         {
-            request.setSuspecttype("Unknown");
+            request.setHeight("Unknown");
         }else{JOptionPane.showMessageDialog(null, "Please select a suspect type");}
 
         //name of suspect
-        request.setNameofsuspect(txtSuspectName.getText());
+        request.setWeight(txtSuspectName.getText());
 
-        if(request.getDoi()!=null && request.getLocation()!=null && request.getRelation()!=null && request.getSuspecttype()!=null
-            && request.getChildName()!=null && request.getAssaultType()!=null)
+        if(request.getDoe()!=null && request.getAddress()!=null && request.getGender()!=null && request.getHeight()!=null
+            && request.getChildName()!=null && request.getSportType()!=null)
         {
             Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.NGO);
             Organization org = null;
             for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-                if (organization instanceof CaseVolunteerOrganization){
+                if (organization instanceof TalentRecruitmentOrganization){
                     org = organization;
                     break;
                 }
             }
             if (org!=null){
-                org.getWorkQueue().getCaseReporterWorkRequestList().add(request);
+                org.getWorkQueue().getTalentScoutWorkRequestList().add(request);
                 //userAccount.getWorkQueue().CaseReporterWorkRequestList().add(request);
             }
 
@@ -463,7 +485,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             unknownRadioButton.setSelected(false);
             comboBoxIncident.setSelectedIndex(0);
             // dateOfIncident.setDate(null);
-            userAccount.getWrkQue().getCaseReporterWorkRequestList().add(request);
+            userAccount.getWrkQue().getTalentScoutWorkRequestList().add(request);
 
             JOptionPane.showMessageDialog(null, "Incident is reported successfully.");
 
@@ -479,7 +501,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
     private javax.swing.JButton ReportjButton;
     private javax.swing.JRadioButton Selfradiobutton;
     private javax.swing.JComboBox<String> comboBoxIncident;
-    private org.netbeans.modules.form.InvalidComponent dateOfIncident;
+    private com.toedter.calendar.JDateChooser dateOfIncident;
     private javax.swing.JRadioButton friendRadioButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -4,6 +4,21 @@
  */
 package ui.TalentScoutGlobal;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+
+import business.Enterprise.TalentScoutGlobalEnterprise;
+import business.Organization.TalentScoutOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.FundAllocatorWorkRequest;
+import business.WorkQueue.TrainingCoachWorkRequest;
+import business.WorkQueue.InsuranceAgentWorkRequest;
+import business.WorkQueue.MentalHealthCoachWorkRequest;
+import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +28,31 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
     /**
      * Creates new form TalentScoutViewStatusJPanel
      */
-    public TalentScoutViewStatusJPanel() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private TalentScoutOrganization CROrganization; 
+    private Organization organization;
+    private TalentScoutGlobalEnterprise CREnterprise;
+    public TalentScoutViewStatusJPanel(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise,EcoSystem business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.CROrganization = (TalentScoutOrganization)organization;
+        this.CREnterprise = (TalentScoutGlobalEnterprise) enterprise;
+        this.organization=organization;
+        
+       popTable();
+       popStatusTable();
+       lblCaseVolunteer.setVisible(false);
+       lblDate.setVisible(false);
+       lblReceiver.setVisible(false);
+       lblStatus.setVisible(false);
+       lblCounsellor.setVisible(false);
+       lblLawyer.setVisible(false);
+       lblDoc.setVisible(false);
+       lblPsych.setVisible(false);
     }
 
     /**
@@ -200,7 +238,129 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
     private void btnCheckStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckStatusActionPerformed
         popStatusTable();
     }//GEN-LAST:event_btnCheckStatusActionPerformed
-
+    
+    private void popTable() {
+        
+        DefaultTableModel model= (DefaultTableModel) tableCases.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        int count = 1;
+        for(TalentScoutWorkRequest request : userAccount.getWrkQue().getTalentScoutWorkRequestList())
+         {
+            request.setRequestid(count);
+            row[0]=request.getRequestid();
+            row[1] = request.getDoe();
+            if (request.getReceiver()==null){
+                row[2] = "Not Assigned";
+            }else{
+                row[2] = request.getReceiver().getEmp().getName();
+            }
+            row[3] = request;
+            
+           
+            
+            model.addRow(row);
+            count++;
+            txtCaseVolunteerDate.setText("");
+            txtCaseVolunteer.setText("");
+            txtCaseVolunteerStatus.setText("");
+            
+            
+        }
+        
+        
+    }
+    
+    
+    private void popStatusTable() {
+        int selectedRow = tableCases.getSelectedRow();
+        
+        if (selectedRow < 0){
+            return;
+        }
+        if (selectedRow >= 0) {
+            lblCaseVolunteer.setVisible(true);
+            lblDate.setVisible(true);
+            lblReceiver.setVisible(true);
+            lblStatus.setVisible(true);
+            lblCounsellor.setVisible(true);
+            lblLawyer.setVisible(true);
+            lblDoc.setVisible(true);
+            lblPsych.setVisible(true);
+            TalentScoutWorkRequest  CaseRepoWorkReq  = (TalentScoutWorkRequest) tableCases.getValueAt(selectedRow, 3);
+                 if(CaseRepoWorkReq!=null){
+                     txtCaseVolunteerDate.setText(CaseRepoWorkReq.getRequestDate().toString());
+                     if(CaseRepoWorkReq.getReceiver()==null){
+                         txtCaseVolunteer.setText("Not Assigned");
+                     }else{
+                         txtCaseVolunteer.setText(CaseRepoWorkReq.getReceiver().toString());
+                     }
+                     txtCaseVolunteerStatus.setText(CaseRepoWorkReq.getStatus());
+                     
+                        if(CaseRepoWorkReq.getTrainingCoachWorkRequest()!=null){
+                            TrainingCoachWorkRequest D = CaseRepoWorkReq.getTrainingCoachWorkRequest(); 
+                            txtDoctorDate.setText(D.getRequestDate().toString());
+                        if(D.getReceiver()==null){
+                            txtDoctor.setText("Not Assigned");
+                        }else{
+                            txtDoctor.setText(D.getReceiver().toString());
+                        }
+                        txtDoctorStatus.setText(D.getStatus());
+                        }else{
+                            txtDoctorDate.setText("-");
+                            txtDoctor.setText("-");
+                            txtDoctorStatus.setText("-");
+                        }
+                        
+                        if(CaseRepoWorkReq.getFundAllocatorWorkRequest()!=null){
+                            FundAllocatorWorkRequest C = CaseRepoWorkReq.getFundAllocatorWorkRequest(); 
+                            txtCounsellorDate.setText(C.getRequestDate().toString());
+                        if(C.getReceiver()==null){
+                            txtCOunsellor.setText("Not Assigned");
+                        }else{
+                            txtCOunsellor.setText(C.getReceiver().toString());
+                        }
+                        txtCounsellorStatus.setText(C.getStatus());
+                        }else{
+                            txtCounsellorDate.setText("-");
+                            txtCOunsellor.setText("-");
+                            txtCounsellorStatus.setText("-");
+                        }
+                        
+                        if(CaseRepoWorkReq.getMentalHealthCoachWorkRequest()!=null){
+                            MentalHealthCoachWorkRequest P = CaseRepoWorkReq.getMentalHealthCoachWorkRequest(); 
+                            txtlPsychDate.setText(P.getRequestDate().toString());
+                        if(P.getReceiver()==null){
+                            txtPsych.setText("Not Assigned");
+                        }else{
+                            txtPsych.setText(P.getReceiver().toString());
+                        }
+                        txtPsychStatus.setText(P.getStatus());
+                        }else{
+                            txtlPsychDate.setText("-");
+                            txtPsych.setText("-");
+                            txtPsychStatus.setText("-");
+                        }
+                        
+                        if(CaseRepoWorkReq.getInsuranceAgentWorkRequest()!=null){
+                            InsuranceAgentWorkRequest L = CaseRepoWorkReq.getInsuranceAgentWorkRequest(); 
+                            txtLawyerDate.setText(L.getRequestDate().toString());
+                        if(L.getReceiver()==null){
+                            txtLawyer.setText("Not Assigned");
+                        }else{
+                            txtLawyer.setText(L.getReceiver().toString());
+                        }
+                        txtLawyerStatus.setText(L.getStatus());
+                        }else{
+                            txtLawyerDate.setText("-");
+                            txtLawyer.setText("-");
+                            txtLawyerStatus.setText("-");
+                        }
+                 }
+                     
+                 
+             }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCheckStatus;

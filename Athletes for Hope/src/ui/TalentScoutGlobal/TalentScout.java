@@ -4,6 +4,15 @@
  */
 package ui.TalentScoutGlobal;
 
+import business.EcoSystem;
+import business.Enterprise.TalentScoutGlobalEnterprise;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.TalentScoutOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author puranjaimendiratta
@@ -13,8 +22,21 @@ public class TalentScout extends javax.swing.JPanel {
     /**
      * Creates new form TalentScout
      */
-    public TalentScout() {
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private TalentScoutOrganization HSOrganization; 
+    private TalentScoutGlobalEnterprise HSenterprise;
+    private EcoSystem system;
+    private Network network;
+    public TalentScout(JPanel userProcessContainer, UserAccount account, Organization organization,Enterprise enterprise,EcoSystem business,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.business = business;
+        this.HSOrganization = (TalentScoutOrganization) organization;
+        this.HSenterprise = (TalentScoutGlobalEnterprise) enterprise;
+        this.network = network;
     }
 
     /**
@@ -161,7 +183,7 @@ public class TalentScout extends javax.swing.JPanel {
 
     private void btnViewStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStatusActionPerformed
         // TODO add your handling code here:
-        CaseReporterViewStatusJPanel reportJPanel1=new CaseReporterViewStatusJPanel(userProcessContainer,userAccount,HSOrganization,HSenterprise,business);
+        TalentScoutViewStatusJPanel reportJPanel1=new TalentScoutViewStatusJPanel(userProcessContainer,userAccount,HSOrganization,HSenterprise,business);
         jVolunteerSplitPanel.setBottomComponent(reportJPanel1);
     }//GEN-LAST:event_btnViewStatusActionPerformed
 
@@ -174,7 +196,7 @@ public class TalentScout extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReportMouseExited
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
-        ReportJPanel reportJPanel=new ReportJPanel(userProcessContainer,business,userAccount,HSOrganization,network);
+        EnrollmentFormJPanel reportJPanel=new EnrollmentFormJPanel(userProcessContainer,business,userAccount,HSOrganization,network);
         jVolunteerSplitPanel.setBottomComponent(reportJPanel);
         //ReportJFrame r = new ReportJFrame(system,network,ua,org);
     }//GEN-LAST:event_btnReportActionPerformed
