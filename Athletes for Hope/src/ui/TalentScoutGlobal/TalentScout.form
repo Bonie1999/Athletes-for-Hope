@@ -114,24 +114,26 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="498" pref="498" max="-2" attributes="0"/>
-                                  <Component id="lblCaseReporter" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="460" pref="460" max="-2" attributes="0"/>
-                                  <Component id="btnReport" min="-2" pref="109" max="-2" attributes="0"/>
-                                  <EmptySpace min="47" pref="47" max="-2" attributes="0"/>
-                                  <Component id="btnViewStatus" min="-2" pref="114" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblCaseReporter" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Component id="btnReport" min="-2" pref="109" max="-2" attributes="0"/>
+                                          <EmptySpace min="47" pref="47" max="-2" attributes="0"/>
+                                          <Component id="btnViewStatus" min="-2" pref="114" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="453" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                   <Component id="lblCaseReporter" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="btnReport" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnViewStatus" min="-2" max="-2" attributes="0"/>
@@ -149,7 +151,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="1" green="92" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Welcome Case Reporter"/>
+                            <Property name="text" type="java.lang.String" value="Welcome Talent Scout Volunteer"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JButton" name="btnViewStatus">
@@ -183,7 +185,7 @@
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="1" green="92" red="ff" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="Report"/>
+                            <Property name="text" type="java.lang.String" value="Enrollment"/>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                                 <BevelBorder/>

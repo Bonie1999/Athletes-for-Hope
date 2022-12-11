@@ -68,6 +68,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         txtAgeofChild = new javax.swing.JTextField();
         lblAgeofChild = new javax.swing.JLabel();
         dateOfIncident = new com.toedter.calendar.JDateChooser();
+        jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,38 +78,38 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
 
         namesurvivorjLabel.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         namesurvivorjLabel.setText("Name of Child : ");
-        jPanel2.add(namesurvivorjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 135, -1));
+        jPanel2.add(namesurvivorjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 135, -1));
 
         relationjLabel.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         relationjLabel.setText("                Gender : ");
-        jPanel2.add(relationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 210, -1));
+        jPanel2.add(relationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 210, -1));
 
         lblType.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblType.setText("         Sport :");
-        jPanel2.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 142, 20));
+        jPanel2.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 142, 20));
 
         lblLocation.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblLocation.setText("            Address : ");
-        jPanel2.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 180, -1));
+        jPanel2.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 180, -1));
 
         lblDate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblDate.setText("Date of Enrollment :");
-        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, 170, 20));
+        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 170, 20));
 
         lblDetails.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblDetails.setText("Parent Name :");
-        jPanel2.add(lblDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 110, -1));
+        jPanel2.add(lblDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 110, -1));
 
         lblNameofSuspect.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblNameofSuspect.setText("         Weight :");
-        jPanel2.add(lblNameofSuspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 290, 140, -1));
+        jPanel2.add(lblNameofSuspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 140, -1));
 
         txtChildName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtChildNameActionPerformed(evt);
             }
         });
-        jPanel2.add(txtChildName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 230, -1));
+        jPanel2.add(txtChildName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 230, -1));
 
         friendRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         friendRadioButton.setText("Female");
@@ -117,7 +118,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
                 friendRadioButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(friendRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+        jPanel2.add(friendRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, -1, -1));
 
         parentRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         parentRadioButton.setText("Male");
@@ -126,22 +127,22 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
                 parentRadioButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(parentRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 58, -1));
+        jPanel2.add(parentRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 58, -1));
 
         txtSuspectName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSuspectNameActionPerformed(evt);
             }
         });
-        jPanel2.add(txtSuspectName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 230, -1));
-        jPanel2.add(txtMoreDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 230, -1));
+        jPanel2.add(txtSuspectName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 230, -1));
+        jPanel2.add(txtMoreDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 230, -1));
 
         txtLocation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocationActionPerformed(evt);
             }
         });
-        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 230, 50));
+        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 230, 50));
 
         ReportjButton.setBackground(new java.awt.Color(255, 146, 1));
         ReportjButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -152,7 +153,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
                 ReportjButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(ReportjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 107, -1));
+        jPanel2.add(ReportjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 107, -1));
 
         comboBoxIncident.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Cricket", "Hockey", "Basket Ball", "Atheletics", "Football" }));
         comboBoxIncident.addActionListener(new java.awt.event.ActionListener() {
@@ -160,13 +161,17 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
                 comboBoxIncidentActionPerformed(evt);
             }
         });
-        jPanel2.add(comboBoxIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
-        jPanel2.add(txtAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 230, -1));
+        jPanel2.add(comboBoxIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 160, -1, -1));
+        jPanel2.add(txtAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 230, -1));
 
         lblAgeofChild.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblAgeofChild.setText("Age :");
-        jPanel2.add(lblAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 50, -1));
-        jPanel2.add(dateOfIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 230, -1));
+        jPanel2.add(lblAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 50, -1));
+        jPanel2.add(dateOfIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 230, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Fill up the enrollment form");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 844, 633));
 
@@ -205,13 +210,24 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         request.setChildName(txtChildName.getText());
 //        request.setEmail(txtAgeofChild.getText());
         //for choosing relations
+        
+        if(txtAgeofChild.getText().length() > 0 ){
+            if(Integer.parseInt(txtAgeofChild.getText())<=0 || Integer.parseInt(txtAgeofChild.getText()) >= 18){
+                JOptionPane.showMessageDialog(this, "Child Age is not correct");
+            }else{
+                request.setAge(Integer.parseInt(txtAgeofChild.getText()));
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Please enter an age of child");
+        }
+        
         if(friendRadioButton.isSelected())
         {
-            request.setRelation("Male");
+            request.setRelation("Female");
         }
         else if(parentRadioButton.isSelected())
         {
-            request.setRelation("Female");
+            request.setRelation("Male");
         }
       
         else
@@ -243,21 +259,9 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             return;
         }
         request.setParentName(txtMoreDetails.getText());
-        //suspect
-//        if(knownRadioButton.isSelected())
-//        {
-//            request.setHeight("Known");
-//        }
-//        else if(unknownRadioButton.isSelected())
-//        {
-//            request.setHeight("Unknown");
-//        }else{JOptionPane.showMessageDialog(null, "Please select a suspect type");}
-
-        //name of suspect
         request.setWeight(txtSuspectName.getText());
 
-        if(request.getDoe()!=null && request.getAddress()!=null && request.getGender()!=null && request.getHeight()!=null
-            && request.getChildName()!=null && request.getSportType()!=null)
+        if( request.getAge() != null && request.getDoe()!=null && request.getAddress()!=null && request.getGender()!=null && request.getChildName()!=null && request.getSportType()!=null)
         {
             Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.NGO);
             Organization org = null;
@@ -277,6 +281,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             txtMoreDetails.setText("");
             txtLocation.setText("");
             txtAgeofChild.setText("");
+            dateOfIncident.setDate(null);
             friendRadioButton.setSelected(false);
             parentRadioButton.setSelected(false);
            
@@ -284,7 +289,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             // dateOfIncident.setDate(null);
             userAccount.getWrkQue().getTalentScoutWorkRequestList().add(request);
 
-            JOptionPane.showMessageDialog(null, "Incident is reported successfully.");
+            JOptionPane.showMessageDialog(null, "Enrollment completed successfully.");
 
         }
     }//GEN-LAST:event_ReportjButtonActionPerformed
@@ -311,6 +316,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comboBoxIncident;
     private com.toedter.calendar.JDateChooser dateOfIncident;
     private javax.swing.JRadioButton friendRadioButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblAgeofChild;
