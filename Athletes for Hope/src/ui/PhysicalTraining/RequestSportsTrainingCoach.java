@@ -3,18 +3,45 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.PhysicalTraining;
-
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TrainingCoachWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+//import business.WorkQueue.RehabilitationCaretakerWorkRequest;
+import business.WorkQueue.WorkRequest;
+import ui.TalentScoutGlobal.TalentScout;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author nishank
  */
 public class RequestSportsTrainingCoach extends javax.swing.JPanel {
-
+JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    TrainingCoachWorkRequest request;
+    Enterprise enterpirse;
+    Network network;
     /**
      * Creates new form RequestSportsTrainingCoach
      */
-    public RequestSportsTrainingCoach() {
+    public RequestSportsTrainingCoach(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount,Organization organization,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.organization = organization;
+        this.network = network;
+        enterpirse = network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.HealthWellBeing);
+        this.userAccount = userAccount;
+        populatetable();
     }
 
     /**
@@ -164,7 +191,7 @@ public class RequestSportsTrainingCoach extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         int selectedRow = jTable1.getSelectedRow();
-        WorkRequest request = (DrWorkRequest)jTable1.getValueAt(selectedRow, 2);
+        WorkRequest request = (TrainingCoachWorkRequest)jTable1.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
             request.setStatus("Accepted");
@@ -190,15 +217,15 @@ public class RequestSportsTrainingCoach extends javax.swing.JPanel {
                 return;
             }
 
-            DrWorkRequest request = (DrWorkRequest)jTable1.getValueAt(selectedRow, 2);
-            request.getCaseReporterWorkRequest().setDoctorWorkRequest(request);
+            TrainingCoachWorkRequest request = (TrainingCoachWorkRequest)jTable1.getValueAt(selectedRow, 2);
+            request.getTalentScoutWorkRequest().setTrainingCoachWorkRequest(request);
 
             if (request.getReceiver()!=userAccount){
                 JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
             }else{
 
-                CaseReportDJPanel caseReportJPanel = new CaseReportDJPanel(userProcessContainer,system,request.getCaseReporterWorkRequest(),userAccount,network,enterpirse,organization);
-                userProcessContainer.add("caseReportJPanel", caseReportJPanel);
+                TalentScoutPT TalentScout  = new TalentScoutPT(userProcessContainer,system,request.getTalentScoutWorkRequest(),userAccount,network,enterpirse,organization);
+                userProcessContainer.add("TalentScout", TalentScout);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
 
@@ -213,7 +240,7 @@ public class RequestSportsTrainingCoach extends javax.swing.JPanel {
             return;
         }
 
-        WorkRequest request = (DrWorkRequest)jTable1.getValueAt(selectedRow, 2);
+        WorkRequest request = (TrainingCoachWorkRequest)jTable1.getValueAt(selectedRow, 2);
         // WorkRequest newReq= (RehabilitationCaretakerWorkRequest);
         request.setReceiver(userAccount);
         request.setStatus("Case Completed");
@@ -230,4 +257,41 @@ public class RequestSportsTrainingCoach extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+private void populatetable() {
+        DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+        for(TrainingCoachWorkRequest request : organization.getWorkQueue().getTrainingCoachWorkRequestList())
+        {
+        
+          row[0]=request.getTalentScoutWorkRequest().getChildName();
+          row[1] = request.getTalentScoutWorkRequest().getDoe();
+          row[2] = request;  
+          if (request.getReceiver()==null){
+              row[3] = "Not Assigned";
+          }else{
+              row[3] = request.getReceiver();
+          }
+          
+          
+          model.addRow(row);
+        }
+        
+    }
+    
+    private int CheckOpenCases(UserAccount userAccount) {
+        int a = 0;
+        for(TrainingCoachWorkRequest request : organization.getWorkQueue().getTrainingCoachWorkRequestList())
+        {
+        
+          if (request.getReceiver()==userAccount){
+              if (request.getStatus().equalsIgnoreCase("Accepted")){
+                  a = a + 1;
+              }
+          } 
+        }
+        return a; 
+    }
+
 }
