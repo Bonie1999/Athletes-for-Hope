@@ -13,7 +13,7 @@ public class MentalHealthCoachWorkRequest extends WorkRequest {
     TalentScoutWorkRequest talentScoutWorkRequest;
     ArrayList<ConsultationMentalHealthCoach> MentalHealthCoachConsultation = new ArrayList<ConsultationMentalHealthCoach>();
 
-    public TalentScoutWorkRequest getCaseReporterWorkRequest() {
+    public TalentScoutWorkRequest getTalentScoutWorkRequest() {
         return talentScoutWorkRequest;
     }
 

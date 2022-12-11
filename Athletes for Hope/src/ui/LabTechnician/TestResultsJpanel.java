@@ -4,17 +4,42 @@
  */
 package ui.LabTechnician;
 
+import business.EcoSystem;
+import business.WorkQueue.LabTechnicianWorkRequest;
+import business.WorkQueue.LabTest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hp
  */
-public class TestResultsJpanel extends javax.swing.JPanel {
+public class TestResultsJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form TestResultsJpanel
      */
-    public TestResultsJpanel() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    LabTechnicianWorkRequest request;
+    public TestResultsJPanel(JPanel userProcessContainer, EcoSystem system,LabTechnicianWorkRequest request) {
         initComponents();
+        initListners();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.request = request;
+        PopulateReport();
+    }
+    private void PopulateReport() {
+        jTextField1.setText(request.getSender().toString());
+        jTextField2.setText(request.getTrainingCoachWorkRequest().getTalentScoutWorkRequest().getChildName());
+        jTextField3.setText(request.getReceiver().toString());
+        PopulateTable();
     }
 
     /**
@@ -273,7 +298,36 @@ public class TestResultsJpanel extends javax.swing.JPanel {
         PopulateTable();
         jTextField4.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    
+    private void initListners() {
+        jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener(){
+        public void valueChanged(ListSelectionEvent event) {
+           int selectedRow = jTable1.getSelectedRow();
+             if (selectedRow >= 0) {
+                  LabTest  L  = (LabTest) jTable1.getValueAt(selectedRow, 0);
+                 /*if(L!=null){
+                     jTextField4.setText(L.getResult());
+                 }*/
+             }
+        }
+    });
+    }
+    
+    private void PopulateTable() {
+        DefaultTableModel model= (DefaultTableModel) jTable1.getModel();
+        Object[] row=new Object[2];
+        model.setRowCount(0);
+        
+         for(LabTest LT: request.getLabTestList())
+         {
+         
+            row[0]= LT;
+            row[1] = LT.getResult();
+            
+            model.addRow(row);
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
