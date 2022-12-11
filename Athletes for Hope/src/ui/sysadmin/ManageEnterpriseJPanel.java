@@ -97,7 +97,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         lblManageEnterprises.setForeground(new java.awt.Color(230, 126, 34));
         lblManageEnterprises.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageEnterprises.setText("Manage Enterprises");
-        jPanel1.add(lblManageEnterprises, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 628, 40));
+        jPanel1.add(lblManageEnterprises, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, 628, 40));
 
         tableEnterprises.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,15 +120,15 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableEnterprises);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 430, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 430, 130));
 
         jLabel2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         jLabel2.setText("Enterprise Type:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 162, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         jLabel3.setText("Network:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 121, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, -1, -1));
 
         btnSubmit.setBackground(new java.awt.Color(51, 102, 255));
         btnSubmit.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -148,12 +148,12 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 btnSubmitActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 258, 120, -1));
+        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 120, -1));
 
         lblNetworkName.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblNetworkName.setText("Name:");
-        jPanel1.add(lblNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 211, -1, -1));
-        jPanel1.add(txtEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 120, -1));
+        jPanel1.add(lblNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+        jPanel1.add(txtEnterpriseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 280, 120, -1));
 
         comboBoxNetworkName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxNetworkName.addActionListener(new java.awt.event.ActionListener() {
@@ -161,7 +161,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 comboBoxNetworkNameActionPerformed(evt);
             }
         });
-        jPanel1.add(comboBoxNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 120, -1));
+        jPanel1.add(comboBoxNetworkName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 120, -1));
 
         comboBoxEnterpriseType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboBoxEnterpriseType.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +169,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 comboBoxEnterpriseTypeActionPerformed(evt);
             }
         });
-        jPanel1.add(comboBoxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 120, -1));
+        jPanel1.add(comboBoxEnterpriseType, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 120, -1));
 
         btnDelete.setBackground(new java.awt.Color(51, 102, 255));
         btnDelete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -189,7 +189,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 btnDeleteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, -1));
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -197,19 +197,13 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1300, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 831, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
