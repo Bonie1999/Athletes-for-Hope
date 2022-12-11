@@ -93,7 +93,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         lblManageNetworks.setForeground(new java.awt.Color(230, 126, 34));
         lblManageNetworks.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblManageNetworks.setText("Manage Networks");
-        jPanel1.add(lblManageNetworks, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 47, 805, 40));
+        jPanel1.add(lblManageNetworks, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 805, 40));
 
         tableNetworks.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -116,18 +116,18 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableNetworks);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 340, 130));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 190, 340, 130));
 
         jLabel2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         jLabel2.setText("Name:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 70, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 70, -1));
 
         txtEnterNameOfNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEnterNameOfNetworkActionPerformed(evt);
             }
         });
-        jPanel1.add(txtEnterNameOfNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, 216, -1));
+        jPanel1.add(txtEnterNameOfNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 216, -1));
 
         btnAddNewNetwork.setBackground(new java.awt.Color(51, 102, 255));
         btnAddNewNetwork.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -146,7 +146,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnAddNewNetworkActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAddNewNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 90, -1));
+        jPanel1.add(btnAddNewNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 90, -1));
 
         btnDeleteNetwork.setBackground(new java.awt.Color(51, 102, 255));
         btnDeleteNetwork.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -165,7 +165,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnDeleteNetworkActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDeleteNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 190, 120, -1));
+        jPanel1.add(btnDeleteNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 120, -1));
 
         jButton2.setBackground(new java.awt.Color(51, 102, 255));
         jButton2.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -176,7 +176,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(51, 102, 255));
         jButton3.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
@@ -187,7 +187,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 232, -1, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 300, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -195,19 +195,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1300, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
