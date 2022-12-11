@@ -233,7 +233,9 @@ public class HealthInsuranceCaseReportJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 0, 0, 82);
         jPanel2.add(txtSuspectType, gridBagConstraints);
 
+        btnSendInvite.setBackground(new java.awt.Color(255, 146, 1));
         btnSendInvite.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnSendInvite.setForeground(new java.awt.Color(255, 255, 255));
         btnSendInvite.setText("Send Invite");
         btnSendInvite.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -249,7 +251,9 @@ public class HealthInsuranceCaseReportJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setBackground(new java.awt.Color(255, 146, 1));
         btnBack.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

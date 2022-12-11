@@ -91,7 +91,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblLawyerManageRequest);
 
+        btnAssignRequest.setBackground(new java.awt.Color(255, 146, 1));
         btnAssignRequest.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnAssignRequest.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignRequest.setText("Assign Request");
         btnAssignRequest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -107,7 +109,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnViewCaseReport.setBackground(new java.awt.Color(255, 146, 1));
         btnViewCaseReport.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnViewCaseReport.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCaseReport.setText("View Case Report");
         btnViewCaseReport.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -123,7 +127,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnEncounter.setBackground(new java.awt.Color(255, 146, 1));
         btnEncounter.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnEncounter.setForeground(new java.awt.Color(255, 255, 255));
         btnEncounter.setText("Ecounters");
         btnEncounter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -139,7 +145,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCaseComplete.setBackground(new java.awt.Color(255, 146, 1));
         btnCaseComplete.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnCaseComplete.setForeground(new java.awt.Color(255, 255, 255));
         btnCaseComplete.setText(" Case Complete");
         btnCaseComplete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
