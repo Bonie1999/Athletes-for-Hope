@@ -32,7 +32,7 @@ import javax.mail.Transport;
 import javax.swing.JOptionPane;
 /**
  *
- * @author puranjaimendiratta
+ * @author hp
  */
 public class SignUpJFrame extends javax.swing.JFrame {
 
@@ -43,7 +43,6 @@ public class SignUpJFrame extends javax.swing.JFrame {
     private EcoSystem system;
     private DB4OUtil dB4OUtil = DB4OUtil.getInstance();
     public SignUpJFrame() {
-        initComponents();
         initComponents();
         system = dB4OUtil.retrieveSystem();
         this.setSize(1080, 680);
@@ -58,7 +57,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
             networkJComboBox.addItem(network);
         }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -293,7 +292,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 690, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -414,7 +413,7 @@ public class SignUpJFrame extends javax.swing.JFrame {
                 }
                 else{
                     //System.out.println("start4");
-                    Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("CaseReporterOrganization");
+                    Organization org = enterprise.getOrganizationDirectory().searchOrganizationbyname("TalentScoutOrganization");
                     Employee employee= org.getEmployeeDirectory().createEmployee(name);
                     if(org.getUserAccountDirectory().CheckIsValidInput(password)){
                         UserAccount userAccount=org.getUserAccountDirectory().createUserAccnt(username, password, employee, new TalentScoutRole());
