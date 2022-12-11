@@ -3,18 +3,52 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.FundAllocator;
+import ui.HealthInsurance.*;
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.TalentRecruitmentOrganization;
+import business.Organization.PhysicalTrainingOrganization;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.InsuranceAgentWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
  * @author nishank
  */
-public class TalentScout extends javax.swing.JPanel {
+public class TalentScoutFA extends javax.swing.JPanel {
 
     /**
      * Creates new form TalentScout
      */
-    public TalentScout() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    TalentScoutWorkRequest request;
+    UserAccount userAccount;
+    Network network;
+    public TalentScoutFA(JPanel userProcessContainer, EcoSystem system, TalentScoutWorkRequest request,UserAccount userAccount, Network network) {
         initComponents();
+    this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.request = request;
+        this.userAccount = userAccount;
+        this.network = network;
+        PopulateReport();
     }
 
     /**
@@ -324,7 +358,7 @@ public class TalentScout extends javax.swing.JPanel {
         String FromEmail="sexualawareness.help@gmail.com";
         String FromEmailPass="Fin@lProject21";
         String Subject = "Sign up successful";
-        String ema=request.getEmail();
+        //String ema=request.getEmail();
         String nv=request.getChildName();
         Properties properties=new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -343,7 +377,7 @@ public class TalentScout extends javax.swing.JPanel {
         {
             Message msg=new MimeMessage(session);
             msg.setFrom(new InternetAddress(FromEmail));
-            msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(ema));
+//            msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(ema));
             msg.setSubject("A Lawyer has been assigned.");
             msg.setText("Dear "+nv +"\n"+"I am here to help you. Please schedule an appointment through the following link."+"\n"+"calendly.link"+"\n"+"Best,"+"\n"+userAccount.getEmp().getName());
             Transport.send(msg);
@@ -369,13 +403,23 @@ public class TalentScout extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        LawyerJPanel sysAdminwjp = (LawyerJPanel) component;
+        HealthInsuranceJPanel sysAdminwjp = (HealthInsuranceJPanel) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBackActionPerformed
+    private void PopulateReport() {
+        txtName.setText(request.getChildName());
+        txtRelationwithSurvivor.setText(request.getGender());
+        txtTypeofAssault.setText(request.getSportType());
+        txtlocation.setText(request.getAddress());
+        txtDate.setText(request.getDoe().toString());
+        txtSuspectType.setText(request.getHeight());
+        txtSuspectName.setText(request.getWeight());
+        
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

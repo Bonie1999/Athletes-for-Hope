@@ -4,6 +4,10 @@
  */
 package ui.EnterpriseAdmin;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import java.awt.Color;
+import javax.swing.JPanel;
 /**
  *
  * @author nishank
@@ -13,8 +17,17 @@ public class EnterpriseAdmin extends javax.swing.JPanel {
     /**
      * Creates new form EnterpriseAdmin
      */
-    public EnterpriseAdmin() {
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    public EnterpriseAdmin(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.system = system;
+        jSplitPane1.setDividerSize(0);
+        jSplitPane1.setDividerLocation(120);
+        txtFieldEnterpriseName.setText(enterprise.getEnterpriseType().getValue());
     }
 
     /**
@@ -40,6 +53,7 @@ public class EnterpriseAdmin extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1300, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -194,26 +208,7 @@ public class EnterpriseAdmin extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 57, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1020, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 677, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 11, 1020, 677));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnManageOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManageOrgMouseExited
@@ -225,7 +220,7 @@ public class EnterpriseAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageOrgMouseEntered
 
     private void btnManageOrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageOrgActionPerformed
-        ManageOrganizationsJPanel manageorganizationsJPanel=new ManageOrganizationsJPanel(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
+        ManageOrganizations manageorganizationsJPanel=new ManageOrganizations(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
         jSplitPane1.setBottomComponent(manageorganizationsJPanel);
     }//GEN-LAST:event_btnManageOrgActionPerformed
 
@@ -238,7 +233,7 @@ public class EnterpriseAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageEmployeeMouseEntered
 
     private void btnManageEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployeeActionPerformed
-        ManageEmployeeJPanel manageemployeeJPanel=new ManageEmployeeJPanel(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
+        ManageEmployee manageemployeeJPanel=new ManageEmployee(userProcessContainer,enterprise, system,enterprise.getOrganizationDirectory());
         jSplitPane1.setBottomComponent(manageemployeeJPanel);
     }//GEN-LAST:event_btnManageEmployeeActionPerformed
 
@@ -251,7 +246,7 @@ public class EnterpriseAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_btnManageEmployeeAccessMouseEntered
 
     private void btnManageEmployeeAccessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageEmployeeAccessActionPerformed
-        ManageUsersJPanel manageuserJPanel=new ManageUsersJPanel(userProcessContainer,enterprise, system);
+        ManageUsers manageuserJPanel=new ManageUsers(userProcessContainer,enterprise, system);
         jSplitPane1.setBottomComponent(manageuserJPanel);
     }//GEN-LAST:event_btnManageEmployeeAccessActionPerformed
 

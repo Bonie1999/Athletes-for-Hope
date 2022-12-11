@@ -4,6 +4,18 @@
  */
 package ui.FundAllocator;
 
+import business.EcoSystem;
+import business.Network.Network;
+import business.Organization.Organization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.FundAllocatorWorkRequest;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author nishank
@@ -13,8 +25,19 @@ public class FundAllocatorRequest extends javax.swing.JPanel {
     /**
      * Creates new form FundAllocatorRequest
      */
-    public FundAllocatorRequest() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    UserAccount userAccount;
+    Organization organization;
+    FundAllocatorWorkRequest request;
+    Network network;
+    public FundAllocatorRequest(JPanel userProcessContainer, EcoSystem system, UserAccount userAccount,Organization organization,Network network) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.organization=organization;
+        this.userAccount = userAccount;
+        populateTable();
     }
 
     /**
@@ -201,7 +224,7 @@ public class FundAllocatorRequest extends javax.swing.JPanel {
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
 
         int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
-        CounsellorWorkRequest request = (CounsellorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
+        FundAllocatorWorkRequest request = (FundAllocatorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
             request.setStatus("Accepted");
@@ -237,14 +260,14 @@ public class FundAllocatorRequest extends javax.swing.JPanel {
                 return;
             }
 
-            CounsellorWorkRequest request = (CounsellorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
+            FundAllocatorWorkRequest request = (FundAllocatorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
 
             if (request.getReceiver()!=userAccount){
                 JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
             }else{
 
-                CaseReportCJPanel caseReportJPanel = new CaseReportCJPanel(userProcessContainer,system,request.getHswr(),userAccount,network);
-                userProcessContainer.add("caseReportJPanel", caseReportJPanel);
+                TalentScoutFA TalentScout = new TalentScoutFA(userProcessContainer,system,request.getHswr(),userAccount,network);
+                userProcessContainer.add("TalentScout", TalentScout);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
                 /*CaseReportJPanel casereportJPanel=new CaseReportJPanel(userProcessContainer,system,request);
@@ -277,12 +300,12 @@ public class FundAllocatorRequest extends javax.swing.JPanel {
             if (selectedRow < 0){
                 return;
             }
-            CounsellorWorkRequest request = (CounsellorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
+            FundAllocatorWorkRequest request = (FundAllocatorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
 
             if (request.getReceiver()!=userAccount){
                 JOptionPane.showMessageDialog(this, "You cannot view the report of this case. Access Denied.");
             }else{
-                CounsellorEncounterJPanel cencounterJPanel = new CounsellorEncounterJPanel(userProcessContainer,system,userAccount,network,organization,request);
+                FundAllocatorConsultation cencounterJPanel = new FundAllocatorConsultation(userProcessContainer,system,userAccount,network,organization,request);
                 userProcessContainer.add("caseReportJPanel", cencounterJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
@@ -315,13 +338,48 @@ public class FundAllocatorRequest extends javax.swing.JPanel {
                 return;
             }
 
-            WorkRequest request = (CounsellorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
+            WorkRequest request = (FundAllocatorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
             //request.setReceiver(userAccount);
             request.setStatus("Case Completed");
             populateTable();
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCaseCompleteActionPerformed
+private void populateTable() {
+        DefaultTableModel model= (DefaultTableModel) tblManageCounsellorRequestDetails.getModel();
+        Object[] row=new Object[4];
+        model.setRowCount(0);
+        
+         for(FundAllocatorWorkRequest request : organization.getWorkQueue().getFundAllocatorWorkRequestList())
+         {
+         
+             //request.getHelpSeekerWorkRequest().getSender().getEmployee().getEmail();
+            
+             row[0]=request.getHswr().getChildName();
+            row[1] = request.getHswr().getDoe();
+            row[2] = request;
+            if (request.getReceiver()==null){
+              row[3] = "Not Assigned";
+            }else{
+              row[3] = request.getReceiver();
+            }
+            model.addRow(row);
+        }
+    }
+    
+    private int CheckOpenCases(UserAccount userAccount) {
+        int a = 0;
+        for(FundAllocatorWorkRequest request : organization.getWorkQueue().getFundAllocatorWorkRequestList())
+        {
+        
+          if (request.getReceiver()==userAccount){
+              if (request.getStatus().equalsIgnoreCase("Accepted")){
+                  a = a + 1;
+              }
+          } 
+        }
+        return a; 
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

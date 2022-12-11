@@ -3,7 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui.PhysicalTraining;
-
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Network.Network;
+import business.Organization.DiagnosticOrganization;
+import business.Organization.Organization;
+import business.Organization.NutrabayOrganization;
+import business.UserAccount.UserAccount;
+import business.WorkQueue.TalentScoutWorkRequest;
+import business.WorkQueue.LabTechnicianWorkRequest;
+import business.WorkQueue.MentalHealthCoachWorkRequest;
+import java.awt.CardLayout;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author nishank
@@ -13,8 +35,23 @@ public class TalentScoutPT extends javax.swing.JPanel {
     /**
      * Creates new form TalentScoutPT
      */
-    public TalentScoutPT() {
+    JPanel userProcessContainer;
+    EcoSystem system;
+    TalentScoutWorkRequest request;
+    UserAccount userAccount;
+    Network network;
+    Enterprise enterprise;
+    Organization organization;
+    public TalentScoutPT(JPanel userProcessContainer, EcoSystem system, TalentScoutWorkRequest request,UserAccount userAccount, Network network,Enterprise enterprise, Organization organization) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.system = system;
+        this.request = request;
+        this.userAccount = userAccount;
+        this.network = network;
+        this.enterprise = enterprise;
+        this.organization = organization;
+        PopulateReport();
     }
 
     /**
@@ -347,30 +384,30 @@ public class TalentScoutPT extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        LabAssistantWorkRequest labrequest = new LabAssistantWorkRequest();
-        labrequest.setDoctorWorkRequest(request.getDoctorWorkRequest());
-        request.getDoctorWorkRequest().setLabAssistanceWorkRequest(labrequest);
+        LabTechnicianWorkRequest labrequest = new LabTechnicianWorkRequest();
+        labrequest.setTrainingCoachWorkRequest(request.getTrainingCoachWorkRequest());
+        request.getTrainingCoachWorkRequest().setLabTechnicianWorkRequest(labrequest);
         labrequest.setSender(userAccount);
         labrequest.setStatus("Waiting");
         if (userAccount==null){
             System.out.println("userAccount is not set");
         }
 
-        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.Wellness);
+        Enterprise e= network.getEnterpriseDirectory().searchEnterprisebyType(Enterprise.EnterpriseType.HealthWellBeing);
         Organization org = null;
         for (Organization organization : e.getOrganizationDirectory().getOrganizationList()){
-            if (organization instanceof ForensicOrganization){
+            if (organization instanceof DiagnosticOrganization){
                 org = organization;
                 break;
             }
         }
         if (org!=null){
-            org.getWorkQueue().getLabAssistanceWorkRequest().add(labrequest);
+            org.getWorkQueue().getLabTechnicianWorkRequest().add(labrequest);
             //userAccount.getWorkQueue().getHelpSeekerworkRequestList().add(request);
-            if(userAccount.getWrkQue().getLabAssistanceWorkRequest()==null){
+            if(userAccount.getWrkQue().getLabTechnicianWorkRequest()==null){
                 System.out.println("True");
             }
-            userAccount.getWrkQue().getLabAssistanceWorkRequest().add(labrequest);
+            userAccount.getWrkQue().getLabTechnicianWorkRequest().add(labrequest);
         }
 
         RequestLabTestJPanel requestLabTestJPanel = new RequestLabTestJPanel(userProcessContainer,system,labrequest,userAccount,network);
@@ -392,10 +429,10 @@ public class TalentScoutPT extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //System.out.println("Status "+request.getDoctorWorkRequest().getLabAssistanceWorkRequest().getStatus());
-        if(request.getDoctorWorkRequest().getLabAssistanceWorkRequest().getStatus().equalsIgnoreCase("Waiting")){
+        if(request.getTrainingCoachWorkRequest().getLabTechnicianWorkRequest().getStatus().equalsIgnoreCase("Waiting")){
             JOptionPane.showMessageDialog(this, "Requested has not been acccepted yet.");
         }else{
-            LabTestResultsJPanel requestLabTestJPanel = new LabTestResultsJPanel(userProcessContainer,system,request.getDoctorWorkRequest().getLabAssistanceWorkRequest());
+            LabTestResults requestLabTestJPanel = new LabTestResults(userProcessContainer,system,request.getTrainingCoachWorkRequest().getLabTechnicianWorkRequest());
             userProcessContainer.add("caseReportJPanel", requestLabTestJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);}
@@ -537,4 +574,16 @@ public class TalentScoutPT extends javax.swing.JPanel {
     private javax.swing.JLabel timejLabel;
     private javax.swing.JLabel typejLabel;
     // End of variables declaration//GEN-END:variables
+private void PopulateReport() {
+        jTextField1.setText(request.getChildName());
+        jTextField5.setText(request.getRelation());
+        jTextField6.setText(request.getAssaultType());
+        jTextField4.setText(request.getLocation());
+        jTextField7.setText(request.getDoi().toString());
+        jTextField3.setText(request.getMoredetails());
+        jTextField8.setText(request.getSuspecttype());
+        jTextField2.setText(request.getNameofsuspect());
+        
+        
+    }
 }

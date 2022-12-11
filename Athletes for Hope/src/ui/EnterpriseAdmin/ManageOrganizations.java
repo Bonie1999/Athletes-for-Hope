@@ -4,6 +4,14 @@
  */
 package ui.EnterpriseAdmin;
 
+import business.EcoSystem;
+import business.Enterprise.Enterprise;
+import business.Organization.Organization;
+import business.Organization.OrganizationDirectory;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author nishank
@@ -13,8 +21,80 @@ public class ManageOrganizations extends javax.swing.JPanel {
     /**
      * Creates new form ManageOrganizations
      */
-    public ManageOrganizations() {
+    
+    JPanel userProcessContainer;
+    Enterprise enterprise;
+    EcoSystem system;
+    private OrganizationDirectory directory;
+    public ManageOrganizations(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system,OrganizationDirectory directory) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.enterprise = enterprise;
+        this.system = system;
+        this.directory = directory;
+        
+        populateTable();
+        populateCombo();
+        //System.out.println(enterprise.getEnterpriseType().getValue());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void populateCombo(){
+        comboBoxOrgType.removeAllItems();
+        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("NGO")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.TalentRecruitment.getValue()) || type.getValue().equals(Organization.Type.SportsFund.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Wellness")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.PhysicalTraining.getValue()) || type.getValue().equals(Organization.Type.Diagnostic.getValue())
+                        || type.getValue().equals(Organization.Type.MentalHealth.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Justice")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.Health.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Pharmaceutical")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.Nutrabay.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Psychiatrist")){
+            for (Organization.Type type : Organization.Type.values()){
+                if (type.getValue().equals(Organization.Type.MentalHealth.getValue())){
+                    comboBoxOrgType.addItem(type);
+                }
+            }
+        }
+        
+        
+        
+        
+        /*for (Organization.Type type : Organization.Type.values()){
+            if (!type.getValue().equals(Organization.Type.Admin.getValue()))
+                organizationJComboBox.addItem(type);
+        }*/
+    }
+
+    private void populateTable(){
+        DefaultTableModel model = (DefaultTableModel) tableOrg.getModel();
+        
+        model.setRowCount(0);
+        
+        for (Organization organization : directory.getOrganizationList()){
+            Object[] row = new Object[1];
+            //row[0] = organization.getOrganizationID();
+            row[0] = organization;
+            
+            model.addRow(row);
+        }
     }
 
     /**
@@ -37,6 +117,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
         btnDltOrg = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1300, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -122,26 +203,7 @@ public class ManageOrganizations extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 38, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1300, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 138, 676, 423));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddOrgMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddOrgMouseExited
