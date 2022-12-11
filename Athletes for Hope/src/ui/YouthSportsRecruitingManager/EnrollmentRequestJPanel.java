@@ -126,9 +126,9 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 490, 130));
 
-        btnAssignRequest.setBackground(new java.awt.Color(129, 178, 154));
+        btnAssignRequest.setBackground(new java.awt.Color(255, 146, 1));
         btnAssignRequest.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnAssignRequest.setForeground(new java.awt.Color(61, 64, 91));
+        btnAssignRequest.setForeground(new java.awt.Color(255, 255, 255));
         btnAssignRequest.setText("Assign Request");
         btnAssignRequest.setBorderPainted(false);
         btnAssignRequest.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -147,9 +147,9 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnAssignRequest, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 89, 170, 42));
 
-        btnViewCaseReport.setBackground(new java.awt.Color(129, 178, 154));
+        btnViewCaseReport.setBackground(new java.awt.Color(255, 146, 1));
         btnViewCaseReport.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnViewCaseReport.setForeground(new java.awt.Color(61, 64, 91));
+        btnViewCaseReport.setForeground(new java.awt.Color(255, 255, 255));
         btnViewCaseReport.setText("View Case Report");
         btnViewCaseReport.setBorderPainted(false);
         btnViewCaseReport.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -168,18 +168,18 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnViewCaseReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 38));
 
-        btnCheckStatus.setBackground(new java.awt.Color(129, 178, 154));
+        btnCheckStatus.setBackground(new java.awt.Color(255, 146, 1));
         btnCheckStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnCheckStatus.setForeground(new java.awt.Color(61, 64, 91));
+        btnCheckStatus.setForeground(new java.awt.Color(255, 255, 255));
         btnCheckStatus.setText("Check Status");
         btnCheckStatus.setBorderPainted(false);
         btnCheckStatus.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnCheckStatus.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnCheckStatusMouseExited(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnCheckStatusMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCheckStatusMouseExited(evt);
             }
         });
         btnCheckStatus.addActionListener(new java.awt.event.ActionListener() {

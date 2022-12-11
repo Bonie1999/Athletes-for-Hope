@@ -213,9 +213,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
 
         jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 62, -1, -1));
 
-        btnBack.setBackground(new java.awt.Color(129, 178, 154));
+        btnBack.setBackground(new java.awt.Color(255, 146, 1));
         btnBack.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(61, 64, 91));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.setBorderPainted(false);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -240,9 +240,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 35, -1, 500));
 
-        btnReqLawyer.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqLawyer.setBackground(new java.awt.Color(255, 146, 1));
         btnReqLawyer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqLawyer.setForeground(new java.awt.Color(61, 64, 91));
+        btnReqLawyer.setForeground(new java.awt.Color(255, 255, 255));
         btnReqLawyer.setText("Request Lawyer");
         btnReqLawyer.setBorderPainted(false);
         btnReqLawyer.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -260,9 +260,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, 170, 38));
 
-        btnReqCounsellar.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqCounsellar.setBackground(new java.awt.Color(255, 146, 1));
         btnReqCounsellar.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqCounsellar.setForeground(new java.awt.Color(61, 64, 91));
+        btnReqCounsellar.setForeground(new java.awt.Color(255, 255, 255));
         btnReqCounsellar.setText("Request Counsellar");
         btnReqCounsellar.setBorderPainted(false);
         btnReqCounsellar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -280,9 +280,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqCounsellar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 410, 170, 41));
 
-        btnReqDoc.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqDoc.setBackground(new java.awt.Color(255, 146, 1));
         btnReqDoc.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqDoc.setForeground(new java.awt.Color(61, 64, 91));
+        btnReqDoc.setForeground(new java.awt.Color(255, 255, 255));
         btnReqDoc.setText("Request Doctor");
         btnReqDoc.setBorderPainted(false);
         btnReqDoc.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -300,9 +300,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, 170, 41));
 
-        btnReqPsych.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqPsych.setBackground(new java.awt.Color(255, 146, 1));
         btnReqPsych.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqPsych.setForeground(new java.awt.Color(61, 64, 91));
+        btnReqPsych.setForeground(new java.awt.Color(255, 255, 255));
         btnReqPsych.setText("Psychiatrist");
         btnReqPsych.setBorderPainted(false);
         btnReqPsych.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -320,9 +320,9 @@ public class EnrollmentFormRJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnReqPsych, new org.netbeans.lib.awtextra.AbsoluteConstraints(792, 270, 170, 38));
 
-        btnReqRehab.setBackground(new java.awt.Color(129, 178, 154));
+        btnReqRehab.setBackground(new java.awt.Color(255, 146, 1));
         btnReqRehab.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        btnReqRehab.setForeground(new java.awt.Color(61, 64, 91));
+        btnReqRehab.setForeground(new java.awt.Color(255, 255, 255));
         btnReqRehab.setText("Request Rehabilitation");
         btnReqRehab.setBorderPainted(false);
         btnReqRehab.addMouseListener(new java.awt.event.MouseAdapter() {
