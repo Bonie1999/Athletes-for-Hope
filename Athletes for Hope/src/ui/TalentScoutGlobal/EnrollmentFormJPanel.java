@@ -47,7 +47,6 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -57,18 +56,13 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         lblLocation = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
         lblDetails = new javax.swing.JLabel();
-        lblSuspect = new javax.swing.JLabel();
         lblNameofSuspect = new javax.swing.JLabel();
         txtChildName = new javax.swing.JTextField();
         friendRadioButton = new javax.swing.JRadioButton();
         parentRadioButton = new javax.swing.JRadioButton();
         txtSuspectName = new javax.swing.JTextField();
-        knownRadioButton = new javax.swing.JRadioButton();
-        unknownRadioButton = new javax.swing.JRadioButton();
         txtMoreDetails = new javax.swing.JTextField();
         txtLocation = new javax.swing.JTextField();
-        Selfradiobutton = new javax.swing.JRadioButton();
-        otherRadioButton = new javax.swing.JRadioButton();
         ReportjButton = new javax.swing.JButton();
         comboBoxIncident = new javax.swing.JComboBox<>();
         txtAgeofChild = new javax.swing.JTextField();
@@ -79,236 +73,86 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new java.awt.GridBagLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         namesurvivorjLabel.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        namesurvivorjLabel.setText("Name of Victim : ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 200, 0, 0);
-        jPanel2.add(namesurvivorjLabel, gridBagConstraints);
+        namesurvivorjLabel.setText("Name of Child : ");
+        jPanel2.add(namesurvivorjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 135, -1));
 
         relationjLabel.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        relationjLabel.setText("Relation with Survivor : ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 130, 0, 0);
-        jPanel2.add(relationjLabel, gridBagConstraints);
+        relationjLabel.setText("                Gender : ");
+        jPanel2.add(relationjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 76, 210, -1));
 
         lblType.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblType.setText("Type of Incident:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 14;
-        gridBagConstraints.ipady = 11;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 190, 0, 0);
-        jPanel2.add(lblType, gridBagConstraints);
+        lblType.setText("         Sport :");
+        jPanel2.add(lblType, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 142, 20));
 
         lblLocation.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblLocation.setText("Location of Incident :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 150, 0, 0);
-        jPanel2.add(lblLocation, gridBagConstraints);
+        lblLocation.setText("            Address : ");
+        jPanel2.add(lblLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 180, -1));
 
         lblDate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblDate.setText("Date of Incident :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 7;
-        gridBagConstraints.ipady = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 180, 0, 0);
-        jPanel2.add(lblDate, gridBagConstraints);
+        lblDate.setText("Date of Enrollment :");
+        jPanel2.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 170, 20));
 
         lblDetails.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblDetails.setText("More Details : ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.ipadx = 27;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 210, 0, 0);
-        jPanel2.add(lblDetails, gridBagConstraints);
-
-        lblSuspect.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblSuspect.setText("Suspect :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.gridwidth = 7;
-        gridBagConstraints.ipadx = 68;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 250, 0, 0);
-        jPanel2.add(lblSuspect, gridBagConstraints);
+        lblDetails.setText("Parent Name :");
+        jPanel2.add(lblDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 110, -1));
 
         lblNameofSuspect.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblNameofSuspect.setText("Name of Suspect : ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 190, 0, 0);
-        jPanel2.add(lblNameofSuspect, gridBagConstraints);
+        lblNameofSuspect.setText("         Weight :");
+        jPanel2.add(lblNameofSuspect, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 140, -1));
 
         txtChildName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtChildNameActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 16;
-        gridBagConstraints.ipadx = 155;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 23, 0, 0);
-        jPanel2.add(txtChildName, gridBagConstraints);
+        jPanel2.add(txtChildName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 230, -1));
 
         friendRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        friendRadioButton.setText("Friend");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 14;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 13, 0, 0);
-        jPanel2.add(friendRadioButton, gridBagConstraints);
+        friendRadioButton.setText("Female");
+        friendRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                friendRadioButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(friendRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
 
         parentRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        parentRadioButton.setText("Parent");
+        parentRadioButton.setText("Male");
         parentRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 parentRadioButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 21;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 32;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 18, 0, 0);
-        jPanel2.add(parentRadioButton, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.gridwidth = 31;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 161;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 23, 0, 0);
-        jPanel2.add(txtSuspectName, gridBagConstraints);
+        jPanel2.add(parentRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 58, -1));
 
-        knownRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        knownRadioButton.setText("Known");
-        knownRadioButton.addActionListener(new java.awt.event.ActionListener() {
+        txtSuspectName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                knownRadioButtonActionPerformed(evt);
+                txtSuspectNameActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.gridwidth = 15;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 23, 0, 0);
-        jPanel2.add(knownRadioButton, gridBagConstraints);
+        jPanel2.add(txtSuspectName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 230, -1));
+        jPanel2.add(txtMoreDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 230, -1));
 
-        unknownRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        unknownRadioButton.setText("Unknown");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 21;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.gridwidth = 49;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 38, 0, 0);
-        jPanel2.add(unknownRadioButton, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 16;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 155;
-        gridBagConstraints.ipady = 25;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 23, 0, 0);
-        jPanel2.add(txtMoreDetails, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 16;
-        gridBagConstraints.ipadx = 155;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(1, 23, 0, 0);
-        jPanel2.add(txtLocation, gridBagConstraints);
-
-        Selfradiobutton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        Selfradiobutton.setText("Self");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 69;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 50;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 3, 0, 0);
-        jPanel2.add(Selfradiobutton, gridBagConstraints);
-
-        otherRadioButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        otherRadioButton.setText("Other");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 119;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 115;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 12, 0, 122);
-        jPanel2.add(otherRadioButton, gridBagConstraints);
+        txtLocation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLocationActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtLocation, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 230, 50));
 
         ReportjButton.setBackground(new java.awt.Color(51, 102, 255));
         ReportjButton.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         ReportjButton.setForeground(new java.awt.Color(255, 255, 255));
-        ReportjButton.setText("Report");
+        ReportjButton.setText("Enroll");
         ReportjButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ReportjButtonActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 18;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.ipadx = 29;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 310, 254, 0);
-        jPanel2.add(ReportjButton, gridBagConstraints);
+        jPanel2.add(ReportjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 107, -1));
 
         comboBoxIncident.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one", "Cricket", "Hockey", "Basket Ball", "Atheletics", "Football" }));
         comboBoxIncident.addActionListener(new java.awt.event.ActionListener() {
@@ -316,41 +160,13 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
                 comboBoxIncidentActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 48;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 23, 0, 0);
-        jPanel2.add(comboBoxIncident, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 16;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 155;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(1, 23, 0, 0);
-        jPanel2.add(txtAgeofChild, gridBagConstraints);
+        jPanel2.add(comboBoxIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+        jPanel2.add(txtAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 230, -1));
 
         lblAgeofChild.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblAgeofChild.setText("Age :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(1, 280, 0, 0);
-        jPanel2.add(lblAgeofChild, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 114;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 261;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 23, 0, 0);
-        jPanel2.add(dateOfIncident, gridBagConstraints);
+        jPanel2.add(lblAgeofChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 49, 50, -1));
+        jPanel2.add(dateOfIncident, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, 230, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 844, 633));
 
@@ -384,10 +200,6 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_parentRadioButtonActionPerformed
 
-    private void knownRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_knownRadioButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_knownRadioButtonActionPerformed
-
     private void ReportjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportjButtonActionPerformed
 
         TalentScoutWorkRequest request = new TalentScoutWorkRequest();
@@ -399,30 +211,22 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         //for choosing relations
         if(friendRadioButton.isSelected())
         {
-            request.setRelation("Friend");
+            request.setRelation("Male");
         }
         else if(parentRadioButton.isSelected())
         {
-            request.setRelation("Parent");
+            request.setRelation("Female");
         }
-        else if(Selfradiobutton.isSelected())
-        {
-            request.setRelation("Self");
-
-        }
-        else if(otherRadioButton.isSelected())
-        {
-            request.setRelation("Other");
-        }
+      
         else
         {
-            JOptionPane.showMessageDialog(null, "Please select a relation");
+            JOptionPane.showMessageDialog(null, "Please select a gender");
 
         }
         //for choosing type
         if(comboBoxIncident.getSelectedItem().toString().equalsIgnoreCase("Select one"))
         {
-            JOptionPane.showMessageDialog(null, "Please select a type");
+            JOptionPane.showMessageDialog(null, "Please select a Sport");
         }
         else{
             request.setSportType(comboBoxIncident.getSelectedItem().toString());
@@ -439,19 +243,19 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         //more detaisl
         if(txtMoreDetails.getText()==null)
         {
-            JOptionPane.showMessageDialog(null, "Please fill more details");
+            JOptionPane.showMessageDialog(null, "Please enter parent name");
             return;
         }
         request.setParentName(txtMoreDetails.getText());
         //suspect
-        if(knownRadioButton.isSelected())
-        {
-            request.setHeight("Known");
-        }
-        else if(unknownRadioButton.isSelected())
-        {
-            request.setHeight("Unknown");
-        }else{JOptionPane.showMessageDialog(null, "Please select a suspect type");}
+//        if(knownRadioButton.isSelected())
+//        {
+//            request.setHeight("Known");
+//        }
+//        else if(unknownRadioButton.isSelected())
+//        {
+//            request.setHeight("Unknown");
+//        }else{JOptionPane.showMessageDialog(null, "Please select a suspect type");}
 
         //name of suspect
         request.setWeight(txtSuspectName.getText());
@@ -479,10 +283,7 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
             txtAgeofChild.setText("");
             friendRadioButton.setSelected(false);
             parentRadioButton.setSelected(false);
-            Selfradiobutton.setSelected(false);
-            otherRadioButton.setSelected(false);
-            knownRadioButton.setSelected(false);
-            unknownRadioButton.setSelected(false);
+           
             comboBoxIncident.setSelectedIndex(0);
             // dateOfIncident.setDate(null);
             userAccount.getWrkQue().getTalentScoutWorkRequestList().add(request);
@@ -496,25 +297,33 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxIncidentActionPerformed
 
+    private void friendRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_friendRadioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_friendRadioButtonActionPerformed
+
+    private void txtLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLocationActionPerformed
+
+    private void txtSuspectNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSuspectNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSuspectNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ReportjButton;
-    private javax.swing.JRadioButton Selfradiobutton;
     private javax.swing.JComboBox<String> comboBoxIncident;
     private com.toedter.calendar.JDateChooser dateOfIncident;
     private javax.swing.JRadioButton friendRadioButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton knownRadioButton;
     private javax.swing.JLabel lblAgeofChild;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblDetails;
     private javax.swing.JLabel lblLocation;
     private javax.swing.JLabel lblNameofSuspect;
-    private javax.swing.JLabel lblSuspect;
     private javax.swing.JLabel lblType;
     private javax.swing.JLabel namesurvivorjLabel;
-    private javax.swing.JRadioButton otherRadioButton;
     private javax.swing.JRadioButton parentRadioButton;
     private javax.swing.JLabel relationjLabel;
     private javax.swing.JTextField txtAgeofChild;
@@ -522,6 +331,5 @@ public class EnrollmentFormJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtLocation;
     private javax.swing.JTextField txtMoreDetails;
     private javax.swing.JTextField txtSuspectName;
-    private javax.swing.JRadioButton unknownRadioButton;
     // End of variables declaration//GEN-END:variables
 }
