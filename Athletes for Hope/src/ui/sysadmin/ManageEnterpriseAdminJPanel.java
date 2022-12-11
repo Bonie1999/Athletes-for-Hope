@@ -264,7 +264,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
 
-        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Wellness")){
+        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("HealthWellBeing")){
             if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
                 UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new SportsWellbeingAdminRole());
             }
@@ -274,7 +274,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 return;
             }
             //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new HealthAdminRole());
-        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Justice")){
+        } else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("TalentScoutGlobal")){
             if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
                 UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PrudentialHealthAdminRole());
             }
@@ -294,7 +294,17 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 return;
             }
             //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NGOAdminRole());
-        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Pharmaceutical")){
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Insurance")){
+            if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
+                UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NutrabayAdminRole());
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Password should have a minimum length of 8 and contain atleast 1 Uppercase, 1 Lowercase, 1 Special character and 1 Digit ");
+                txtPassword.setText("");
+                return;
+            }
+            //UserAccount account = enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new PharmacyAdminRole());
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Nutrition")){
             if(enterprise.getUserAccountDirectory().CheckIsValidInput(password)){
                 UserAccount userAccount=enterprise.getUserAccountDirectory().createUserAccnt(username, password, employee, new NutrabayAdminRole());
             }
