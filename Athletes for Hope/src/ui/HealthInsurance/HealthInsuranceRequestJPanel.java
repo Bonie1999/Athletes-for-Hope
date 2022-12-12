@@ -65,8 +65,10 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
         btnEncounter = new javax.swing.JButton();
         btnCaseComplete = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         lblHeader.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(51, 102, 255));
+        lblHeader.setForeground(new java.awt.Color(255, 146, 1));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("Manage Requests");
 
@@ -78,7 +80,7 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Name ", "Time of Assault", "Status", "Assigned to"
+                "Child Name", "Enrollment Time", "Status", "Assigned to"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -130,7 +132,7 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
         btnEncounter.setBackground(new java.awt.Color(255, 146, 1));
         btnEncounter.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnEncounter.setForeground(new java.awt.Color(255, 255, 255));
-        btnEncounter.setText("Ecounters");
+        btnEncounter.setText("Consultation");
         btnEncounter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnEncounterMouseEntered(evt);
@@ -172,13 +174,14 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnViewCaseReport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAssignRequest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCaseComplete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(btnAssignRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(btnViewCaseReport)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEncounter, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCaseComplete)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(149, 149, 149))
             .addComponent(lblHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -190,14 +193,12 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCaseComplete)
-                    .addComponent(btnAssignRequest))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAssignRequest)
                     .addComponent(btnViewCaseReport)
-                    .addComponent(btnEncounter))
-                .addGap(89, 89, 89))
+                    .addComponent(btnEncounter)
+                    .addComponent(btnCaseComplete))
+                .addGap(133, 133, 133))
         );
     }// </editor-fold>//GEN-END:initComponents
 
