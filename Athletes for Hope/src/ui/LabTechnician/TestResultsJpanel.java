@@ -298,7 +298,8 @@ public class TestResultsJPanel extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
+        try{
+         int selectedRow = jTable1.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -308,7 +309,10 @@ public class TestResultsJPanel extends javax.swing.JPanel {
 
         request.setResult(jTextField4.getText());
         PopulateTable();
-        jTextField4.setText("");
+        jTextField4.setText("");   
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
     
     private void initListners() {

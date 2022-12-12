@@ -190,7 +190,8 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
 
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
 
-        int selectedRow = tblPsychiatristRequestDetails.getSelectedRow();
+        try{
+         int selectedRow = tblPsychiatristRequestDetails.getSelectedRow();
         MentalHealthCoachWorkRequest request = (MentalHealthCoachWorkRequest)tblPsychiatristRequestDetails.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
@@ -200,6 +201,9 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
         }else
         {
             JOptionPane.showMessageDialog(null, "Only one case can be accepted at a time");
+        }   
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from table");
         }
 
         // TODO add your handling code here:

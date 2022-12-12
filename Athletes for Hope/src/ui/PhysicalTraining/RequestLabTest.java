@@ -272,12 +272,15 @@ JPanel userProcessContainer;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        LabTest Lt = new LabTest(jTextField4.getText());
-        Lt.setResult("Waiting");
-        labrequest.getLabTestList().add(Lt);
-        populatetable();
-        jTextField4.setText("");
-
+        if(jTextField4.getText().length() == 0){
+            JOptionPane.showMessageDialog(null, "Please enter all the fields");
+        }else{
+            LabTest Lt = new LabTest(jTextField4.getText());
+            Lt.setResult("Waiting");
+            labrequest.getLabTestList().add(Lt);
+            populatetable();
+            jTextField4.setText("");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered

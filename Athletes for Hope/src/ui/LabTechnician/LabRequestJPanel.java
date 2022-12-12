@@ -187,7 +187,8 @@ public class LabRequestJPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
+        try{
+         int selectedRow = jTable1.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -196,7 +197,10 @@ public class LabRequestJPanel extends javax.swing.JPanel {
         WorkRequest request = (LabTechnicianWorkRequest)jTable1.getValueAt(selectedRow, 2);
         request.setReceiver(userAccount);
         request.setStatus("Accepted");
-        populateTable();
+        populateTable();   
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -213,7 +217,8 @@ public class LabRequestJPanel extends javax.swing.JPanel {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int selectedRow = jTable1.getSelectedRow();
+        try{
+         int selectedRow = jTable1.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -230,6 +235,9 @@ public class LabRequestJPanel extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
 
+        }   
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
