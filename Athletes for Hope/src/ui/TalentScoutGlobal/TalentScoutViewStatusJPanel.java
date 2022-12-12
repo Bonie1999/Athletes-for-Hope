@@ -97,10 +97,10 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 146, 1));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 146, 1));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tableCases.setModel(new javax.swing.table.DefaultTableModel(
@@ -127,86 +127,54 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 0, 598, 156));
 
         lblCaseVolunteer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblCaseVolunteer.setForeground(new java.awt.Color(255, 255, 255));
+        lblCaseVolunteer.setForeground(new java.awt.Color(255, 146, 1));
         lblCaseVolunteer.setText("Talent Scout");
         jPanel3.add(lblCaseVolunteer, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 189, 125, -1));
 
         lblDate.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblDate.setForeground(new java.awt.Color(255, 255, 255));
         lblDate.setText("Date:");
         jPanel3.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
         lblReceiver.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblReceiver.setForeground(new java.awt.Color(255, 255, 255));
         lblReceiver.setText("Assigned To:");
         jPanel3.add(lblReceiver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, -1, 32));
-
-        txtCaseVolunteerDate.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtCaseVolunteerDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 217, 120, 35));
-
-        txtCaseVolunteer.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtCaseVolunteer, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 125, 32));
-
-        txtCaseVolunteerStatus.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtCaseVolunteerStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 320, 125, 30));
 
         lblCounsellor.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblCounsellor.setForeground(new java.awt.Color(255, 255, 255));
+        lblCounsellor.setForeground(new java.awt.Color(255, 146, 1));
         lblCounsellor.setText("Fund Allocator");
         jPanel3.add(lblCounsellor, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 190, 103, -1));
-
-        txtDoctorDate.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtDoctorDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 100, 30));
-
-        txtDoctor.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtDoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 90, 32));
-
-        txtDoctorStatus.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtDoctorStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 100, 30));
 
         lblLawyer.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblLawyer.setForeground(new java.awt.Color(255, 255, 255));
+        lblLawyer.setForeground(new java.awt.Color(255, 146, 1));
         lblLawyer.setText("Insurance Agent");
         jPanel3.add(lblLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, -1, -1));
 
         lblDoc.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblDoc.setForeground(new java.awt.Color(255, 255, 255));
+        lblDoc.setForeground(new java.awt.Color(255, 146, 1));
         lblDoc.setText("Training Coach");
         jPanel3.add(lblDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 110, -1));
 
         lblPsych.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblPsych.setForeground(new java.awt.Color(255, 255, 255));
+        lblPsych.setForeground(new java.awt.Color(255, 146, 1));
         lblPsych.setText("Health Coach");
         jPanel3.add(lblPsych, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 108, -1));
-
-        txtCounsellorDate.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtCounsellorDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 120, 35));
-
-        txtCOunsellor.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtCOunsellor, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 120, 32));
-
-        txtCounsellorStatus.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtCounsellorStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 120, 30));
-
-        txtLawyerDate.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtLawyerDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 220, 101, 35));
-
-        txtLawyer.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtLawyer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 103, 36));
-
-        txtLawyerStatus.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtLawyerStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 103, 21));
-
-        txtlPsychDate.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtlPsychDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 220, 145, 35));
-
-        txtPsych.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtPsych, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 145, 36));
-
-        txtPsychStatus.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(txtPsychStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 145, 21));
 
-        btnCheckStatus.setBackground(new java.awt.Color(1, 81, 92));
+        btnCheckStatus.setBackground(new java.awt.Color(255, 146, 1));
         btnCheckStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         btnCheckStatus.setForeground(new java.awt.Color(255, 255, 255));
         btnCheckStatus.setText("Check Status");
@@ -227,7 +195,6 @@ public class TalentScoutViewStatusJPanel extends javax.swing.JPanel {
         jPanel3.add(btnCheckStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 70, -1, -1));
 
         lblStatus.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
-        lblStatus.setForeground(new java.awt.Color(255, 255, 255));
         lblStatus.setText("Status:");
         jPanel3.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 21));
 
