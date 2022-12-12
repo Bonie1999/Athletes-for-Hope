@@ -2,6 +2,12 @@
 
 ## Topic: Athletes for Hope - Empowering young athletes to score big in life.
 
+## Project Description
+
+“Athletes for Hope", is a Java-based application that aims to provide equal sports opportunities for underprivileged youth in the community. The program will allow youth to sign up to access equipment and facilities, and receive training and coaching from experienced volunteers. The application will also connect youth with local organizations and charities that can provide additional support and resources. Through Athletes for Hope, underprivileged youth will have the opportunity to participate in sports and stay active, promoting physical and mental well-being. The project will seek to address the disparities in sports opportunities for youth from low-income backgrounds, providing them with the same opportunities to learn, grow, and excel in sports as their more privileged peers.
+
+
+## Team 
 Group Members & Professor (Prof. Kal Bugrara):
 
 - Name: Bonie Rajkumar Sachdev
@@ -48,10 +54,13 @@ ENTERPRISE → ORGANISATIONS → ROLES
 		
 		
 ## UML Diagrams
-Object Model Diagram
+# Object Model Diagram
 		
 ![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Nishank/UML%20Diagrams/UML_Objectmodel_AED.jpg)
 
-Use Case Diagram
+# Use Case Diagram
 ![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Puranjai/UML%20Diagrams/Use%20case%20Diagram.jpg)
+
+# Sequence Diagram
+![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Bonie/UML%20Diagrams/afhsequence.jpg)
 
