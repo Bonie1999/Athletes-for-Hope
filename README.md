@@ -1,6 +1,6 @@
 ## INFO 5100 FINAL PROJECT
 
-## Topic: Athletes for Hope
+## Topic: Athletes for Hope - Empowering young athletes to score big in life.
 
 Group Members & Professor (Prof. Kal Bugrara):
 
@@ -50,5 +50,8 @@ ENTERPRISE → ORGANISATIONS → ROLES
 ## UML Diagrams
 Object Model Diagram
 		
-![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Nishank/UML%20Diagrams/UML_Objectmodel_AED.jpg) 
+![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Nishank/UML%20Diagrams/UML_Objectmodel_AED.jpg)
+
+Use Case Diagram
+![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Puranjai/UML%20Diagrams/Use%20case%20Diagram.jpg)
 
