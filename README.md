@@ -1,4 +1,4 @@
-​​# INFO 5100 FINAL PROJECT
+## INFO 5100 FINAL PROJECT
 
 ## Topic: Athletes for Hope
 
@@ -45,4 +45,10 @@ ENTERPRISE → ORGANISATIONS → ROLES
 
 5. Talent Scout Global (SIGN UP)
 		i. Talent Scout
+		
+		
+## UML Diagrams
+Object Model Diagram
+		
+![](https://github.com/Bonie1999/Athletes-for-Hope/blob/Nishank/UML%20Diagrams/UML_Objectmodel_AED.jpg) 
 
