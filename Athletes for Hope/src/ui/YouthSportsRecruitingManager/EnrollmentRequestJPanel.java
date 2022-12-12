@@ -273,8 +273,8 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAssignRequestMouseExited
 
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
-
-        int i=1;
+        try{
+            int i=1;
         if(i<5)
         {
             int selectedRow = tblCaseRequest.getSelectedRow();
@@ -294,6 +294,10 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null, "Only 4 cases can be handled");
         }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from table");
+        }
+        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAssignRequestActionPerformed
@@ -308,7 +312,8 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
 
     private void btnViewCaseReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCaseReportActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblCaseRequest.getSelectedRow();
+        try{
+            int selectedRow = tblCaseRequest.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -327,6 +332,9 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
             /*CaseReportJPanel casereportJPanel=new CaseReportJPanel(userProcessContainer,system,request);
             casereportJPanel.setVisible(true);*/
         }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
+        }
     }//GEN-LAST:event_btnViewCaseReportActionPerformed
 
     private void btnCheckStatusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCheckStatusMouseExited
@@ -339,8 +347,8 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
 
     private void btnCheckStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckStatusActionPerformed
         // TODO add your handling code here:
-
-        int selectedRow = tblCaseRequest.getSelectedRow();
+        try{
+            int selectedRow = tblCaseRequest.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -415,6 +423,9 @@ public class EnrollmentRequestJPanel extends javax.swing.JPanel {
                 txtLawyerStatus.setText("-");
             }
 
+        }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
         }
     }//GEN-LAST:event_btnCheckStatusActionPerformed
     

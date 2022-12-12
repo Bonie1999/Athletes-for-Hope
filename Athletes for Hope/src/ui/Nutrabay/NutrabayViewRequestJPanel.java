@@ -179,7 +179,8 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
 
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblPharmaViewRequest.getSelectedRow();
+        try{
+            int selectedRow = tblPharmaViewRequest.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -189,6 +190,9 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
         request.setReceiver(userAccount);
         request.setStatus("Accepted");
         populateTable();
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
+        }
     }//GEN-LAST:event_btnAssignRequestActionPerformed
 
     private void btnViewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnViewMouseEntered
@@ -201,7 +205,8 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tblPharmaViewRequest.getSelectedRow();
+        try{
+         int selectedRow = tblPharmaViewRequest.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -217,6 +222,9 @@ public class NutrabayViewRequestJPanel extends javax.swing.JPanel {
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
 
+        }   
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Please select any one row from table");
         }
     }//GEN-LAST:event_btnViewActionPerformed
 

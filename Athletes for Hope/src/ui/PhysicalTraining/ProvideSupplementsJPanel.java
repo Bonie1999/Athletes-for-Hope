@@ -60,6 +60,8 @@ public class ProvideSupplementsJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Child Name:");
         jLabel5.setAutoscrolls(true);
@@ -303,11 +305,15 @@ public class ProvideSupplementsJPanel extends javax.swing.JPanel {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Supplements M = new Supplements(jTextField5.getText(),Integer.parseInt(jTextField3.getText()));
-        pRequest.getSupplements().add(M);
-        populatetable();
-        jTextField3.setText("");
-        jTextField5.setText("");
+        if((jTextField3.getText().length() == 0) || (jTextField5.getText().length() == 0)){
+            JOptionPane.showMessageDialog(this, "Please enter all fields");
+        }else{
+            Supplements M = new Supplements(jTextField5.getText(),Integer.parseInt(jTextField3.getText()));
+            pRequest.getSupplements().add(M);
+            populatetable();
+            jTextField3.setText("");
+            jTextField5.setText("");
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed

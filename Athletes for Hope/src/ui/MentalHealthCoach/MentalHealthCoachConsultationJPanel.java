@@ -13,6 +13,7 @@ import business.WorkQueue.MentalHealthCoachWorkRequest;
 import business.WorkQueue.TalentScoutWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
@@ -73,6 +74,7 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
         btnUpdate = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -105,7 +107,7 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
         lblAdvice.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblAdvice.setForeground(new java.awt.Color(61, 64, 91));
         lblAdvice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblAdvice.setText("                 Advice:");
+        lblAdvice.setText("Progress:");
 
         txtAreaAdvice.setColumns(20);
         txtAreaAdvice.setRows(5);
@@ -114,7 +116,7 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
         lblProgress.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
         lblProgress.setForeground(new java.awt.Color(61, 64, 91));
         lblProgress.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lblProgress.setText("            Progress:");
+        lblProgress.setText("Advice:");
 
         btnUpdate.setBackground(new java.awt.Color(255, 146, 1));
         btnUpdate.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
@@ -146,6 +148,24 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnBack.setBackground(new java.awt.Color(255, 146, 1));
+        btnBack.setFont(new java.awt.Font("Monaco", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBackMouseExited(evt);
+            }
+        });
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -162,30 +182,31 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
                                     .addComponent(lblProgress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtEncounterNo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(54, 54, 54))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(52, 52, 52))))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtEncounterNo, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblAdvice, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(46, 46, 46)
-                                .addComponent(txtProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)))
+                                .addComponent(txtProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(53, 53, 53)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(btnUpdate)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 672, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnUpdate)))
                 .addGap(158, 158, 158))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(btnBack)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(147, Short.MAX_VALUE)
+                .addGap(60, 60, 60)
+                .addComponent(btnBack)
+                .addGap(61, 61, 61)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -255,36 +276,6 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
             txtEncounterNo.setText("");
             txtProgress.setText("");
             txtAreaAdvice.setText("");
-
-            /*String FromEmail="sexualawareness.help@gmail.com";
-            String FromEmailPass="Fin@lProject21";
-            String Subject = "Sign up successful";
-
-            Properties properties=new Properties();
-            properties.put("mail.smtp.auth", "true");
-            properties.put("mail.smtp.starttls.enable", "true");
-            properties.put("mail.smtp.host", "smtp.gmail.com");
-            properties.put("mail.smtp.port", "587");
-
-            Session session=Session.getDefaultInstance(properties, new javax.mail.Authenticator(){
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication(){
-                    return new PasswordAuthentication(FromEmail,FromEmailPass);
-                }
-            });
-
-            try
-            {
-                Message msg=new MimeMessage(session);
-                msg.setFrom(new InternetAddress(FromEmail));
-                msg.addRecipients(Message.RecipientType.TO, InternetAddress.parse(request.CaseReporterWorkRequest().getEmail()));
-                msg.setSubject("Invitation for a session with Help Provider, " + request.CaseReporterWorkRequest().getNameofvictim() );
-                msg.setText("Dear "+ request.CaseReporterWorkRequest().getNameofvictim()+"\n"+"I am here to help you. Join me through the following link for the next encounter."+"\n"+"zoom1.link"+"\n"+"Best");
-                Transport.send(msg);
-            }catch(Exception e)
-            {
-                System.out.println(""+e);
-            } */
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
@@ -292,6 +283,26 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+
+    private void btnBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseEntered
+        btnBack.setForeground(new Color(0,128,128));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackMouseEntered
+
+    private void btnBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseExited
+        btnBack.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackMouseExited
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        //        HealthInsuranceJPanel sysAdminwjp = (HealthInsuranceJPanel) component;
+        //sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
     
     private void populate() {
     
@@ -310,6 +321,7 @@ public class MentalHealthCoachConsultationJPanel extends javax.swing.JPanel {
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

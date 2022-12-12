@@ -188,8 +188,8 @@ JPanel userProcessContainer;
     }//GEN-LAST:event_jButton1MouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        int selectedRow = jTable1.getSelectedRow();
+        try{
+            int selectedRow = jTable1.getSelectedRow();
         WorkRequest request = (TrainingCoachWorkRequest)jTable1.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
@@ -199,11 +199,14 @@ JPanel userProcessContainer;
         {
             JOptionPane.showMessageDialog(null, "Only one case can be accepted at a time");
         }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from table");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
-        int selectedRow = jTable1.getSelectedRow();
+        try{
+            int selectedRow = jTable1.getSelectedRow();
         String st=jTable1.getValueAt(selectedRow, 3).toString();
         String stat="Waiting";
         if(st.equalsIgnoreCase(stat))
@@ -230,10 +233,14 @@ JPanel userProcessContainer;
 
             }
         }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from table");
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int selectedRow = jTable1.getSelectedRow();
+        try{
+            int selectedRow = jTable1.getSelectedRow();
 
         if (selectedRow < 0){
             return;
@@ -244,6 +251,9 @@ JPanel userProcessContainer;
         request.setReceiver(userAccount);
         request.setStatus("Case Completed");
         populatetable();
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from table");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

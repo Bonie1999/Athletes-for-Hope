@@ -212,7 +212,8 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
 
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
 
-        int selectedRow = tblLawyerManageRequest.getSelectedRow();
+        try{
+            int selectedRow = tblLawyerManageRequest.getSelectedRow();
         WorkRequest request = (InsuranceAgentWorkRequest)tblLawyerManageRequest.getValueAt(selectedRow, 2);
         if (CheckOpenCases(userAccount) == 0){
             request.setReceiver(userAccount);
@@ -221,6 +222,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
         }else
         {
             JOptionPane.showMessageDialog(null, "Only one case can be accepted at a time");
+        }
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please select atleast any one row from table");
         }
 
         // TODO add your handling code here:
@@ -236,7 +240,8 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
 
     private void btnViewCaseReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewCaseReportActionPerformed
 
-        int selectedRow = tblLawyerManageRequest.getSelectedRow();
+        try{
+            int selectedRow = tblLawyerManageRequest.getSelectedRow();
         String sta=tblLawyerManageRequest.getValueAt(selectedRow, 2).toString();
         String status="Waiting";
         //        if(sta.equalsIgnoreCase(status))
@@ -263,6 +268,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 // }
 
         }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please select atleast any one row from table");
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewCaseReportActionPerformed
 
@@ -276,7 +284,8 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
 
     private void btnEncounterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncounterActionPerformed
 
-        int selectedRow = tblLawyerManageRequest.getSelectedRow();
+        try {
+         int selectedRow = tblLawyerManageRequest.getSelectedRow();
 
         String sta=tblLawyerManageRequest.getValueAt(selectedRow, 2).toString();
         String status="Waiting";
@@ -298,7 +307,10 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
                 userProcessContainer.add("caseReportJPanel", lencounterJPanel);
                 CardLayout layout = (CardLayout) userProcessContainer.getLayout();
                 layout.next(userProcessContainer);
-            }
+            }   
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please select atleast any one row from table");
+        }
             // }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEncounterActionPerformed
@@ -312,7 +324,8 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCaseCompleteMouseExited
 
     private void btnCaseCompleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaseCompleteActionPerformed
-        int selectedRow = tblLawyerManageRequest.getSelectedRow();
+        try{
+         int selectedRow = tblLawyerManageRequest.getSelectedRow();
 
         String sts="Waiting";
         String sta=tblLawyerManageRequest.getValueAt(selectedRow, 2).toString();
@@ -329,6 +342,9 @@ public class HealthInsuranceRequestJPanel extends javax.swing.JPanel {
             request.setReceiver(userAccount);
             request.setStatus("Case Completed");
             populateTable();
+        }   
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select atleast any one row from table");
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCaseCompleteActionPerformed

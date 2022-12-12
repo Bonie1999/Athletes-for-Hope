@@ -222,16 +222,19 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAssignRequestMouseExited
 
     private void btnAssignRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignRequestActionPerformed
-
-        int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
-        FundAllocatorWorkRequest request = (FundAllocatorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
-        if (CheckOpenCases(userAccount) == 0){
-            request.setReceiver(userAccount);
-            request.setStatus("Accepted");
-            populateTable();
-        }else
-        {
-            JOptionPane.showMessageDialog(null, "Only one case can be accepted at a time");
+        try{
+            int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
+            FundAllocatorWorkRequest request = (FundAllocatorWorkRequest)tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2);
+            if (CheckOpenCases(userAccount) == 0){
+                request.setReceiver(userAccount);
+                request.setStatus("Accepted");
+                populateTable();
+            }else
+            {
+                JOptionPane.showMessageDialog(null, "Only one case can be accepted at a time");
+            }
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from a table");
         }
     }//GEN-LAST:event_btnAssignRequestActionPerformed
 
@@ -244,6 +247,7 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnViewReportMouseExited
 
     private void btnViewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewReportActionPerformed
+        try {
         int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
         DefaultTableModel model=(DefaultTableModel) tblManageCounsellorRequestDetails.getModel();
         String sta="Waiting";
@@ -274,6 +278,9 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
                 casereportJPanel.setVisible(true);*/
             }
 
+        }   
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from a table");
         }
     }//GEN-LAST:event_btnViewReportActionPerformed
 
@@ -286,7 +293,8 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEncountersMouseExited
 
     private void btnEncountersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncountersActionPerformed
-        int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
+        try{
+            int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
         DefaultTableModel model=(DefaultTableModel) tblManageCounsellorRequestDetails.getModel();
         String stat="Waiting";
         String statu=tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2).toString();
@@ -311,7 +319,11 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
                 layout.next(userProcessContainer);
 
             }
-        }// TODO add your handling code here:
+        }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from a table");
+        }
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnEncountersActionPerformed
 
     private void btnCaseCompleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCaseCompleteMouseEntered
@@ -323,7 +335,8 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCaseCompleteMouseExited
 
     private void btnCaseCompleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCaseCompleteActionPerformed
-        int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
+        try{
+            int selectedRow = tblManageCounsellorRequestDetails.getSelectedRow();
 
         String s="Waiting";
         String status=tblManageCounsellorRequestDetails.getValueAt(selectedRow, 2).toString();
@@ -342,6 +355,9 @@ public class FundAllocatorRequestJPanel extends javax.swing.JPanel {
             //request.setReceiver(userAccount);
             request.setStatus("Case Completed");
             populateTable();
+        }
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Please select any one row from a table");
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCaseCompleteActionPerformed
