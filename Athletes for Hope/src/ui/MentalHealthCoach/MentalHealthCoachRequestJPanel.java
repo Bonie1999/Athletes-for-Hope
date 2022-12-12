@@ -65,10 +65,10 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
         btnEncounters = new javax.swing.JButton();
         btnCaseComplete = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(244, 241, 222));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lblHeader.setFont(new java.awt.Font("Monaco", 1, 36)); // NOI18N
-        lblHeader.setForeground(new java.awt.Color(61, 64, 91));
+        lblHeader.setForeground(new java.awt.Color(255, 146, 1));
         lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHeader.setText("Manage Requests");
 
@@ -114,7 +114,7 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
         btnEncounters.setBackground(new java.awt.Color(255, 146, 1));
         btnEncounters.setFont(new java.awt.Font("Monaco", 1, 18)); // NOI18N
         btnEncounters.setForeground(new java.awt.Color(255, 255, 255));
-        btnEncounters.setText("Encounters");
+        btnEncounters.setText("Consultation");
         btnEncounters.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEncountersActionPerformed(evt);
@@ -143,7 +143,7 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
                     .addComponent(btnEncounters, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnCaseComplete, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(71, 71, 71)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
                 .addGap(256, 256, 256))
         );
         jPanel1Layout.setVerticalGroup(
@@ -161,7 +161,7 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
                         .addComponent(btnEncounters)
                         .addGap(18, 18, 18)
                         .addComponent(btnCaseComplete)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -170,19 +170,13 @@ public class MentalHealthCoachRequestJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1300, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
